@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la /e/GiaPha/*.jpg)",
+      "Skill(claude-api)",
+      "Skill(claude-api:*)",
+      "Bash(node -e ' *)",
+      "mcp__Claude_Preview__preview_start",
+      "PowerShell(Get-Command npx,node -ErrorAction SilentlyContinue)",
+      "mcp__Claude_in_Chrome__tabs_context_mcp",
+      "PowerShell(\\(Get-Content \"E:\\\\GiaPha\\\\index.html\"\\).Count)",
+      "PowerShell(Select-String -Path \"E:\\\\GiaPha\\\\index.html\" -Pattern 'lao|LÀO|Lào' | Where-Object { $_.Line -match 'id:|name:' } | Select-Object LineNumber, Line | Select-Object -First 10)"
+    ]
+  }
+}
