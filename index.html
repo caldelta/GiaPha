@@ -621,168 +621,424 @@ const DATA = {
       id:"d2-hoa", name:"HUỲNH VĂN HÒA", gender:"male", gen:2,
       title:"Tổ Đời 2 – Nhánh 1",
       spouse:"Không rõ tên",
-      intro:"◆ NHÁNH 1 – ÔNG TỔ ĐỜI 2: HUỲNH VĂN HÒA (hay KHẾ) VÀ HẬU DUỆ\n\nÔng Huỳnh Văn Hòa còn có tên gọi là KHẾ, là con thứ tư (hoặc thứ năm) của Cao Tổ Huỳnh Đầu, và là anh ruột của ông Huỳnh Văn Hơn (Nhánh 2). Ông là một trong ba vị Lãnh binh có công lớn trong phong trào kháng chiến chống thực dân Pháp tại vùng Bến Tre – Tiền Giang. Theo sử liệu gia phả, ông có liên hệ mật thiết với Lãnh binh Trương Định và Phan Thanh Giản trong cuộc khởi nghĩa những năm 1860. Sau khi cuộc kháng chiến thất bại, ông về sinh sống tại vùng Bến Tre và để lại hậu duệ đông đúc qua các đời sau. Tài liệu gia phả ghi nhận nhánh 1 từ trang 6 đến trang 18.",
-      notes:"Tổ Nhánh 1 của họ Huỳnh Văn. Tên khác: KHẾ. Là anh của ông Huỳnh Văn Hơn. Ông là một trong ba vị Lãnh binh chống Pháp tại vùng Bến Tre thời Trương Định (khoảng 1860–1865). Khi phong trào kháng chiến tan rã, ông về lập nghiệp tại vùng Bến Tre. Theo gia phả, ông có ít nhất 2 người con với bà chính thất: Huỳnh Thị Sáu (con gái, lấy chồng họ Bành) và Huỳnh Văn Hào. Ngoài ra còn nhiều con cháu khác ghi trong trang 6–18.",
+      intro:"◆ NHÁNH 1 – ÔNG TỔ ĐỜI 2: HUỲNH VĂN HÒA (T.5) VÀ HẬU DUỆ\n\nÔng Huỳnh Văn Hòa là con thứ 5 (T5) của Cao Tổ Huỳnh Văn Báu, là anh ruột của ông Huỳnh Văn Hơn (Nhánh 2). Ông là Lãnh binh Hữu quân được triều đình nhà Nguyễn phái vào Nam tiếp viện Tướng quân Trương Định chống Pháp. Khi lực lượng kháng chiến tan rã, ông lánh vào ẩn tu tại một ngôi chùa vùng Bình Đại, Bến Tre. Gia phả ghi chỉ có 2 người con: Huỳnh Thị Sáo và Huỳnh Văn Hào. Hậu duệ ghi từ trang 6–18.",
+      notes:"Tổ Nhánh 1. Tên khác: KHÁ. Là anh của ông Huỳnh Văn Hơn (Nhánh 2). Lãnh binh Hữu quân thời Trương Định (1860–1865). Sau kháng chiến tan rã, lánh tu ở chùa vùng Bình Đại, Bến Tre. Có 2 con: Huỳnh Thị Sáo và Huỳnh Văn Hào.",
       children:[
         {
-          id:"d3-sau-hoa", name:"HUỲNH THỊ SÁU", gender:"female", gen:3,
-          notes:"Con trưởng (T1) của Ông Huỳnh Văn Hòa. Là con gái, không biết ngày sinh. Bà lấy chồng họ Bành và sinh ít nhất 3 người con: Bành Văn Hàm, Bành Văn Dinh, Bành Văn Mụi. Gia phả không ghi thêm chi tiết về bà.",
+          id:"d3-sao", name:"HUỲNH THỊ SÁO", gender:"female", gen:3,
+          death:"1899 (Kỷ Tị)", spouse:"họ Đặng",
+          notes:"Trưởng nữ (T2) của Ông Huỳnh Văn Hòa. Không biết năm sinh, mất 1899 (Kỷ Tị). Chồng họ ĐẶNG, sinh 3 con.",
           children:[
-            {id:"d4-ham-b", name:"BÀNH VĂN HÀM", gender:"male", gen:4, notes:"Con (T2) của bà Huỳnh Thị Sáu. Họ Bành.", children:[]},
-            {id:"d4-dinh-b", name:"BÀNH VĂN DINH", gender:"male", gen:4, notes:"Con (T3) của bà Huỳnh Thị Sáu. Họ Bành.", children:[]},
-            {id:"d4-mui-b", name:"BÀNH VĂN MỤI", gender:"male", gen:4, notes:"Con (T4) của bà Huỳnh Thị Sáu. Họ Bành.", children:[]}
+            {
+              id:"d4-hanh-dang", name:"ĐẶNG VĂN HÀNH", gender:"male", gen:4,
+              notes:"Con T2 của bà Huỳnh Thị Sáo.",
+              children:[
+                {id:"d5-ngo-dang", name:"ĐẶNG THỊ NGỌ", gender:"female", gen:5, children:[]},
+                {id:"d5-dau-dang", name:"ĐẶNG THỊ DẬU", gender:"female", gen:5, children:[]}
+              ]
+            },
+            {id:"d4-dinh-dang", name:"ĐẶNG VĂN ĐINH", gender:"male", gen:4, children:[]},
+            {id:"d4-mui-dang", name:"ĐẶNG VĂN MÙI", gender:"male", gen:4, children:[]}
           ]
         },
         {
           id:"d3-hao", name:"HUỲNH VĂN HÀO", gender:"male", gen:3,
           spouse:"Không rõ tên",
-          notes:"Con thứ 2 (T2) của Ông Huỳnh Văn Hòa. Có ít nhất 4 người con. Hậu duệ sinh sống tại vùng Bến Tre.",
+          notes:"Con thứ 3 (T3) của Ông Huỳnh Văn Hòa. Có 4 người con: T2 không biết tên, T3 Huỳnh Khắc Hộ, T4 Huỳnh Khắc Thông, T5 Huỳnh Thị Thiện.",
           children:[
+            {id:"d4-t2-hao", name:"[Đ4.T2 – không biết tên]", gender:"unknown", gen:4, notes:"Con T2 của Huỳnh Văn Hào, gia phả không ghi tên.", children:[]},
             {
-              id:"d4-hanh", name:"HUỲNH VĂN HÀNH", gender:"male", gen:4,
-              spouse:"Không rõ",
-              notes:"Con của Huỳnh Văn Hào.",
-              children:[
-                {id:"d5-ngo-hanh", name:"HUỲNH VĂN NGỌ", gender:"male", gen:5, children:[]},
-                {id:"d5-dau-hanh", name:"HUỲNH VĂN DẬU", gender:"male", gen:5, children:[]}
-              ]
-            },
-            {id:"d4-dinh-hao", name:"HUỲNH VĂN ĐÌNH", gender:"male", gen:4, children:[]},
-            {id:"d4-mui-hao", name:"HUỲNH VĂN MÙI", gender:"male", gen:4, children:[]}
-          ]
-        },
-        {
-          id:"d3-hao2", name:"HUỲNH VĂN HAO", gender:"male", gen:3,
-          spouse:"Không rõ",
-          notes:"Con của Huỳnh Văn Hòa. Có 4 người con.",
-          children:[
-            {
-              id:"d4-ho", name:"HUỲNH VĂN HỌ", gender:"male", gen:4,
-              spouse:"Không rõ",
-              notes:"Con của Huỳnh Văn Hao.",
+              id:"d4-ho", name:"HUỲNH KHẮC HỘ", gender:"male", gen:4,
+              notes:"Con T3 của Huỳnh Văn Hào. Có 4 con: Điểu (T2), Hà (T3), Thâu (T4), Trừ (T5).",
               children:[
                 {
-                  id:"d5-dieu", name:"HUỲNH VĂN ĐIỂU", gender:"male", gen:5,
-                  spouse:"Liếng",
-                  notes:"Có nhiều con, một số mất nhỏ.",
+                  id:"d5-dieu", name:"HUỲNH THỊ ĐIỂU", gender:"female", gen:5,
+                  spouse:"NGUYỄN VĂN LIỄNG (hay Nguyễn Ngọc Liễng)",
+                  notes:"Con T2 của Huỳnh Khắc Hộ. Ở ấp 3, xã Long Hòa, huyện Bình Đại, Bến Tre. 7 con (T2–T3 chết nhỏ; T4 Đồ, T5 Chạm, T6 Kiều, T7 Út, T8 Ngữ, T9 Inh).",
                   children:[
-                    {id:"d6-da", name:"ĐÀ", gender:"unknown", gen:6, children:[]},
-                    {id:"d6-cham", name:"CHẠM", gender:"unknown", gen:6, children:[]},
-                    {id:"d6-kieu-d", name:"KIỀU", gender:"unknown", gen:6, children:[]},
-                    {id:"d6-ot", name:"ỚT", gender:"unknown", gen:6, children:[]},
-                    {id:"d6-ngu", name:"NGỮ", gender:"unknown", gen:6, children:[]},
-                    {id:"d6-inh", name:"INH", gender:"unknown", gen:6, children:[]}
+                    {id:"d6-chet1-dieu", name:"(Chết nhỏ – T2)", gender:"unknown", gen:6, children:[]},
+                    {id:"d6-chet2-dieu", name:"(Chết nhỏ – T3)", gender:"unknown", gen:6, children:[]},
+                    {
+                      id:"d6-do-dieu", name:"NGUYỄN THỊ ĐỒ", gender:"female", gen:6,
+                      birth:"1917 (Đinh Tị)", spouse:"BÙI VĂN ĐỀ (1914/Giáp Dần)",
+                      notes:"Con T4 của Điểu. 5 con.",
+                      children:[
+                        {id:"d7-tri-do", name:"Bùi Năng Tri", gender:"male", gen:7, birth:"1948 (Mậu Tý)", notes:"Chết.", children:[]},
+                        {id:"d7-trinang-do", name:"Bùi Tri Năng", gender:"male", gen:7, notes:"Chết nhỏ.", children:[]},
+                        {id:"d7-thuy-do", name:"Bùi Phù Thuỷ", gender:"unknown", gen:7, notes:"Chết.", children:[]},
+                        {id:"d7-thang-do", name:"Bùi Minh Thắng", gender:"male", gen:7, birth:"1950 (Canh Dần)", notes:"Lớp 5, làm vườn. Vợ, 4 con chết 1 còn 3.", children:[]},
+                        {id:"d7-dac-do", name:"Bùi Minh Đắc", gender:"male", gen:7, birth:"1953 (Quý Tị)", notes:"Lớp 7, Đội Hình sự CA Bến Tre.", children:[]}
+                      ]
+                    },
+                    {
+                      id:"d6-cham-dieu", name:"NGUYỄN NGỌC CHẠM", gender:"male", gen:6,
+                      birth:"1919 (Kỷ Mùi)", spouse:"NGUYỄN THỊ NGỌC (1922/Nhâm Tuất)",
+                      notes:"Con T5 của Điểu. Đi Mỹ 1996. 6 con.",
+                      children:[
+                        {
+                          id:"d7-yen-cham", name:"Nguyễn Hải Yến", gender:"male", gen:7, birth:"1949 (Kỷ Sửu)",
+                          spouse:"Nguyễn Thị Bé (1953/Quý Tị)", notes:"Lớp 7, thợ hồ. 10 con.",
+                          children:[
+                            {id:"d8-phong-yen", name:"Nguyễn Hải Phong", gen:8, birth:"1972", children:[]},
+                            {id:"d8-cuong-yen", name:"Nguyễn Hải Cường", gen:8, birth:"1973", children:[]},
+                            {id:"d8-hang-yen", name:"Nguyễn Thanh Hằng", gen:8, birth:"1974", children:[]},
+                            {id:"d8-duong-yen", name:"Nguyễn Hải Dương", gen:8, birth:"1975", children:[]},
+                            {id:"d8-truc-yen", name:"Nguyễn Thị Thanh Trúc", gen:8, birth:"1976", children:[]},
+                            {id:"d8-thuy-yen", name:"Nguyễn Thị Diễm Thuý", gen:8, birth:"1977", children:[]},
+                            {id:"d8-mai-yen", name:"Nguyễn Thị Xuân Mai", gen:8, birth:"1978", children:[]},
+                            {id:"d8-hoang-yen", name:"Nguyễn Hải Hoàng", gen:8, birth:"1979", children:[]},
+                            {id:"d8-van-yen", name:"Nguyễn Thị Mộng Vân", gen:8, birth:"1980", children:[]},
+                            {id:"d8-tuyen-yen", name:"Nguyễn Thị Mộng Tuyền", gen:8, birth:"1981", children:[]}
+                          ]
+                        },
+                        {id:"d7-thuy-cham", name:"Nguyễn Thị Thanh Thuỷ", gender:"female", gen:7, birth:"1952 (Nhâm Thìn)", notes:"Lớp 9. Chồng chết. 1 con.", children:[{id:"d8-tu-thuy", name:"Nguyễn Minh Tú", gen:8, birth:"1982", children:[]}]},
+                        {
+                          id:"d7-thach-cham", name:"Nguyễn Ngọc Thạch", gender:"male", gen:7, birth:"1953 (Quý Tị)",
+                          spouse:"Ngọc Hoa (người Hoa, 1955)", notes:"5 con.",
+                          children:[
+                            {id:"d8-thien-thach", name:"Nguyễn Ngọc Thiện", gen:8, birth:"1975", children:[]},
+                            {id:"d8-tham-thach", name:"Nguyễn Thị Hồng Thắm", gen:8, birth:"1977", children:[]},
+                            {id:"d8-nam-thach", name:"Nguyễn Ngọc Phương Nam", gen:8, birth:"1979", children:[]},
+                            {id:"d8-quoc-thach", name:"Nguyễn Viết Quốc", gen:8, birth:"1981", children:[]},
+                            {id:"d8-chau-thach", name:"Nguyễn Ngọc Hồng Châu", gen:8, birth:"1983", children:[]}
+                          ]
+                        },
+                        {
+                          id:"d7-loan-cham", name:"Nguyễn Thị Xuân Loan", gender:"female", gen:7, birth:"1956 (Bính Thân)",
+                          spouse:"Nguyễn Hoàng Sơn (1955)", notes:"Ở Mỹ. 4 con.",
+                          children:[
+                            {id:"d8-vu-loan", name:"Nguyễn Hoàn Vũ", gen:8, birth:"1975", children:[]},
+                            {id:"d8-chet-loan", name:"(Chết nhỏ)", gen:8, children:[]},
+                            {id:"d8-huong-loan", name:"Nguyễn Thị Xuân Hương", gen:8, birth:"1977", children:[]},
+                            {id:"d8-dung-loan", name:"Nguyễn Ngọc Dung", gen:8, birth:"1979", children:[]}
+                          ]
+                        },
+                        {id:"d7-nguyet-cham", name:"Nguyễn Thị Thanh Nguyệt", gender:"female", gen:7, birth:"1958 (Mậu Tuất)", spouse:"Nguyễn Thành Trung (1959)", notes:"2 con.", children:[{id:"d8-hang2-nguyet", name:"Nguyễn Thị Thanh Hằng", gen:8, birth:"1979", children:[]},{id:"d8-nga-nguyet", name:"Nguyễn Thị Thanh Nga", gen:8, birth:"1981", children:[]}]},
+                        {id:"d7-son-cham", name:"Nguyễn Ngọc Sơn", gender:"male", gen:7, birth:"1973 (Quý Sửu)", spouse:"Nguyễn Thị Lan Chi", notes:"2 con.", children:[{id:"d8-huong2-son", name:"Nguyễn Thị Xuân Hương", gen:8, birth:"1988", children:[]},{id:"d8-hiem-son", name:"Nguyễn Thị Diễm Hương", gen:8, birth:"1991", children:[]}]}
+                      ]
+                    },
+                    {
+                      id:"d6-kieu-dieu", name:"NGUYỄN THỊ KIỀU", gender:"female", gen:6,
+                      birth:"1921 (Tân Dậu)", death:"1963", spouse:"TRẦN CẨM MẦU (người Hoa)",
+                      notes:"Con T6 của Điểu. 2 con.",
+                      children:[
+                        {id:"d7-hoa-kieu", name:"Trần Văn Hòa", gender:"male", gen:7, birth:"1946 (Bính Tuất)", notes:"Giáo viên ở Bà Rịa.", children:[]},
+                        {id:"d7-hao-kieu", name:"Trần Thị Phụng Hảo", gender:"female", gen:7, birth:"1948 (Mậu Tý)", notes:"Giáo viên ở Bà Rịa.", children:[]}
+                      ]
+                    },
+                    {id:"d6-ut-dieu", name:"NGUYỄN VĂN ÚT", gender:"male", gen:6, birth:"1925 (Ất Sửu)", notes:"Con T7 của Điểu. Tật bẩm sinh, chết.", children:[]},
+                    {
+                      id:"d6-ngu-dieu", name:"NGUYỄN VĂN NGỮ", gender:"male", gen:6,
+                      birth:"1927 (Đinh Mão)", spouse:"NGUYỄN THỊ THỪA (1929/Kỷ Tị)",
+                      notes:"Con T8 của Điểu. Trung học cấp 2, làm thầu hồ. 10 con.",
+                      children:[
+                        {id:"d7-beanh-ngu", name:"Nguyễn Bé Anh", gen:7, children:[]},
+                        {id:"d7-beem-ngu", name:"Nguyễn Bé Em", gen:7, children:[]},
+                        {id:"d7-betu-ngu", name:"Nguyễn Thị Bé Tư", gen:7, children:[]},
+                        {id:"d7-benam-ngu", name:"Nguyễn Thị Bé Năm", gen:7, notes:"Chết.", children:[]},
+                        {id:"d7-nguyet-ngu", name:"Nguyễn Thị Nguyệt", gen:7, children:[]},
+                        {id:"d7-betam-ngu", name:"Nguyễn Bé Tám", gen:7, children:[]},
+                        {id:"d7-dung-ngu", name:"Nguyễn Thị Ngọc Dung", gen:7, children:[]},
+                        {id:"d7-bemuoi-ngu", name:"Nguyễn Bé Mười", gen:7, children:[]},
+                        {id:"d7-hoang-ngu", name:"Nguyễn Minh Hoàng", gen:7, children:[]},
+                        {id:"d7-phuong-ngu", name:"Nguyễn Thị Ngọc Phượng", gen:7, children:[]}
+                      ]
+                    },
+                    {
+                      id:"d6-inh-dieu", name:"NGUYỄN VĂN INH", gender:"male", gen:6,
+                      birth:"1930 (Canh Ngọ)", spouse:"LÊ THỊ HOA (1930)",
+                      notes:"Con T9 của Điểu. Lớp 6, làm ruộng. 3 con.",
+                      children:[
+                        {id:"d7-linh-inh", name:"Nguyễn Ngọc Linh", gender:"male", gen:7, birth:"1954 (Giáp Ngọ)", notes:"Lớp 7, cách mạng, không vợ.", children:[]},
+                        {
+                          id:"d7-hien-inh", name:"Nguyễn Minh Hiển", gender:"male", gen:7, birth:"1956 (Bính Thân)",
+                          spouse:"Dương Thị Lệ (1958)", notes:"Lớp 5, thợ hồ. 2 con.",
+                          children:[
+                            {id:"d8-trami-hien", name:"Nguyễn Thị Trà Mi", gen:8, birth:"1986", children:[]},
+                            {id:"d8-lehien-hien", name:"Nguyễn Thị Lệ Hiển", gen:8, birth:"1991", children:[]}
+                          ]
+                        },
+                        {
+                          id:"d7-lanh-inh", name:"Nguyễn Thị Nguyệt Lanh", gender:"female", gen:7, birth:"1958 (Mậu Tuất)",
+                          spouse:"Nguyễn Văn Hải (1956)", notes:"Lớp 4. 8 con.",
+                          children:[
+                            {id:"d8-trang-lanh", name:"Nguyễn Thị Thùy Trang", gen:8, birth:"1976", children:[]},
+                            {id:"d8-vu-lanh", name:"Nguyễn Văn Vũ", gen:8, birth:"1978", children:[]},
+                            {id:"d8-huong-lanh", name:"Nguyễn Thị Thu Hương", gen:8, birth:"1980", children:[]},
+                            {id:"d8-tam-lanh", name:"Nguyễn Minh Tâm", gen:8, birth:"1982", children:[]},
+                            {id:"d8-nguyet-lanh", name:"Nguyễn Thị Thu Nguyệt", gen:8, birth:"1984", children:[]},
+                            {id:"d8-hieu-lanh", name:"Nguyễn Minh Hiếu", gen:8, birth:"1986", children:[]},
+                            {id:"d8-hanh-lanh", name:"Nguyễn Thị Bích Hạnh", gen:8, birth:"1989", children:[]},
+                            {id:"d8-hien2-lanh", name:"Nguyễn Thị Thu Hiền", gen:8, birth:"1992", children:[]}
+                          ]
+                        }
+                      ]
+                    }
                   ]
                 },
                 {
-                  id:"d5-thau", name:"HUỲNH VĂN THẦU", gender:"male", gen:5,
-                  spouse:"Người Hoa (về Tàu)",
-                  notes:"Vợ là người Hoa, về Tàu.",
+                  id:"d5-ha", name:"HUỲNH THỊ HÀ", gender:"female", gen:5,
+                  birth:"1897 (Đinh Dậu)", spouse:"NGUYỄN VĂN GIA (1889/Kỷ Sửu, mất 1952/Nhâm Thìn)",
+                  notes:"Con T3 của Huỳnh Khắc Hộ. 6 con đã chết 5, còn 1 người.",
+                  children:[
+                    {
+                      id:"d6-nhu-ha", name:"NGUYỄN THỊ NHƯ", gender:"female", gen:6,
+                      birth:"1931 (Tân Mùi)", spouse:"NGUYỄN VĂN NINH (1929/Kỷ Tị, mất 1962/Nhâm Dần)",
+                      notes:"Con T7 của bà Hà. Làm vườn, buôn bán. 3 con.",
+                      children:[
+                        {
+                          id:"d7-tuyeths-nhu", name:"Nguyễn Thị Hồng Tuyết", gender:"female", gen:7, birth:"1956 (Bính Thân)",
+                          spouse:"Hồ Văn Minh (1951/Tân Mão)", notes:"Lớp 10. 3 con.",
+                          children:[
+                            {id:"d8-truonggiang", name:"Hồ Văn Trường Giang", gen:8, birth:"1980", children:[]},
+                            {id:"d8-thanggiang", name:"Hồ Thị Thanh Giang", gen:8, birth:"1982", children:[]},
+                            {id:"d8-trietgiang", name:"Hồ Thị Triết Giang", gen:8, birth:"1983", children:[]}
+                          ]
+                        },
+                        {
+                          id:"d7-thanh-nhu", name:"Nguyễn Quốc Thành", gender:"male", gen:7, birth:"1961 (Tân Sửu)",
+                          spouse:"Bạch Thị Thanh Thuỷ (1962)", notes:"1 con.",
+                          children:[{id:"d8-quethanh-thanh", name:"Nguyễn Thị Quế Thanh", gen:8, birth:"1990", children:[]}]
+                        },
+                        {
+                          id:"d7-thuyha-nhu", name:"Nguyễn Thị Thanh Thuý", gender:"female", gen:7, birth:"1962 (Nhâm Dần)",
+                          spouse:"Phan Thanh Liêm (1961)", notes:"Lớp 9, thợ may. 2 con.",
+                          children:[
+                            {id:"d8-thuyan-thuy", name:"Phan Thị Thuý An", gen:8, birth:"1986", children:[]},
+                            {id:"d8-duyan-thuy", name:"Phan Văn Duy An", gen:8, birth:"1994", children:[]}
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  id:"d5-thau", name:"HUỲNH THỊ THÂU", gender:"female", gen:5,
+                  notes:"Con T4 của Huỳnh Khắc Hộ. Có chồng người Hoa, về Tàu, bặt tin.",
                   children:[]
                 },
                 {
-                  id:"d5-tri", name:"HUỲNH VĂN TRỊ", gender:"male", gen:5,
-                  spouse:"Quí",
+                  id:"d5-tru", name:"HUỲNH KHẮC TRỪ", gender:"male", gen:5,
+                  birth:"1902 (Nhâm Dần)", spouse:"NGUYỄN THỊ QUÍ (1909/Kỷ Dậu, chết chìm 1941)",
+                  notes:"Con T5 của Huỳnh Khắc Hộ. 5 con.",
                   children:[
-                    {id:"d6-anh-tri", name:"ANH", gender:"unknown", gen:6, children:[]},
-                    {id:"d6-au-tri", name:"ẤU", gender:"unknown", gen:6, children:[]},
-                    {id:"d6-em-tri", name:"EM", gender:"unknown", gen:6, children:[]},
-                    {id:"d6-anh2-tri", name:"ÁNH", gender:"unknown", gen:6, children:[]},
-                    {id:"d6-tien-tri", name:"TIÊN", gender:"unknown", gen:6, children:[]}
+                    {
+                      id:"d6-anh-tru", name:"HUỲNH THỊ ANH", gender:"female", gen:6,
+                      birth:"1926 (Bính Dần)", spouse:"NGUYỄN VĂN CẦN (chết)", notes:"8 con.",
+                      children:[
+                        {id:"d7-behai-anh", name:"Nguyễn Thị Bé Hai", gender:"female", gen:7, birth:"1952 (Nhâm Thìn)", spouse:"Nguyễn Văn Hiếu", notes:"3 con.", children:[{id:"d8-tuan-behai", name:"Nguyễn Văn Tuấn", gen:8, birth:"1973", children:[]},{id:"d8-thao-behai", name:"Nguyễn Thị Thảo", gen:8, birth:"1976", children:[]},{id:"d8-mai-behai", name:"Nguyễn Thị Mai", gen:8, birth:"1978", children:[]}]},
+                        {id:"d7-beba-anh", name:"Nguyễn Thị Bé Ba", gender:"female", gen:7, birth:"1954 (Giáp Ngọ)", spouse:"Trương Văn Vân (1956)", notes:"2 con.", children:[{id:"d8-hovu-beba", name:"Trương Hồ Vũ", gen:8, birth:"1976", children:[]},{id:"d8-hophong-beba", name:"Trương Hồ Phong", gen:8, birth:"1970", children:[]}]},
+                        {id:"d7-chet-anh", name:"(Chết nhỏ – T4)", gen:7, children:[]},
+                        {id:"d7-benam-anh", name:"Nguyễn Thị Bé Năm", gender:"female", gen:7, birth:"1958 (Mậu Tuất)", spouse:"Nguyễn Văn Trai (1958)", notes:"3 con.", children:[{id:"d8-xhoang-benam", name:"Nguyễn Xuân Hoàng", gen:8, birth:"1980", children:[]},{id:"d8-dieu-benam", name:"Nguyễn Thị Thanh Diệu", gen:8, birth:"1982", children:[]},{id:"d8-hien-benam", name:"Nguyễn Thị Hiền", gen:8, birth:"1987", children:[]}]},
+                        {id:"d7-duoc1-anh", name:"Nguyễn Văn Được (lớn)", gender:"male", gen:7, birth:"1960 (Canh Tý)", spouse:"Nguyễn Thị Kim Phấn (1962)", notes:"Thợ mộc. 3 con.", children:[{id:"d8-nhattan-duoc1", name:"Nguyễn Nhựt Tân", gen:8, birth:"1985", children:[]},{id:"d8-nhattuong-duoc1", name:"Nguyễn Nhựt Trường", gen:8, birth:"1988", children:[]},{id:"d8-thuytrang-duoc1", name:"Nguyễn Thị Thuỳ Trang", gen:8, birth:"1990", children:[]}]},
+                        {id:"d7-duoc2-anh", name:"Nguyễn Văn Được (nhỏ)", gender:"male", gen:7, birth:"1966 (Bính Ngọ)", spouse:"Nguyễn Thị Lắm (1968)", notes:"Làm vườn. 1 con.", children:[{id:"d8-tanthanh-duoc2", name:"Nguyễn Tấn Thanh", gen:8, birth:"1989", children:[]}]},
+                        {id:"d7-khoi-anh", name:"Nguyễn Văn Khôi (tự Mười)", gender:"male", gen:7, birth:"1968 (Mậu Thân)", spouse:"Đặng Thị Thu", notes:"1 con.", children:[{id:"d8-tu-khoi", name:"Nguyễn Văn Tú", gen:8, birth:"1992", children:[]}]},
+                        {id:"d7-ut-anh", name:"Nguyễn Văn Út (tự Mười Một)", gender:"male", gen:7, birth:"1970 (Canh Tuất)", spouse:"Phan Thị Ngọc Thuý", notes:"1 con.", children:[{id:"d8-cuong-ut", name:"Nguyễn Quốc Cường", gen:8, birth:"1995", children:[]}]}
+                      ]
+                    },
+                    {
+                      id:"d6-au-tru", name:"HUỲNH THỊ ẤU", gender:"female", gen:6,
+                      birth:"1930 (Canh Ngọ)", spouse:"PHẠM VĂN NAM (chết)", notes:"5 con.",
+                      children:[
+                        {id:"d7-tim-au", name:"Huỳnh Thị Tím", gender:"female", gen:7, birth:"1962 (Nhâm Dần)", spouse:"Lê Văn Minh (1962)", notes:"5 con.", children:[{id:"d8-chet-tim", name:"(Chết nhỏ)", gen:8, children:[]},{id:"d8-thuan-tim", name:"Lê Minh Thuận", gen:8, birth:"1979", children:[]},{id:"d8-sang-tim", name:"Lê Minh Sang", gen:8, birth:"1982", children:[]},{id:"d8-giau-tim", name:"Lê Minh Giàu", gen:8, birth:"1995", children:[]},{id:"d8-ut-tim", name:"(Út)", gen:8, children:[]}]},
+                        {id:"d7-thuy-au", name:"Huỳnh Thị Thuỷ", gender:"female", gen:7, birth:"1964 (Giáp Thìn)", notes:"Lớp 5, độc thân.", children:[]},
+                        {id:"d7-thang-au", name:"Huỳnh Thị Thắng (tự Nguyệt Yến)", gender:"female", gen:7, birth:"1967 (Đinh Mùi)", notes:"Có chồng, 1 con.", children:[]},
+                        {id:"d7-hoang-au", name:"Huỳnh Văn Hoàng", gender:"male", gen:7, birth:"1969 (Kỷ Dậu)", notes:"Chết.", children:[]},
+                        {id:"d7-muoi-au", name:"Huỳnh Thị Mười", gender:"female", gen:7, birth:"1968 (Mậu Thân)", notes:"Có chồng, chưa con.", children:[]}
+                      ]
+                    },
+                    {
+                      id:"d6-em-tru", name:"HUỲNH THỊ EM", gender:"female", gen:6,
+                      birth:"1934 (Giáp Tuất)", spouse:"TRƯƠNG VĂN CHUÔNG (1926/Bính Dần, chết)", notes:"9 con.",
+                      children:[
+                        {id:"d7-hung-em", name:"Trương Văn Hùng", gender:"male", gen:7, birth:"1952 (Nhâm Thìn)", spouse:"Võ Thị Ở (1961)", notes:"4 con.", children:[{id:"d8-tien-hung", name:"Trương Văn Tiến", gen:8, birth:"1978", children:[]},{id:"d8-minh-hung", name:"Trương Văn Minh", gen:8, birth:"1980", children:[]},{id:"d8-dao-hung", name:"Trương Thị Đào", gen:8, birth:"1982", children:[]},{id:"d8-quyen-hung", name:"Trương Thị Bé Quyên", gen:8, birth:"1990", children:[]}]},
+                        {id:"d7-dung-em", name:"Trương Văn Dũng", gender:"male", gen:7, birth:"1954 (Giáp Ngọ)", notes:"Liệt sĩ.", children:[]},
+                        {id:"d7-dung2-em", name:"Trương Văn Dùng", gender:"male", gen:7, birth:"1956 (Bính Thân)", notes:"Chết.", children:[]},
+                        {id:"d7-dut-em", name:"Trương Văn Dứt", gender:"male", gen:7, birth:"1958 (Mậu Tuất)", spouse:"Trần Thị Hồng (1965)", notes:"1 con.", children:[{id:"d8-kieu-dut", name:"Trương Thị Diễm Kiều", gen:8, birth:"1990", children:[]}]},
+                        {id:"d7-dung3-em", name:"Trương Văn Đừng", gender:"male", gen:7, birth:"1960 (Canh Tý)", spouse:"Trần Thị Lộ (1961)", notes:"4 con.", children:[{id:"d8-vubinh-dung3", name:"Trương Văn Vũ Bình", gen:8, birth:"1983", children:[]},{id:"d8-linh-dung3", name:"Trương Thị Linh", gen:8, birth:"1985", children:[]},{id:"d8-phuong-dung3", name:"Trương Văn Phương", gen:8, birth:"1987", children:[]},{id:"d8-phi-dung3", name:"Trương Thị Phi", gen:8, birth:"1990", children:[]}]},
+                        {id:"d7-lo-em", name:"Trương Văn Lo", gender:"male", gen:7, birth:"1962 (Nhâm Dần)", spouse:"Nguyễn Thị Tí (1965)", notes:"1 con.", children:[{id:"d8-thang-lo", name:"Trương Văn Thắng", gen:8, birth:"1991", children:[]}]},
+                        {id:"d7-chin-em", name:"Trương Thị Chín", gender:"female", gen:7, birth:"1965 (Ất Tị)", spouse:"Nguyễn Văn Tính (chết)", notes:"3 con.", children:[{id:"d8-bngoc-chin", name:"Nguyễn Thị Bích Ngọc", gen:8, birth:"1984", children:[]},{id:"d8-tuyen-chin", name:"Nguyễn Văn Ngọc Tuyền", gen:8, birth:"1988", children:[]},{id:"d8-ngoan-chin", name:"Nguyễn Văn Ngoan", gen:8, birth:"1990", children:[]}]},
+                        {id:"d7-muoi-em", name:"Trương Thị Mười", gender:"female", gen:7, birth:"1967 (Đinh Mùi)", spouse:"Trầm Văn Đáng (1960)", notes:"1 con.", children:[{id:"d8-thuong-muoi", name:"Trần Văn Thương", gen:8, birth:"1991", children:[]}]},
+                        {id:"d7-ut-em", name:"Trương Thị Út", gender:"female", gen:7, birth:"1971 (Tân Hợi)", spouse:"Phạm Văn Hữu (1967)", notes:"1 con.", children:[{id:"d8-ngan-ut", name:"Phạm Thị Kim Ngân", gen:8, birth:"1994", children:[]}]}
+                      ]
+                    },
+                    {
+                      id:"d6-anh2-tru", name:"HUỲNH THỊ ÁNH", gender:"female", gen:6,
+                      birth:"1937 (Đinh Sửu)", spouse:"NGUYỄN VĂN BÉ (1937)", notes:"9 con.",
+                      children:[
+                        {id:"d7-mot-anh2", name:"Nguyễn Văn Một (tự Khét)", gender:"male", gen:7, birth:"1957 (Đinh Dậu)", spouse:"Lê Thị Xuân", notes:"3 con.", children:[{id:"d8-duy-mot", name:"Nguyễn Văn Duy", gen:8, birth:"1985", children:[]},{id:"d8-ngoan-mot", name:"Nguyễn Thị Ngoan", gen:8, birth:"1989", children:[]},{id:"d8-ngoc-mot", name:"Nguyễn Thị Ngọc", gen:8, birth:"1991", children:[]}]},
+                        {id:"d7-dung-anh2", name:"Nguyễn Anh Dũng (tự Móm)", gender:"male", gen:7, birth:"1958 (Mậu Tuất)", spouse:"Huỳnh Thị Vui (1961)", notes:"2 con.", children:[{id:"d8-viet-dung", name:"Nguyễn Văn Việt", gen:8, birth:"1989", children:[]},{id:"d8-chung-dung", name:"Nguyễn Văn Chung", gen:8, birth:"1992", children:[]}]},
+                        {id:"d7-le-anh2", name:"Nguyễn Thị Lê", gender:"female", gen:7, birth:"1960 (Canh Tý)", spouse:"Huỳnh Văn Nhiệm (1959)", notes:"2 con.", children:[{id:"d8-khoa-le", name:"Huỳnh Anh Khoa", gen:8, birth:"1980", children:[]},{id:"d8-nha-le", name:"Huỳnh Thanh Nhã", gen:8, birth:"1982", children:[]}]},
+                        {id:"d7-lem-anh2", name:"Nguyễn Thị Lệ Em (tự Lem)", gender:"female", gen:7, birth:"1963 (Quý Mão)", spouse:"Nguyễn Văn Lạc (1966)", notes:"2 con.", children:[{id:"d8-cthanh-lem", name:"Nguyễn Thị Cẩm Thanh", gen:8, birth:"1984", children:[]},{id:"d8-tan-lem", name:"Nguyễn Duy Tân", gen:8, birth:"1987", children:[]}]},
+                        {id:"d7-tam-anh2", name:"Nguyễn Văn Tâm (tự Sáu)", gender:"male", gen:7, birth:"1966 (Bính Ngọ)", notes:"Buôn bán.", children:[]},
+                        {id:"d7-lam-anh2", name:"Nguyễn Thành Lâm (tự Chánh)", gender:"male", gen:7, birth:"1969 (Kỷ Dậu)", notes:"Có vợ, 3 con.", children:[]},
+                        {id:"d7-tuan-anh2", name:"Nguyễn Ngọc Tuấn (tự Mèo)", gender:"male", gen:7, birth:"1971 (Tân Hợi)", notes:"Lớp 10, chưa vợ.", children:[]},
+                        {id:"d7-toan-anh2", name:"Nguyễn Văn Toàn (tự Tèo)", gender:"male", gen:7, birth:"1974 (Giáp Dần)", spouse:"Dương Thị Diễm (1974)", notes:"Chưa con.", children:[]},
+                        {id:"d7-nhung-anh2", name:"Nguyễn Thị Nhung (tự Mười)", gender:"female", gen:7, birth:"1976 (Bính Thìn)", children:[]}
+                      ]
+                    },
+                    {
+                      id:"d6-tien-tru", name:"HUỲNH KHẮC TIÊN", gender:"male", gen:6,
+                      birth:"1940 (Canh Thìn)", death:"liệt sĩ Thành phố",
+                      spouse:"NGUYỄN HOA LỆ (1944/Giáp Thân)", notes:"Con T6 của Huỳnh Khắc Trừ. Liệt sĩ. 2 con.",
+                      children:[
+                        {id:"d7-phong-tien", name:"Huỳnh Kiến Phong", gender:"male", gen:7, birth:"1962 (Nhâm Dần)", spouse:"Nguyễn Thị Huyền Lam (1964)", notes:"2 con.", children:[{id:"d8-quang-phong", name:"Huỳnh Thái Quang", gen:8, birth:"1990", children:[]},{id:"d8-ngan-phong", name:"Huỳnh Kim Ngân", gen:8, birth:"1993", children:[]}]},
+                        {id:"d7-dien-tien", name:"Nguyễn Kiến Điền", gender:"male", gen:7, birth:"1964 (Giáp Thìn)", spouse:"Nguyễn Thị Thu Trang (1971)", notes:"1 con.", children:[{id:"d8-khanh-dien", name:"Nguyễn Huỳnh Kim Khanh", gen:8, birth:"1994", children:[]}]}
+                      ]
+                    }
                   ]
                 }
               ]
             },
             {
-              id:"d4-thong", name:"HUỲNH VĂN THÔNG", gender:"male", gen:4,
-              spouse:"Bà Thanh (9 con)",
-              notes:"Con của Huỳnh Văn Hao. Có 9 người con với bà Thanh.",
+              id:"d4-thong", name:"HUỲNH KHẮC THÔNG", gender:"male", gen:4,
+              spouse:"V1 CAO THỊ THANH (9 con), V2 (bặt tin, 1 con)",
+              notes:"Con T4 của Huỳnh Văn Hào. Bà 1 Cao Thị Thanh sinh 9 con (T2–T3 không nghe nói; T4 Trung tự Tư Chơi; T5 chết nhỏ; T6 Giỏi; T7 Biên; T8 Lương; T9 Đỏ; T10 Tề). Bà 2 sinh con Non rồi bặt tin.",
               children:[
+                {id:"d5-t2-thong", name:"[T2 – không rõ]", gender:"unknown", gen:5, notes:"Con T2 của Thông/Bà Thanh.", children:[]},
+                {id:"d5-t3-thong", name:"[T3 – không rõ]", gender:"unknown", gen:5, notes:"Con T3 của Thông/Bà Thanh.", children:[]},
                 {
-                  id:"d5-trung-ha", name:"HUỲNH VĂN TRUNG", gender:"male", gen:5,
-                  spouse:"V2 Há",
-                  children:[{id:"d6-chanh", name:"CHÁNH", gender:"unknown", gen:6, children:[]}]
-                },
-                {
-                  id:"d5-trung-thoa", name:"HUỲNH VĂN TRUNG (V2)", gender:"male", gen:5,
-                  spouse:"V2 Thoa",
+                  id:"d5-trung", name:"HUỲNH THỦ TRUNG (tự Tư Chơi)", gender:"male", gen:5,
+                  birth:"1907 (Đinh Mùi)", death:"06-7-1964 (27-5 Giáp Thìn)",
+                  spouse:"V1 Trương Phụng Hảo (Bảy Phùng Há), V2 Kim Thoa, V3 Nguyễn Thị An (1929)",
+                  notes:"Con T4 của Thông/Bà Thanh. Soạn giả kiêm kịch sĩ nổi tiếng (tự Tư Chơi). Mất tại BV Chợ Rẫy, an táng Nghĩa trang Nghệ sĩ (mộ D7, xã Hạnh Thông Tây, Q.Gò Vấp, Tp.HCM).",
                   children:[
-                    {id:"d6-hieu-th", name:"HIẾU", gender:"unknown", gen:6, children:[]},
-                    {id:"d6-rinh", name:"RINH", gender:"unknown", gen:6, children:[]}
+                    {
+                      id:"d6-tran-trung", name:"LÝ BỬU TRÂN (tự Bửu Chánh)", gender:"female", gen:6,
+                      birth:"1926 (Bính Dần)", death:"chết tuổi 33",
+                      notes:"Con của Tư Chơi và V1 Bảy Phùng Há. Được anh rể người Hoa họ Lý nhận làm con nuôi. Mất vì bệnh suy thận.",
+                      children:[]
+                    },
+                    {
+                      id:"d6-hieu-trung", name:"HUỲNH THỦ HIỂU (tự Háo)", gender:"male", gen:6,
+                      birth:"1931 (Tân Mùi)", death:"tháng 10-1994",
+                      spouse:"V1 Nguyễn Thị Mỹ Dung (1937), V2 Quách Muội (người Hoa, 1948)",
+                      notes:"Con của Tư Chơi và V2 Kim Thoa. Tay trống nổi tiếng nhất Việt Nam (1960). 5 con với V1.",
+                      children:[
+                        {id:"d7-myli-hieu", name:"Huỳnh Thị Mỹ Lý", gender:"female", gen:7, birth:"1954 (Giáp Ngọ)", spouse:"Nguyễn Văn Chốt (1948)", notes:"3 con.", children:[{id:"d8-yenlam-myli", name:"Nguyễn Huỳnh Yến Lam", gen:8, birth:"1979", children:[]},{id:"d8-yenlam2-myli", name:"Nguyễn Huỳnh Yến Lâm", gen:8, birth:"1982", children:[]},{id:"d8-mylinh-myli", name:"Nguyễn Huỳnh Mỹ Linh", gen:8, birth:"1984", children:[]}]},
+                        {id:"d7-thailam-hieu", name:"Huỳnh Thị Thái Lam", gender:"female", gen:7, birth:"1955 (Ất Mùi)", notes:"4 con.", children:[{id:"d8-quyen-tl", name:"Trương Huỳnh Thế Quyên", gen:8, children:[]},{id:"d8-phuong-tl", name:"Trương Huỳnh Thế Phương", gen:8, children:[]},{id:"d8-quan-tl", name:"Trương Huỳnh Hồng Quân", gen:8, children:[]},{id:"d8-tram-tl", name:"Trương Huỳnh Bích Trâm", gen:8, children:[]}]},
+                        {id:"d7-myvan-hieu", name:"Huỳnh Thị Mỹ Vân", gender:"female", gen:7, notes:"Chết nhỏ.", children:[]},
+                        {id:"d7-mykim-hieu", name:"Huỳnh Thị Mỹ Kim", gender:"female", gen:7, birth:"1957 (Đinh Dậu)", children:[]},
+                        {id:"d7-thanh-hieu", name:"Huỳnh Hữu Thanh", gender:"male", gen:7, birth:"1959 (Kỷ Dậu)", spouse:"Nguyễn Thị Hữu Phước (mất 36 tuổi)", notes:"Nhạc sĩ (1995). 1 con.", children:[{id:"d8-uyphuong-thanh", name:"Huỳnh Nguyễn Uy Phương", gen:8, birth:"1980", children:[]}]}
+                      ]
+                    },
+                    {id:"d6-rinh-trung", name:"PHẠM RINH (tức Marie Ngọc)", gender:"female", gen:6, notes:"Con của Tư Chơi và V2 Kim Thoa (họ mẹ Phạm). Chồng Kỹ sư Philippines. Gia đình ở Texas, Mỹ.", children:[]},
+                    {
+                      id:"d6-tam-trung", name:"HUỲNH THỦ TÂM", gender:"male", gen:6,
+                      birth:"1946 (Bính Tuất)", spouse:"TRẦN THỊ VINH (1950/Canh Dần)",
+                      notes:"Con của Tư Chơi và V3 Nguyễn Thị An. Tay trống. Ngụ 166 Bình Thới, Q.11 Tp.HCM. 4 con.",
+                      children:[
+                        {id:"d7-thu-tam", name:"Huỳnh Thị Thu", gender:"female", gen:7, birth:"1970 (Canh Tuất)", notes:"Buôn bán.", children:[]},
+                        {id:"d7-vien-tam", name:"Huỳnh Thị Viên", gender:"female", gen:7, birth:"1972 (Nhâm Tý)", children:[]},
+                        {id:"d7-tien-tam", name:"Huỳnh Thủ Tiến", gender:"male", gen:7, birth:"1975 (Ất Mão)", notes:"Nhạc sĩ.", children:[]},
+                        {id:"d7-toi-tam", name:"Huỳnh Tấn Tới", gender:"male", gen:7, birth:"1977 (Đinh Tị)", notes:"Nhạc sĩ.", children:[]}
+                      ]
+                    }
+                  ]
+                },
+                {id:"d5-t5-thong", name:"[T5 – chết nhỏ]", gender:"unknown", gen:5, notes:"Con T5 của Thông/Bà Thanh, chết nhỏ.", children:[]},
+                {
+                  id:"d5-gioi", name:"HUỲNH THỊ GIỎI", gender:"female", gen:5,
+                  birth:"1909 (Kỷ Dậu)", spouse:"LÊ VĂN SAO",
+                  notes:"Con T6 của Thông/Bà Thanh. 2 con.",
+                  children:[
+                    {
+                      id:"d6-be-gioi", name:"LÊ THỊ BÉ", gender:"female", gen:6,
+                      birth:"1939 (Kỷ Mão)", spouse:"NGUYỄN VĂN QUÁNH (1937/Đinh Sửu)", notes:"11 con.",
+                      children:[
+                        {id:"d7-le-be", name:"Nguyễn Thị Lệ", gen:7, birth:"1960", notes:"1 con.", children:[{id:"d8-kimchi-le", name:"Trần Thị Kim Chi", gen:8, birth:"1986", children:[]}]},
+                        {id:"d7-thu-be", name:"Nguyễn Thị Thu", gen:7, birth:"1962 (Nhâm Dần)", children:[]},
+                        {id:"d7-hoa-be", name:"Nguyễn Thị Hoa", gen:7, birth:"1963 (Quý Mão)", notes:"1 con.", children:[{id:"d8-tam-hoa", name:"Nguyễn Văn Tâm", gen:8, birth:"1994", children:[]}]},
+                        {id:"d7-hien-be", name:"Nguyễn Văn Hiền", gen:7, birth:"1965 (Ất Tị)", notes:"2 con.", children:[{id:"d8-hau-hien", name:"Nguyễn Văn Hậu", gen:8, birth:"1989", children:[]},{id:"d8-thao-hien", name:"Nguyễn Văn Thảo", gen:8, birth:"1992", children:[]}]},
+                        {id:"d7-thanh-be", name:"Nguyễn Văn Thanh", gen:7, birth:"1967 (Đinh Mùi)", notes:"Bệnh thần kinh.", children:[]},
+                        {id:"d7-hai-be", name:"Nguyễn Thị Hải", gen:7, birth:"1968 (Mậu Thân)", notes:"2 con.", children:[{id:"d8-tai-hai", name:"Nguyễn Văn Tài", gen:8, birth:"1987", children:[]},{id:"d8-ngoc-hai", name:"Nguyễn Thị Ngọc", gen:8, birth:"1989", children:[]}]},
+                        {id:"d7-long-be", name:"Nguyễn Văn Long", gen:7, notes:"1 con.", children:[{id:"d8-khanh-long", name:"Nguyễn Văn Khánh", gen:8, birth:"1993", children:[]}]},
+                        {id:"d7-thuan-be", name:"Nguyễn Văn Thuận", gen:7, birth:"1972 (Nhâm Tý)", children:[]},
+                        {id:"d7-hoa2-be", name:"Nguyễn Văn Hòa", gen:7, birth:"1974 (Giáp Dần)", children:[]},
+                        {id:"d7-minh-be", name:"Nguyễn Thị Minh", gen:7, birth:"1976 (Bính Thìn)", children:[]},
+                        {id:"d7-hung-be", name:"Nguyễn Văn Hùng", gen:7, birth:"1978 (Mậu Ngọ)", children:[]}
+                      ]
+                    },
+                    {
+                      id:"d6-tat-gioi", name:"LÊ THỊ TẤT", gender:"female", gen:6,
+                      birth:"1941 (Tân Tị)", spouse:"TRẦN HỮU HẠNH (tự E, 1934/Giáp Tuất)",
+                      notes:"Ngụ ấp 3, xã Phong Nẫm, huyện Giồng Trôm, Bến Tre. 8 con.",
+                      children:[
+                        {id:"d7-mai-tat", name:"Trần Thị Mai", gen:7, birth:"1963 (Quý Mão)", notes:"2 con.", children:[{id:"d8-cham-mai", name:"Nguyễn Tuyết Châm", gen:8, birth:"1988", children:[]},{id:"d8-nhannhan-mai", name:"Nguyễn Âm Nhân", gen:8, birth:"1989", children:[]}]},
+                        {id:"d7-chien-tat", name:"Trần Hữu Chiến", gen:7, birth:"1965 (Ất Tị)", notes:"Thương binh 2/4, thợ rèn. 1 con.", children:[{id:"d8-chi-chien", name:"Trần Hữu Chí", gen:8, birth:"1989", children:[]}]},
+                        {id:"d7-huong-tat", name:"Trần Tuyết Hương", gen:7, birth:"1967 (Đinh Mùi)", notes:"Chưa con.", children:[]},
+                        {id:"d7-cong-tat", name:"Trần Hữu Công", gen:7, birth:"1968 (Mậu Thân)", notes:"Chưa vợ.", children:[]},
+                        {id:"d7-dung-tat", name:"Trần Tuyết Dung", gen:7, birth:"1970 (Canh Tuất)", notes:"1 con.", children:[{id:"d8-dien-dung", name:"Nguyễn Tấn Điền", gen:8, birth:"1990", children:[]}]},
+                        {id:"d7-nghiep-tat", name:"Trần Hữu Nghiệp", gen:7, birth:"1972 (Nhâm Tý)", notes:"Thợ hồ, chưa vợ.", children:[]},
+                        {id:"d7-doan-tat", name:"Trần Hữu Đoàn", gen:7, birth:"1974 (Giáp Dần)", notes:"Thợ dệt, chưa vợ.", children:[]},
+                        {id:"d7-phong-tat", name:"Trần Hữu Phong", gen:7, birth:"1976 (Bính Thìn)", notes:"Thợ dệt, chưa vợ.", children:[]}
+                      ]
+                    }
                   ]
                 },
                 {
-                  id:"d5-trung-an", name:"HUỲNH VĂN TRUNG (V3)", gender:"male", gen:5,
-                  spouse:"V3 An",
-                  children:[{id:"d6-tam-an", name:"TÂM", gender:"unknown", gen:6, children:[]}]
-                },
-                {
-                  id:"d5-gioi", name:"HUỲNH VĂN GIỎI", gender:"male", gen:5,
-                  spouse:"Sao",
+                  id:"d5-bien", name:"HUỲNH VĂN BIÊN", gender:"male", gen:5,
+                  birth:"1911 (Tân Hợi)", death:"30-9-1970 (01-9 Canh Tuất)",
+                  spouse:"NGUYỄN THỊ BÔNG (1914/Giáp Dần, mất 1982)",
+                  notes:"Con T7 của Thông/Bà Thanh. Giáo viên, Thanh tra tiểu học Vũng Tàu (1963–1970). 12 con.",
                   children:[
-                    {id:"d6-be-g", name:"BÉ", gender:"unknown", gen:6, children:[]},
-                    {id:"d6-tat-g", name:"TẤT", gender:"unknown", gen:6, children:[]}
-                  ]
-                }
-              ]
-            },
-            {
-              id:"d4-thong-v2", name:"HUỲNH VĂN THÔNG (V2)", gender:"male", gen:4,
-              notes:"Người con khác của Huỳnh Văn Hao.",
-              children:[
-                {id:"d5-non", name:"HUỲNH VĂN NON", gender:"male", gen:5, children:[]},
-                {
-                  id:"d5-bien", name:"HUỲNH VĂN BIỀN", gender:"male", gen:5,
-                  spouse:"Bông",
-                  children:[
-                    {id:"d6-sem", name:"SEM", gender:"unknown", gen:6, children:[]},
-                    {id:"d6-dang", name:"ĐẰNG", gender:"unknown", gen:6, children:[]},
-                    {id:"d6-hue", name:"HUỆ", gender:"unknown", gen:6, children:[]},
-                    {id:"d6-le-b", name:"LÊ", gender:"unknown", gen:6, children:[]},
-                    {id:"d6-tuyen", name:"TUYẾN", gender:"unknown", gen:6, children:[]},
-                    {id:"d6-qui", name:"QUI", gender:"unknown", gen:6, children:[]},
-                    {id:"d6-tuyet", name:"TUYẾT", gender:"unknown", gen:6, children:[]},
-                    {id:"d6-boi", name:"BỘI", gender:"unknown", gen:6, children:[]},
-                    {id:"d6-bang", name:"BẰNG", gender:"unknown", gen:6, children:[]},
-                    {id:"d6-mon", name:"MÔN", gender:"unknown", gen:6, children:[]},
-                    {id:"d6-phu-b", name:"PHÚ", gender:"unknown", gen:6, children:[]}
+                    {id:"d6-sen-bien", name:"HUỲNH THỊ SEN", gender:"female", gen:6, birth:"1936 (Bính Tý)", spouse:"NGUYỄN ĐÌNH KHIẾM (1937, mất 1994)", notes:"Giáo viên. 1 con.", children:[{id:"d7-hien-sen", name:"Nguyễn Thị Ngọc Hiền", gen:7, birth:"1962", children:[]}]},
+                    {id:"d6-dang-bien", name:"HUỲNH CÁC ĐẰNG", gender:"female", gen:6, birth:"1937 (Đinh Sửu)", spouse:"LƯU VĂN NGHĨA (1937)", notes:"Giáo viên. 5 con.", children:[{id:"d7-le-dang", name:"Lưu Thị Hồng Lệ", gen:7, birth:"1962", children:[]},{id:"d7-giao-dang", name:"Lưu Đằng Giao", gen:7, birth:"1963", notes:"1 con.", children:[{id:"d8-tien-giao", name:"Lưu Đào Xuân Tiên", gen:8, children:[]}]},{id:"d7-phuong-dang", name:"Lưu Đằng Phương", gen:7, birth:"1965", children:[]},{id:"d7-nhan-dang", name:"Lưu Thị Hồng Nhan", gen:7, birth:"1967", notes:"1 gái.", children:[]},{id:"d7-phong-dang", name:"Lưu Đằng Phong", gen:7, birth:"1970", notes:"Kỹ sư, ở CHLB Đức.", children:[]}]},
+                    {id:"d6-hue-bien", name:"HUỲNH TÔ HUỆ", gender:"male", gen:6, birth:"1940 (Canh Thìn)", spouse:"PHẠM THỊ ÁNH (1946)", notes:"3 con. Ở Mỹ.", children:[{id:"d7-vu-hue", name:"Huỳnh Tô Vũ", gen:7, birth:"1969", children:[]},{id:"d7-van-hue", name:"Huỳnh Tô Văn", gen:7, birth:"1971", children:[]},{id:"d7-minh-hue", name:"Huỳnh Tô Minh", gen:7, birth:"1972", children:[]}]},
+                    {id:"d6-le-bien", name:"HUỲNH HOA LỆ", gender:"male", gen:6, birth:"1942 (Nhâm Ngọ)", spouse:"PHẠM THỊ SỰ (1949)", notes:"Giáo viên cấp 3. Ở Mỹ. 5 con.", children:[{id:"d7-tien-leb", name:"Huỳnh Hoa Thuỳ Tiên", gen:7, birth:"1973", children:[]},{id:"d7-trang-leb", name:"Huỳnh Hoa Thiên Trang", gen:7, birth:"1974", children:[]},{id:"d7-phuong-leb", name:"Huỳnh Hoa Thanh Phương", gen:7, birth:"1976", children:[]},{id:"d7-mai-leb", name:"Huỳnh Hoa Thanh Mai", gen:7, birth:"1982", children:[]}]},
+                    {id:"d6-tuyen-bien", name:"HUỲNH THỊ KIM TUYẾN", gender:"female", gen:6, birth:"1943 (Quý Mùi)", spouse:"NGUYỄN VĂN MẪN (1941)", notes:"4 con.", children:[{id:"d7-nhan-tuyen", name:"Nguyễn Duy Nhân", gen:7, birth:"1968", notes:"Ở Đông Đức. 1 con.", children:[{id:"d8-tan-nhan", name:"Phạm Duy Tân", gen:8, children:[]}]},{id:"d7-khanh-tuyen", name:"Nguyễn Duy Khánh", gen:7, birth:"1972", children:[]},{id:"d7-linh-tuyen", name:"Nguyễn Duy Linh", gen:7, birth:"1973", children:[]},{id:"d7-lam-tuyen", name:"Nguyễn Duy Lam", gen:7, birth:"1976", children:[]}]},
+                    {id:"d6-qui-bien", name:"HUỲNH KIM QUI", gender:"male", gen:6, birth:"1945 (Ất Dậu)", spouse:"HUỲNH THỊ PHƯỢNG (1952)", notes:"7 con.", children:[{id:"d7-suong-qui", name:"Huỳnh Thị Ngọc Sương", gen:7, birth:"1970", children:[]},{id:"d7-tung-qui", name:"Huỳnh Kim Tùng", gen:7, birth:"1971", children:[]},{id:"d7-trong-qui", name:"Huỳnh Kim Trọng", gen:7, birth:"1973", children:[]},{id:"d7-thuong-qui", name:"Huỳnh Thị Ngọc Thương", gen:7, birth:"1974", children:[]},{id:"d7-tram-qui", name:"Huỳnh Thị Ngọc Trâm", gen:7, birth:"1976", children:[]},{id:"d7-danh-qui", name:"Huỳnh Kim Danh", gen:7, birth:"1979", children:[]},{id:"d7-trinh-qui", name:"Huỳnh Thị Ngọc Trinh", gen:7, birth:"1982", children:[]}]},
+                    {id:"d6-be-bien", name:"HUỲNH VĂN BÉ", gender:"male", gen:6, birth:"1947 (Đinh Hợi)", spouse:"NGUYỄN THỊ CẨM NHUNG (1952)", notes:"Chết. 2 con.", children:[{id:"d7-bang-be", name:"Nguyễn Quốc Bằng", gen:7, birth:"1973", children:[]},{id:"d7-tri-be", name:"Nguyễn Quốc Trị", gen:7, birth:"1974", children:[]}]},
+                    {id:"d6-tuyetb-bien", name:"HUỲNH THỊ BẠCH TUYẾT", gender:"female", gen:6, birth:"1950 (Canh Dần)", notes:"Cử nhân luật, Phó GĐ XN Lubico. 1 con nuôi.", children:[{id:"d7-dungbn-tuyetb", name:"Đào Ngọc Dũng", gen:7, birth:"1980", children:[]}]},
+                    {id:"d6-boi-bien", name:"HUỲNH KIM BỘI", gender:"female", gen:6, birth:"1952 (Nhâm Thìn)", notes:"Chết.", children:[]},
+                    {id:"d6-bang-bien", name:"HUỲNH KIM BẰNG", gender:"male", gen:6, birth:"1954 (Giáp Ngọ)", spouse:"TRẦN THỊ HIỆP THƯƠNG (1957)", notes:"Chuyên ngành Điện, Điện tử. 2 con.", children:[{id:"d7-tu-bang", name:"Huỳnh Kim Ngọc Tú", gen:7, birth:"1977", children:[]},{id:"d7-bao-bang", name:"Huỳnh Kim Bảo", gen:7, birth:"1979", children:[]}]},
+                    {id:"d6-mon-bien", name:"HUỲNH THỊ KIM MÔN", gender:"female", gen:6, birth:"1955 (Ất Mùi)", spouse:"ĐOÀN VĂN CHÂU (1956)", notes:"CNV Sở Y tế. 1 con.", children:[{id:"d7-thang-mon", name:"Đoàn Văn Thắng", gen:7, birth:"1986", children:[]}]},
+                    {id:"d6-phu-bien", name:"HUỲNH KIM PHÚ", gender:"male", gen:6, birth:"1958 (Mậu Tuất)", spouse:"TRẦN MINH HỒNG (1960)", notes:"Thợ may. 2 con.", children:[{id:"d7-phi-phu", name:"Huỳnh Kim Hồng Phi", gen:7, birth:"1980", children:[]},{id:"d7-phong-phu", name:"Huỳnh Kim Hồng Phong", gen:7, birth:"1983", children:[]}]}
                   ]
                 },
                 {
                   id:"d5-luong", name:"HUỲNH VĂN LƯƠNG", gender:"male", gen:5,
-                  spouse:"Chim",
+                  birth:"1914 (Giáp Dần)", death:"1967 (Đinh Mùi)",
+                  spouse:"LÊ THỊ CHIM (1916/Bính Thìn, mất 1957)",
+                  notes:"Con T8 của Thông/Bà Thanh. 9 con.",
                   children:[
-                    {id:"d6-no", name:"NỞ", gender:"unknown", gen:6, children:[]},
-                    {id:"d6-yen-l", name:"YẾN", gender:"unknown", gen:6, children:[]},
-                    {id:"d6-be-l", name:"BÉ", gender:"unknown", gen:6, children:[]},
-                    {id:"d6-van-l", name:"VẦN", gender:"unknown", gen:6, children:[]},
-                    {id:"d6-net", name:"NẾT", gender:"unknown", gen:6, children:[]},
-                    {id:"d6-oanh-l", name:"OANH", gender:"unknown", gen:6, children:[]},
-                    {id:"d6-uyen", name:"UYỂN", gender:"unknown", gen:6, children:[]},
-                    {id:"d6-chin-l", name:"CHÍN", gender:"unknown", gen:6, children:[]},
-                    {id:"d6-hieu-l", name:"HIẾU", gender:"unknown", gen:6, children:[]}
+                    {id:"d6-no-luong", name:"HUỲNH THỊ NỞ", gender:"female", gen:6, birth:"1935 (Ất Hợi)", spouse:"NGUYỄN VĂN MUỐI (liệt sĩ)", notes:"10 con.", children:[{id:"d7-mai-no", name:"Nguyễn Thị Mai", gen:7, birth:"1953", children:[]},{id:"d7-thuy-no", name:"Nguyễn Thị Thuỷ", gen:7, birth:"1954", children:[]},{id:"d7-van-no", name:"Nguyễn Văn Vân", gen:7, birth:"1957", notes:"Chết.", children:[]},{id:"d7-nam-no", name:"Nguyễn Thị Năm", gen:7, birth:"1958", notes:"4 con.", children:[{id:"d8-cau-nam", name:"Nguyễn Thị Mộng Cầu", gen:8, birth:"1978", children:[]},{id:"d8-diep-nam", name:"Nguyễn Thị Mộng Điệp", gen:8, birth:"1979", children:[]},{id:"d8-cuong-nam", name:"Nguyễn Chí Cường", gen:8, birth:"1983", children:[]},{id:"d8-tam-nam", name:"Nguyễn Chí Tâm", gen:8, birth:"1988", children:[]}]},{id:"d7-tham-no", name:"Nguyễn Thị Thắm", gen:7, birth:"1959", notes:"4 con.", children:[]},{id:"d7-man-no", name:"Nguyễn Thị Mặn", gen:7, birth:"1963", notes:"2 con.", children:[{id:"d8-duong-man", name:"Nguyễn Quốc Dương", gen:8, birth:"1981", children:[]},{id:"d8-khanh-man", name:"Nguyễn Quốc Khanh", gen:8, birth:"1982", children:[]}]},{id:"d7-mykim-no", name:"Nguyễn Mỹ Kim", gen:7, birth:"1965", children:[]},{id:"d7-mia-no", name:"Nguyễn Thị Mía", gen:7, birth:"1962", notes:"2 con.", children:[{id:"d8-vu-mia", name:"Trương Tấn Vũ", gen:8, birth:"1989", children:[]},{id:"d8-ngoc-mia", name:"Trương Bội Ngọc", gen:8, birth:"1990", children:[]}]},{id:"d7-ngot-no", name:"Nguyễn Thị Ngọt", gen:7, birth:"1969", notes:"1 con.", children:[{id:"d8-linh-ngot", name:"Huỳnh Thị Linh", gen:8, birth:"1989", children:[]}]},{id:"d7-teo-no", name:"Nguyễn Văn Tèo", gen:7, birth:"1970", notes:"1 con.", children:[{id:"d8-sang-teo", name:"Nguyễn Thế Sang", gen:8, birth:"1994", children:[]}]}]},
+                    {id:"d6-yen-luong", name:"HUỲNH VĂN YẾN", gender:"male", gen:6, birth:"1938 (Mậu Dần)", spouse:"ĐINH THỊ BÉ", notes:"Chết lính. 7 con ở Long Khánh, Đồng Nai.", children:[{id:"d7-mydung-yen", name:"Huỳnh Thị Mỹ Dung", gen:7, children:[]},{id:"d7-tung-yen", name:"Nguyễn Văn Tùng", gen:7, children:[]},{id:"d7-thanh-yen", name:"Nguyễn Văn Thạnh", gen:7, children:[]},{id:"d7-huong-yen", name:"Huỳnh Thị Hương", gen:7, children:[]},{id:"d7-hai-yen", name:"Huỳnh Văn Hải", gen:7, children:[]},{id:"d7-hung-yen", name:"Huỳnh Văn Hùng", gen:7, children:[]},{id:"d7-lam-yen", name:"Huỳnh Văn Lâm", gen:7, children:[]}]},
+                    {id:"d6-be-luong", name:"HUỲNH VĂN BỂ", gender:"male", gen:6, notes:"Chết năm 1945.", children:[]},
+                    {id:"d6-van-luong", name:"HUỲNH THỊ CẨM VÂN (tự Năm Na)", gender:"female", gen:6, birth:"1943 (Quý Mùi)", spouse:"ĐINH VĂN BÉ (1924)", notes:"7 con.", children:[{id:"d7-hung-van", name:"Đinh Văn Hùng", gen:7, birth:"1962", notes:"Câm bẩm sinh.", children:[]},{id:"d7-dung-van", name:"Đinh Văn Dũng", gen:7, birth:"1963", children:[]},{id:"d7-ut-van", name:"Đinh Văn Út", gen:7, birth:"1965", children:[]},{id:"d7-tu-van", name:"Đinh Thị Cẩm Tú", gen:7, birth:"1966", notes:"1 con.", children:[{id:"d8-nhunhu-tu", name:"Nguyễn Quỳnh Như", gen:8, birth:"1995", children:[]}]},{id:"d7-nga-van", name:"Đinh Thị Ngọc Nga", gen:7, birth:"1968", children:[]},{id:"d7-lam-van", name:"Đinh Thị Ngọc Lam", gen:7, birth:"1970", children:[]},{id:"d7-huong-van", name:"Đinh Thị Hương", gen:7, birth:"1973", notes:"2 con.", children:[{id:"d8-bao-huong", name:"Nguyễn Vũ Bão", gen:8, birth:"1992", children:[]},{id:"d8-nhungoc-huong", name:"Nguyễn Thị Như Ngọc", gen:8, birth:"1993", children:[]}]}]},
+                    {id:"d6-net-luong", name:"HUỲNH THỊ NẾT", gender:"female", gen:6, notes:"Chết nhỏ.", children:[]},
+                    {id:"d6-oanh-luong", name:"HUỲNH THỊ OANH (tự Bảy Sỏi)", gender:"female", gen:6, birth:"1948 (Mậu Tý)", spouse:"NGUYỄN VĂN MÀNH (liệt sĩ)", notes:"4 con.", children:[{id:"d7-yen-oanh", name:"Nguyễn Thị Kim Yến", gen:7, birth:"1965", notes:"1 con.", children:[{id:"d8-khang-yen", name:"Lê Phú Khang", gen:8, birth:"1989", children:[]}]},{id:"d7-nhung-oanh", name:"Nguyễn Thị Tuyết Nhung", gen:7, birth:"1966", notes:"1 con.", children:[{id:"d8-thaonguyen-nhung", name:"Nguyễn Thị Thảo Nguyên", gen:8, birth:"1995", children:[]}]},{id:"d7-chau-oanh", name:"Nguyễn Văn Châu", gen:7, birth:"1968", children:[]},{id:"d7-loan-oanh", name:"Nguyễn Thị Kim Loan", gen:7, birth:"1970", notes:"1 con.", children:[{id:"d8-lam-loan", name:"Phùng Ngọc Lâm", gen:8, birth:"1994", children:[]}]}]},
+                    {id:"d6-uyen-luong", name:"HUỲNH THỊ UYÊN (tự Tám Xồm)", gender:"female", gen:6, birth:"1949 (Kỷ Sửu)", spouse:"NGUYỄN VĂN LIỄU (1949, chết)", notes:"4 con.", children:[{id:"d7-lien-uyen", name:"Nguyễn Thị Kim Liên", gen:7, birth:"1969", children:[]},{id:"d7-son-uyen", name:"Nguyễn Văn Sơn", gen:7, birth:"1972", children:[]},{id:"d7-phuong-uyen", name:"Nguyễn Thị Phượng", gen:7, birth:"1974", children:[]},{id:"d7-haiuyen", name:"Nguyễn Văn Hải", gen:7, birth:"1976", children:[]}]},
+                    {id:"d6-chin-luong", name:"HUỲNH KHẮC CHÍN (tự Xệ)", gender:"male", gen:6, birth:"1953 (Quý Tị)", notes:"Liệt sĩ.", children:[]},
+                    {id:"d6-hieu-luong", name:"HUỲNH KHẮC HIẾU", gender:"male", gen:6, birth:"1955 (Ất Mùi)", spouse:"NGUYỄN THỊ THẠNH", notes:"2 con.", children:[{id:"d7-trang-hieu", name:"Huỳnh Thị Thuỳ Trang", gen:7, birth:"1976", children:[]},{id:"d7-thao-hieu", name:"Huỳnh Thị Hải Thảo", gen:7, birth:"1979", children:[]}]}
                   ]
                 },
                 {
-                  id:"d5-do", name:"HUỲNH VĂN ĐÓ", gender:"male", gen:5,
-                  spouse:"Khâm",
+                  id:"d5-do", name:"HUỲNH THỊ ĐỎ", gender:"female", gen:5,
+                  birth:"1916 (Bính Thìn)", death:"7-2-1993 (Quý Dậu)",
+                  spouse:"BÙI VĂN KHÂM (1913/Quý Sửu, mất 1947/Đinh Hợi)",
+                  notes:"Con T9 của Thông/Bà Thanh. 3 con.",
                   children:[
-                    {id:"d6-huong-d", name:"HƯỜNG", gender:"unknown", gen:6, children:[]},
-                    {id:"d6-tang-d", name:"TẶNG", gender:"unknown", gen:6, children:[]},
-                    {id:"d6-khen", name:"KHEN", gender:"unknown", gen:6, children:[]}
+                    {id:"d6-huong-do", name:"BÙI THỊ HƯỜNG", gender:"female", gen:6, birth:"1932 (Nhâm Thân)", spouse:"HUỲNH VĂN ĐỊNH (1932)", notes:"6 con.", children:[{id:"d7-yen-huong", name:"Huỳnh Thị Yến", gen:7, notes:"Phát bệnh tâm thần khi đang học lớp 8.", children:[]},{id:"d7-yenyen-huong", name:"Huỳnh Thị Nguyệt Yến (nhỏ)", gen:7, birth:"1955 (Ất Mùi)", notes:"1 con.", children:[{id:"d8-khanh-yenyen", name:"Nguyễn Huỳnh Xuân Khanh", gen:8, birth:"1983", children:[]}]},{id:"d7-phuong-huong", name:"Huỳnh Thị Phi Phượng", gen:7, birth:"1958", notes:"Bệnh tâm thần.", children:[]},{id:"d7-oanh-huong", name:"Huỳnh Thị Kim Oanh", gen:7, birth:"1965", notes:"1 con.", children:[{id:"d8-khoa-oanh", name:"Đoàn Tiến Khoa", gen:8, children:[]}]},{id:"d7-chi-huong", name:"Huỳnh Thị Kim Chi", gen:7, birth:"1967", notes:"Không con.", children:[]},{id:"d7-tai-huong", name:"Huỳnh Tấn Tài", gen:7, birth:"1971 (Tân Hợi)", notes:"1 con.", children:[{id:"d8-thao-tai", name:"Huỳnh Thị Thu Thảo", gen:8, birth:"1995", children:[]}]}]},
+                    {id:"d6-tang-do", name:"BÙI QUANG TẶNG", gender:"male", gen:6, birth:"1934 (Giáp Tuất)", spouse:"NGUYỄN THỊ VỐN (1936)", notes:"Trung tá QĐNDVN. 1 con.", children:[{id:"d7-phuong-tang", name:"Bùi Thị Minh Phương", gen:7, birth:"1976 (Bính Thìn)", children:[]}]},
+                    {id:"d6-khen-do", name:"BÙI THỊ KHEN", gender:"female", gen:6, birth:"1936 (Bính Tý)", spouse:"LÊ CHU TÀI (1936)", notes:"5 con.", children:[{id:"d7-hanh-khen", name:"Lê Thị Mỹ Hạnh", gen:7, birth:"1964", notes:"1 con.", children:[{id:"d8-khoa-hanh", name:"Huỳnh Đình Khoa", gen:8, birth:"1987", children:[]}]},{id:"d7-hoang-khen", name:"Lê Thị Kim Hoàng", gen:7, birth:"1965", notes:"1 con.", children:[{id:"d8-khang-hoang", name:"Nguyễn Lê Anh Khang", gen:8, birth:"1993", children:[]}]},{id:"d7-hung-khen", name:"Lê Chí Hùng", gen:7, birth:"1967", children:[]},{id:"d7-hoa-khen", name:"Lê Thị Kim Hoa", gen:7, birth:"1969", notes:"Bệnh tâm thần.", children:[]},{id:"d7-van-khen", name:"Lê Thị Mỹ Vân", gen:7, birth:"1973", notes:"1 con.", children:[{id:"d8-dai-van", name:"Trần Đại", gen:8, birth:"1995", children:[]}]}]}
                   ]
                 },
                 {
-                  id:"d5-te", name:"HUỲNH VĂN TẾ", gender:"male", gen:5,
-                  spouse:"Không rõ",
-                  children:[{id:"d6-hong-te", name:"HỒNG", gender:"unknown", gen:6, children:[]}]
-                }
+                  id:"d5-te", name:"HUỲNH KHẮC TỀ", gender:"male", gen:5,
+                  birth:"1922 (Nhâm Tuất)", death:"1984 (Giáp Tý)",
+                  notes:"Con T10 của Thông/Bà Thanh. Tham gia cách mạng, bị bắt tù Chí Hòa rồi đày Côn Đảo. Sau 1975 về công tác, bị bại liệt, mất 1984 tại xã Phước Thạnh, Bến Tre.",
+                  children:[]
+                },
+                {id:"d5-non", name:"NON", gender:"male", gen:5, notes:"Con duy nhất của Thông/Bà 2, bặt tin.", children:[]}
               ]
             },
             {
-              id:"d4-thien", name:"HUỲNH VĂN THIỆN", gender:"male", gen:4,
-              notes:"Con của Huỳnh Văn Hao.",
-              children:[{id:"d5-dong-th", name:"HUỲNH VĂN ĐỒNG", gender:"male", gen:5, children:[]}]
+              id:"d4-thien", name:"HUỲNH THỊ THIỆN", gender:"female", gen:4,
+              notes:"Con T5 (út) của Huỳnh Văn Hào. Không biết ngày sinh, chồng là ai. Có 1 con tên Đổng.",
+              children:[
+                {id:"d5-dong-th", name:"ĐỔNG", gender:"unknown", gen:5, children:[]}
+              ]
             }
           ]
         }
