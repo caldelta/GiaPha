@@ -95,7 +95,7 @@ SAIGON - NAY
 ---
 
 # SƠ ĐỒ PHẢ HỆ
-## CAO TỔ [H]-/UỲNH ([V]-/AN [B]-/ÁU (5 con))
+## CAO TỔ HUỲNH VĂN BÁU (5 con))
 
 Sơ đồ nhánh phát triển từ Tổ Đời 2 HUỲNH VĂN HÒA:
 

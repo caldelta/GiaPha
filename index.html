@@ -260,6 +260,32 @@ body{
 .srcBody h4{color:var(--gold-light);font-size:.88em;font-weight:700;margin-bottom:5px}
 .srcBody p{color:var(--text);font-size:.78em;line-height:1.7}
 .srcBody p b{color:var(--gold)}
+
+/* ─── SUB-NAV (sticky anchor links inside scroll panel) ── */
+.subNav{
+  position:sticky;top:0;z-index:80;
+  display:flex;flex-wrap:wrap;gap:5px;
+  padding:8px 0 10px;margin:-8px 0 18px;
+  background:linear-gradient(180deg,var(--bg) 80%,transparent);
+  border-bottom:1px solid rgba(200,150,12,.22);
+}
+.subNavBtn{
+  padding:4px 13px;border-radius:20px;cursor:pointer;
+  background:rgba(255,255,255,.05);border:1px solid rgba(200,150,12,.3);
+  color:var(--gold);font-size:.73em;white-space:nowrap;transition:all .18s;
+  text-decoration:none;display:inline-block;
+}
+.subNavBtn:hover{background:rgba(200,150,12,.18);color:var(--gold-light);border-color:var(--gold)}
+.subNavBtn.cur{background:rgba(200,150,12,.25);color:var(--gold-light);border-color:var(--gold-light);font-weight:700}
+.secAnchor{display:block;height:0;margin-top:-4px}
+.bodyText{font-size:.83em;color:var(--text);line-height:1.85;margin-bottom:10px}
+.bodyText b{color:var(--gold-light)}
+.bodyText em{color:#d4c49a;font-style:italic}
+.soDo{background:rgba(255,255,255,.03);border:1px solid rgba(200,150,12,.18);
+  border-radius:8px;padding:12px 16px;font-size:.76em;color:#c8b898;
+  font-family:monospace;line-height:1.9;overflow-x:auto;margin-bottom:14px}
+.soDo b{color:var(--gold-light)}
+.soDo em{color:var(--gold)}
 </style>
 </head>
 <body>
@@ -285,7 +311,7 @@ body{
 <!-- TAB NAVIGATION -->
 <div id="tabBar">
   <button class="tabBtn active" onclick="switchTab(this,'tabTree')">🌳 Cây Gia Phả</button>
-  <button class="tabBtn" onclick="switchTab(this,'tabHistory')">📜 Lịch Sử</button>
+  <button class="tabBtn" onclick="switchTab(this,'tabHistory')">📜 Giới Thiệu & Lược Sử</button>
   <button class="tabBtn" onclick="switchTab(this,'tabTimeline')">📅 Niên Biểu</button>
   <button class="tabBtn" onclick="switchTab(this,'tabSources')">📚 Tài Liệu</button>
 </div>
@@ -335,56 +361,240 @@ body{
 </div>
 </div><!-- end #tabTree -->
 
-<!-- ── TAB: LỊCH SỬ ────────────────────────────── -->
+<!-- ── TAB: LỊCH SỬ & GIỚI THIỆU ───────────────── -->
 <div class="tabPanel" id="tabHistory">
 <div class="scrollPanel">
-  <div class="secH1">📜 Lịch Sử & Giới Thiệu Gia Phả</div>
 
-  <div class="secH2">Lời Nói Chung (Trang 2–4)</div>
-  <div class="infoCard">
-    <p>Tôi, <b>Nguyễn Tấn Long</b>, xin mấy lời chung với hai họ Nguyễn và Huỳnh. Tôi là con của ông <b>Nguyễn Tấn Tơn</b> (tức Tân) và mẹ tôi là bà <b>Huỳnh Thị Ngọc</b> – thuộc dòng họ Huỳnh Khắc. Thiết nghĩ ghi chép gia phả là một việc rất cần thiết và quan trọng cho mỗi gia đình người Việt.</p>
-    <p>Tôi có 7 người con, từ 7 tuổi đến 50 tuổi; tôi cố gắng ghi lại lịch sử gia đình để lại cho các con cháu sau này biết cội nguồn, biết quê hương, biết anh em họ hàng và cố tránh những điều lầm lẫn đáng tiếc.</p>
-    <p>Đây là lần in thứ hai, có kiểu chính và bổ sung, được thực hiện sau chuyến về thăm quê lần đầu năm 1995 và hoàn thành vào ngày <b>24 tháng 12 năm 1997</b> tại Nhà Trang Minh.</p>
-    <p>Bà nội tôi đã kể rất nhiều câu chuyện của bà cố, bà sơ của tôi. Nhờ đó tôi ghi lại được khá nhiều chi tiết về hai dòng họ Nguyễn và Huỳnh qua các đời. Tôi cũng nhờ bà thím tôi là bà <b>Lưu Thị Bình</b> (vợ ông Huỳnh Khắc Chung) và nhiều người khác cung cấp thêm tư liệu chi tiết.</p>
-    <p>Trong cuốn gia phả này, tôi không đặt ra vấn đề phán xét – dù ai tốt hay xấu, dù là người đã mất hay còn sống, tôi đều ghi lại trung thực những gì biết được, tránh làm mất lòng con cháu người ta. Gia phả chỉ là lịch sử, không phải tòa án.</p>
-  </div>
-  <div class="infoCard">
-    <div class="quote">"Trong cuốn Gia Phả này, tôi chỉ cố thu thập tư liệu về gia đình với tất cả sự thành thật và cẩn thận nhất mà tôi có thể – để lại cho các con cháu đời sau làm một cẩm nang về nguồn gốc gia tộc trong vòng gần 200 năm."<br>— Nguyễn Tấn Long, 24-12-1997</div>
-  </div>
-  <div class="infoCard">
-    <p><b>Phương pháp biên soạn:</b> Ông Nguyễn Tấn Long đã trực tiếp đến các địa phương thu thập thông tin qua các chuyến về quê năm 1993, 1994, 1995. Ông phỏng vấn các bậc cao niên trong họ, tham khảo các tài liệu sẵn có, và nhờ nhiều người đóng góp thông tin. Mỗi tiểu sử được kiểm chứng qua nhiều nguồn khác nhau trước khi ghi vào gia phả.</p>
-    <p><b>Hạn chế của tài liệu:</b> Do thời gian xa cách và chiến tranh, nhiều thông tin về các thế hệ đầu (Đ1, Đ2, một phần Đ3) không còn rõ ràng. Một số người chỉ còn biết tên, không rõ năm sinh, năm mất. Ông Long đã cố gắng ghi lại ngay cả những thông tin không đầy đủ để hậu thế có thể tiếp tục tra cứu bổ sung.</p>
+  <!-- Sticky sub-navigation -->
+  <div class="subNav" id="histSubNav">
+    <a class="subNavBtn" href="#sec-lnc" onclick="scrollToSec('sec-lnc',this)">📝 Lời Nói Chung</a>
+    <a class="subNavBtn" href="#sec-tlhk" onclick="scrollToSec('sec-tlhk',this)">📚 Tài Liệu Tham Khảo</a>
+    <a class="subNavBtn" href="#sec-sodo" onclick="scrollToSec('sec-sodo',this)">🌳 Sơ Đồ Phả Hệ</a>
+    <a class="subNavBtn" href="#sec-luocsu" onclick="scrollToSec('sec-luocsu',this)">⚔️ Lược Sử</a>
+    <a class="subNavBtn" href="#sec-nhanh1" onclick="scrollToSec('sec-nhanh1',this)">🏠 Nhánh 1 – Huỳnh Văn Hòa</a>
+    <a class="subNavBtn" href="#sec-nhanh2" onclick="scrollToSec('sec-nhanh2',this)">🏠 Nhánh 2 – Huỳnh Văn Hơn</a>
   </div>
 
+  <!-- ═══ SECTION 1: LỜI NÓI CHUNG ═══ -->
+  <span class="secAnchor" id="sec-lnc"></span>
+  <div class="secH1">📝 Lời Nói Chung</div>
   <div class="infoCard">
-    <p><b>Bối cảnh lịch sử:</b> Tài liệu gia phả này trải dài từ thời <b>Cao Tổ Huỳnh Đầu (~1800)</b> – đầu thế kỷ 19 – qua hai thời kỳ thực dân Pháp (1858–1954) và chiến tranh Việt Nam (1945–1975), đến tận năm 1997. Dòng họ sống tại vùng <b>Phước Thạnh, Châu Thành, Bến Tre</b> và lan rộng ra nhiều tỉnh thành.</p>
-    <p>Gia đình trải qua những biến cố lịch sử lớn: Phong trào chống Pháp thời Trương Định (1860s), thời kỳ thuộc địa Pháp với các quan chức người Việt trong bộ máy hành chính, chiến tranh Đông Dương, và cuộc di dân sau 1975 – nhiều người trong họ Huỳnh Khắc hiện sinh sống tại Pháp.</p>
+    <p class="bodyText"><em>với hai họ NGUYỄN TẤN... và HUỲNH KHẮC...</em></p>
+    <p class="bodyText">Tôi, <b>Nguyễn Tấn Long</b>, mang trong mình dòng máu của hai họ <b>NGUYỄN TẤN...</b> và <b>HUỲNH KHẮC</b>: cha Nguyễn Tấn Tồn, mẹ Huỳnh Thị Ngọc.</p>
+    <p class="bodyText">Còn nhớ năm nào trong Lễ Tảo Mộ sau ngày đất nước trở lại thanh bình, tôi về làng cũ viếng mồ mả ông bà. Nhìn thấy cây cỏ hoang dại um tùm che phủ vùng mộ chí, những ngôi mộ bị nứt nẻ sụp đổ, cảnh vật tiêu sơ, lòng tôi bùi ngùi và ghê sợ sức tàn phá của thời gian.</p>
+    <p class="bodyText">Tôi có ý nghĩ, làm sao gìn giữ họ tộc được trường cửu? Một vài thế kỷ tới đây, phần mộ mà thế hệ hiện tại đang nâng niu bảo quản biết còn tồn tại mãi không khi những người của thế hệ này lần lượt theo ông bà; con cháu chúng ta hằng trăm năm sau sẽ lạt tình máu mủ, xa dần dòng họ, quên đi quá khứ của mình. Hơn nữa, quan niệm <em>'sống cái nhà, thác cái mồ'</em> có lẽ rồi đây sẽ bị thay đổi, nấm mồ sẽ được rút gọn hình dáng chỉ còn một 'cái hũ'.</p>
+    <p class="bodyText">Vì sự bất lực của con người trước sức hủy diệt của thời gian nên người ta nghĩ ra phương thức bảo tồn dòng họ trên phương diện tinh thần tức là lưu truyền giống dòng mình xuyên qua cái tình máu mủ ruột thịt thiêng liêng. Người ta nghĩ ra cách bảo vệ qua việc thiết lập <b>Gia Phả</b> để thắt chặt sợi dây thân ái trong họ tộc từ đời này sang đời khác. Việc làm này bên họ NGUYỄN TẤN... cha tôi, Nguyễn Tấn Tồn có ghi lại nhiều chi tiết đi sâu vào lai lịch Tổ tông đời trước, nhưng tiếc thay trong quá trình làm cách mạng đầy gian nguy, tài liệu bị thất lạc; nay anh Nguyễn Tấn Hằng có ghi phần nào những người trong họ tộc gần; bên họ HUỲNH KHẮC... có cậu <b>Huỳnh Khắc Chung</b> tiếp nối việc làm của cha Huỳnh Khắc Thuận ghi thêm hậu duệ đến năm 1980.</p>
+    <p class="bodyText">Đúng như cậu Huỳnh Khắc Chung nhận định: <em>"Người mình ít ai chịu khó làm gia phả; nếu có cũng chỉ ghi lại đơn sơ những người trong họ tộc gần, ít đi sâu vào dòng họ xa, vì việc làm này phải tốn nhiều thời gian và công sức mà lẽ sống thường nhật không cho phép. Hơn nữa, việc làm thì đơn độc, âm thầm, buồn tẻ, phải bền bỉ, thậm chí nó đòi hỏi cả sự quên mình."</em></p>
+    <p class="bodyText">Em tôi, cô <b>Nguyễn Thị Yếm</b> cũng có ý định làm tập <em>'Tiểu gia phả'</em> gói ghém trong bà con, anh em họ tộc gần. Em <b>Nguyễn Tấn Đạo</b>, thiết thực hơn, đi tìm lại gia phả bên ngoại, phối hợp với gia phả bên nội, định lập gia phả cả hai họ NGUYỄN – HUỲNH; nhưng cả hai chưa có điều kiện thực hiện mong ước của mình.</p>
+    <p class="bodyText">Riêng quan điểm tôi, gia phả đầy đủ phải là một <b>Cây Gia Phả</b>, một cổ thụ đi từ gốc rễ lên thân cây, sang cành nhánh, chi, cho đến ngọn. Chúng ta khó có thể đạt được đỉnh cao tinh thần lập gia phả; cho nên người làm công tác này thường xuyên bị bế tắc trước thông tin về những gia đình họ tộc tản mạn khắp nơi.</p>
+    <p class="bodyText">Nếu gặp phải ít nhiều nỗi khó khăn trong việc sưu tập tư liệu để thiết lập một gia phả không ngoài mục đích tập hợp danh sách người cùng họ tộc, còn một việc thiết yếu nữa là chúng ta làm sao xây dựng một ngôi <b>Từ Đường</b>, rồi cử ra một <b>Hội đồng họ tộc</b>, điều hành hoạt động tạo nền tảng vững chắc để củng cố cộng đồng họ tộc ngày càng phát triển sâu rộng hơn. Việc làm này chủ yếu không ngoài hai điều cơ bản sau đây:</p>
+  </div>
+  <div class="infoCard">
+    <p class="bodyText"><b>Điều thứ nhất:</b> Nó đòi hỏi sự đóng góp tự nguyện của những người có tinh thần họ tộc cao, có quyết tâm bảo vệ huyết thống. Muốn được vậy, hằng năm phải có những buổi họp của những người trưởng thượng cùng nhau thảo luận để tìm hiểu tình hình sinh hoạt chung của cộng đồng. Hội đồng sẽ đưa ra những biện pháp cứu trợ người nghèo khổ gặp hoàn cảnh khó khăn. Về mặt tinh thần, ôn lại truyền thống dòng họ, thắt chặt thêm tình thương yêu, hàn gắn những rạn nứt, xóa bỏ những dị biệt, những tranh chấp nhỏ nhen, san lấp hố chia rẽ giữa người cùng dòng họ.</p>
+    <p class="bodyText">Trong quá trình sưu tập, tìm lại việc cũ người xưa, tôi đã thấm thía xúc động khi tiếp xúc với một bà Dì hơn bảy mươi tuổi – bà là người con út cuối cùng của một chi tộc. Tôi gặp bà trong túp lều lá bên vệ đường làng, bày bán vài hũ bánh kẹo, một rổ khoai lang, đôi nải chuối; toàn cảnh quản bà phơi, bày cảnh nghèo tận cùng của một người gần tàn đời. Khi nêu việc lập gia phả, bà hỏi tôi: <em>"Gia phả là cái gì? và để làm gì? Dì chỉ biết có cái nghèo!"</em></p>
+    <p class="bodyText"><b>Điều thứ hai:</b> Hội đồng họ tộc cần theo dõi để ghi bổ sung nhân số vào gia phả đàn hậu sinh trong năm. Đồng thời thường xuyên nghe ngóng tin tức và thông báo cho nhau khi bà con thân thuộc bị ốm đau trầm trọng, người già cả yếu đuối, hoặc những kẻ không may qua đời. Mọi sự thăm viếng, an ủi, phúng điếu, giúp đỡ đều biểu hiện tấm lòng tương thân tương ái rất đáng quý.</p>
+    <p class="bodyText">Đó là ý nghĩa tốt đẹp của việc lập gia phả để gìn giữ và phát triển họ tộc. Nếu không có một cái nền thì không sao xây dựng lên được một ngôi nhà; nếu không có một cơ bản gia phả thì bảo con cháu chúng ta sẽ làm gì trên cái trống rỗng của sử liệu họ tộc.</p>
+  </div>
+  <div class="infoCard">
+    <p class="bodyText">Tôi là một trong những người ngơ ngác ấy đã nhận thức được tầm quan trọng tối yếu của việc thiết lập gia phả, nên tự nguyện nhận trách nhiệm đơn thân sưu tập để củng cố lại phả tộc vì <b>bốn động lực chính</b> sau đây:</p>
+    <p class="bodyText"><b>1)</b> Hằng năm cứ mỗi lần tảo mộ vào dịp cận Nguyên đán, đứng thắp nén hương tưởng niệm trước mộ phần ông bà, mắt tôi bị đập vào dòng chữ của cha tôi ghi trên bia đá: <em>"Nguyễn Tấn Tồn lập mộ"</em>. Nó như tấm gương phản chiếu có mãnh lực thúc đẩy tiềm thức tôi, nung sôi dòng máu tôi quyết tâm phải làm một cái gì cho họ tộc.</p>
+    <p class="bodyText"><b>2)</b> Em tôi, cô Nguyễn Thị Yến cũng đồng quan điểm, tán thành và khuyến khích việc làm mà bao lâu cô hằng ưu tư. Em Nguyễn Tấn Đạo cụ thể trao cho tôi tập gia phả họ Huỳnh ghi từ 1800 đến 1980 và một số ghi chép về họ Nguyễn đã tạo điều kiện thuận lợi căn bản cho tôi.</p>
+    <p class="bodyText"><b>3)</b> Vừa rồi đoàn khách thương Nam Hàn sang đầu tư cho biết họ là hậu duệ của hoàng tử <b>Lý Long Tường</b>, con vua Lý Anh Tông triều Lý của Việt Nam phiêu bạt đến Cao Ly (Nam Hàn ngày nay), có công giúp vua chống quân Mông Cổ, được vua phong ấp nay trở thành làng riêng của họ Lý và đã tồn tại qua 50–60 đời cháu chắt trong gia phả dài gần 800 năm. Hiện họ Lý này có thế mạnh trên thương trường Hàn Quốc; nay muốn đến Việt Nam, trước thăm viếng cho biết quê hương nguồn cội.</p>
+    <p class="bodyText"><b>4)</b> Sau khi đọc lại tiểu sử các Tổ, lòng tôi dậy lên niềm hãnh diện cho dòng họ đã từng có <b>hai vị Tổ với chức vụ lãnh binh</b> của triều đình nhà Nguyễn tham gia trợ lực cho Tướng quân <b>TRƯƠNG ĐỊNH</b> kháng chiến chống Pháp xâm lược.</p>
+    <p class="bodyText">Vì những lẽ trên, tôi mạnh dạn đứng ra đi tìm những thông tin cũ và mới nhất của thế hệ hậu sinh đương thời để bổ sung vào gia phả hai họ tộc Nguyễn – Huỳnh. Tôi không đi sâu vào chi tiết cá nhân, vì mỗi con người đều có nỗi thăng trầm riêng biệt trong đời sống. Tôi chỉ có cái nhìn chung: Trải thời gian dài ngót 200 năm lịch sử (1800–1995), trong mọi diễn biến của xã hội, của đất nước, khi thanh bình cũng như thời nguy biến, dòng họ ta vẫn tiếp tục truyền thống tốt đẹp của ông cha, con cháu vẫn đóng góp tích cực cho Tổ quốc, cho Dân tộc đã cho phép chúng ta ngẩng đầu tự hào về dòng họ của mình.</p>
+    <p class="bodyText">Trong quá trình hình thành tập gia phả này, tôi cố gắng sưu tập tối đa những chi tiết cũ cũng như mới để bù đắp những thiếu sót từ trước và bổ sung lớp kế thừa đến năm 1995 để chúng ta có một dòng lịch sử họ tộc liên tục từ năm 1800, qua 1980, đến 1995.</p>
+    <p class="bodyText">Tôi quyết tâm hoàn thành hai tập gia phả NGUYỄN – HUỲNH trong năm 1995. Dĩ nhiên, trên chiếc xe gắn máy dong ruổi khắp đường quê nẻo chợ, tôi phải gánh chịu nhiều hiểm nguy và vất vả đối với tuổi bảy mươi, nhưng tôi chấp nhận khó khăn để thực hiện cho bằng được trong những năm cuối đời mình với niềm hy vọng rồi đây đàn con cháu sẽ có người tiếp nối.</p>
+  </div>
+  <div class="infoCard">
+    <div class="quote"><em>Sài Gòn, ngày 24 tháng Giêng năm 1995 – nhằm 24 tháng 12 năm Giáp Tuất – Mùa Thanh Minh</em><br><br><b>NGUYỄN TẤN LONG</b></div>
   </div>
 
-  <div class="secH2">Đặc Điểm Dòng Họ</div>
+  <!-- ═══ SECTION 2: TÀI LIỆU THAM KHẢO ═══ -->
+  <span class="secAnchor" id="sec-tlhk"></span>
+  <div class="secH1">📚 Tài Liệu Tham Khảo</div>
   <div class="infoCard">
-    <p><b>Hai nhánh lớn:</b></p>
-    <p>• <b>Nhánh 1 – Huỳnh Văn Hòa (hay Khế):</b> Ông Hòa là một trong 3 vị Lãnh binh kháng Pháp thời Trương Định. Sau khi phong trào tan rã (1865), ông về lập nghiệp tại Bến Tre. Con cháu ghi chép từ trang 6–18.</p>
-    <p>• <b>Nhánh 2 – Huỳnh Văn Hơn:</b> Ông Hơn là em ông Hòa, sinh sống tại Phước Thạnh, Châu Thành, Bến Tre. Ông có bà chánh thất sinh 8 con (T2–T8) và bà kế sinh bà Huỳnh Thị Tài (T9). Con cháu ghi chép từ trang 19–60. Từ nhánh này có dòng họ <b>Huỳnh Khắc</b> (T2 Cần, T3 Kiệm, T7 Doãn).</p>
+    <p class="bodyText">Với quyết tâm xây dựng lại Gia Phả dòng họ NGUYỄN TẤN... và HUỲNH VĂN, tôi đã hoàn tất phần lớn ý nguyện của mình. Nay, nhân đọc và xin trích đoạn sau đây bài báo <b>Thanh Niên số 101 ngày 20-7-1995</b>, nêu lên giá trị thiết yếu của gia phả mà tôi xem như người bạn đồng hành trên con đường về nguồn cội.</p>
+  </div>
+  <div class="infoCard">
+    <p class="bodyText"><em>Trên hành trình 'về nguồn' hiện nay –</em></p>
+    <p class="bodyText" style="text-align:center;font-weight:700;color:var(--gold-light);font-size:.9em">NGHĨ VỀ MỤC ĐÍCH VÀ LỢI ÍCH CỦA GIA PHẢ</p>
+    <div class="quote"><b>Dương tộc thế phả:</b> <em>"Nước mắt bao giờ cũng chảy xuống, cha mẹ nuôi con, ông bà thương cháu, tiền nhân lo cho người sau không giữ tròn chữ Hiếu, giỗ chạp chỉ theo hình thức, mồ mả tổ tiên thì để dế sớm giun chiều kêu khóc, việc đời nhầm lẫn tới nỗi lấy thau làm vàng, sỏi làm ngọc, lấy lông cánh làm thịt xương."</em></div>
+    <div class="quote"><b>Gia phả họ Phan Thanh Giản:</b> <em>"... Vì lẽ trên, nhiều cuốn gia phả xưa ngoài việc chép rõ gốc tích tổ tiên, tên họ ông bà, ngày giỗ chạp, nơi phần mộ, thuật lại gốc gác họ hàng thân sơ để tránh chuyện thương luân bại lý về sau, còn kể những gian truân, thuật xử thế đời trước, để làm gương. Không thiếu những lời dặn dò thống thiết trong đó, như 'chớ một ngày một giờ lười biếng.'"</em></div>
+    <div class="quote"><b>Gia phả họ Nguyễn Trình Tường – Long Xuyên:</b> <em>"... Vua chúa có ngọc phả, ngọc điệp, thương dân có tộc phả, tông phả, văn chép cẩn trọng từng chữ, cất giữ trong hộp gỗ sơn son cất ở nhà thờ họ hoặc trên bàn thờ tổ tiên... Nếu nước không quốc sử thì lần lượt bị tuyệt chủng, nhà không thế phả thì thân thích phải chia lìa. Rồi ra dân thì giết lẫn nhau, thâm thích thì kiện cáo nhau không biết nguồn biết gốc. Bởi thế, nhà phải có thế phả, cho biết mà thương yêu nhau, giữ gìn nhau, đời đời cho ra dòng hiếu tử, rồi hiệp lại thành nước thì ra giúp nước mới có mặt trung thần, vậy có đáng lập gia phả chăng? Xin trả lời: Đáng lắm."</em></div>
+  </div>
+  <div class="infoCard">
+    <p class="bodyText">Những điều trên đây được tóm lược và trích từ cuốn <b>Gia Phả Khảo Luận và Thực Hành</b> của cụ Dã Lan <b>Nguyễn Đức Dụ</b>. Cụ đã nhiều năm miệt mài nghiên ngẫm gia phả các họ: Ngô Vương, Đinh Tiên Hoàng, Trịnh Kiểm, Nguyễn Kim, Nguyễn Du..., nghiên cứu các phả liệu về Quang Trung, Nguyễn Khuyến, Hồ Xuân Hương, Nguyễn Thượng Hiền..., tìm ra và nêu rõ những ích lợi của gia phả đối với quốc gia trên nhiều mặt lịch sử, văn chương, phong tục, xã hội và khẳng định việc sưu tầm, nghiên cứu về gia phả sẽ làm giàu thêm kho tàng cổ thư vô giá của nước ta. Cụ trình bày nguồn gốc ngành gia phả Á châu – Âu châu, so sánh, phân tích quan niệm Đông Tây trong việc lập phả, rồi chỉ dẫn cách thức soạn một cuốn phả. Với sự giúp đỡ của bằng hữu, cụ đã ấn hành cuốn <em>Gia Phả Khảo Luận và Thực Hành</em> với 100 bản dày gần 500 trang vào năm 1970 tại Sài Gòn. Nhiều học giả tiếng tăm thời đó đã xem đây là công trình khảo cứu công phu, nghiêm túc, là cuốn chuyên luận (monographie) đầu tiên có giá trị về gia phả Việt Nam.</p>
+    <div class="quote"><b>Giáo sư Huỳnh Lứa</b> viết lời giới thiệu, nêu rõ việc lập gia phả <em>"là một tập tục rất tốt cần được duy trì."</em></div>
+    <div class="quote"><b>Giáo sư Lê Hữu Mục</b> viết: <em>"Sự thiết lập một Viện Phả học Quốc gia, một tín chỉ phả học tại các trường Đại học, tất cả đều cần thiết cho sự phát triển của ngành phả học là một ngành không thể không có trong các bộ môn văn hóa."</em></div>
+    <div class="quote"><b>Học giả Nguyễn Hiến Lê</b> nói về công trình biên khảo của cụ Dã Lan cho rằng <em>"công việc trở về nguồn đó thật độc đáo và đáng quý."</em></div>
+    <div class="quote"><em>"Chúng ta đang hướng về tương lai nhưng không quên nguồn cội, vì thế cần 'giở lại' gia phả, kính cẩn lắng nghe tiếng nói của người khuất mặt và tìm đọc trong đó những 'trang sử đời' sinh động."</em><br>— Báo Thanh Niên số 101, ngày 20-7-1995</div>
   </div>
 
+  <!-- ═══ SECTION 3: SƠ ĐỒ PHẢ HỆ ═══ -->
+  <span class="secAnchor" id="sec-sodo"></span>
+  <div class="secH1">🌳 Sơ Đồ Phả Hệ</div>
   <div class="infoCard">
-    <p><b>Truyền thống học vấn:</b> Dòng họ Huỳnh Khắc rất chú trọng giáo dục. Điển hình là ông Nguyễn Thanh Liêm (cháu bà Huỳnh Thị Kiếm) – ông đầu tư toàn bộ tài sản vào việc học của các con, nhờ đó có con trai là Giám đốc Ngân hàng Việt Nam (Nguyễn Thành Lập). Nhiều người trong họ có học vị cao: Tiến sĩ, Bác sĩ, Kỹ sư, Dược sĩ, Cử nhân kinh tế.</p>
-    <p><b>Sau 1975:</b> Nhiều thành viên họ Huỳnh Văn Bi (cháu ông Huỳnh Khắc Thuận) đã định cư tại Pháp. Con cháu ông Nguyễn Thanh Liêm cũng phần lớn ở Pháp và Mỹ.</p>
+    <p class="bodyText"><b>CAO TỔ HUỲNH VĂN BÁU</b> (5 con) – người khởi nguồn của hai dòng họ Huỳnh Văn và Huỳnh Khắc tại Bến Tre.</p>
+    <p class="bodyText">Chỉ có hai trong 5 người con nối dõi được, tạo thành hai nhánh lớn: <b>Nhánh 1</b> (Tổ Đ2 T5 Huỳnh Văn Hòa) và <b>Nhánh 2</b> (Tổ Đ2 T6 Huỳnh Văn Hơn).</p>
   </div>
 
-  <div class="secH2">Câu Chuyện Gia Đình Đáng Nhớ</div>
+  <div class="secH2">Nhánh 1 – Tổ Đ2 T5 Huỳnh Văn Hòa (Trang 6–18)</div>
+  <div class="soDo">
+<b>Đ2 T5. HUỲNH VĂN HÒA</b> + vợ (?): 2 con
+  ├─ <b>Đ3 SÁO</b> + ch. Đặng → Đ4 HÀNH (→Đ5 Ngọ, Đ5 Dậu) · Đ4 ĐINH · Đ4 MÙI
+  └─ <b>Đ3 HÀO</b> + vợ: 4 con
+       ├─ Đ4 (không rõ tên)
+       ├─ <b>Đ4 HỘ</b> + vợ: 4 con
+       │    ├─ Đ5 ĐIỂU + ch. Liễng (7 con: [chết nhỏ×2]·Đồ·Chạm·Kiều·Út·Ngữ·Inh)
+       │    ├─ Đ5 HẠCH GIA (→Đ6 [mất,5con]·Như)
+       │    ├─ Đ5 THÂU + ch. ng. Hoa (về Tàu)
+       │    └─ Đ5 TRỪ + vợ Quí (→Đ6 Anh·Ấu·Em·Ánh·Tiên)
+       ├─ <b>Đ4 THÔNG</b> + V1 THANH: 9 con
+       │    ├─ Đ5 T2 – T3 (?)
+       │    ├─ Đ5 TRUNG + V2 Há (→Chánh) · V2 Thoa (→Hiếu·Rinh) · V3 Am (→Tâm)
+       │    ├─ Đ5 T5 (mất)
+       │    ├─ Đ5 GIỎI + ch. Sao (→Bé·Tất)
+       │    ├─ Đ5 BIÊN + vợ Bông (→Sem·Đằng·Huệ·Lê·Tuyền·Quí·Bé·Tuyết·Bội·Bằng·Môn·Phú)
+       │    ├─ Đ5 LƯƠNG + vợ Chim (→Nở·Yến·Bé·Vân·Nết·Oanh·Uyên·Chín·Hiếu)
+       │    ├─ Đ5 ĐÓ + ch. Khâm (→Hưởng·Tặng·Khen)
+       │    └─ Đ5 TỀ + vợ (→Hồng)
+       ├─ <b>Đ4 THÔNG</b> + V2 → Đ5 NON
+       └─ <b>Đ4 THIỆN</b> + vợ (→Đ5 Đổng)
+  </div>
   <div class="infoCard">
-    <div class="quote">
-      "Sự giàu có của ông bà Nguyễn Văn Ngạn và Huỳnh Thị Kiếm có truyền thuyết mà người dân Phú An Hòa đều biết: Ấy là một ngày xa xưa, có hai cha con ông Nguyễn Thanh Phong đến lập nghiệp tại vùng đất xã Phú An Hòa. Ông Nguyễn Văn Ngạn là người con út đã cưới bà Huỳnh Thị Kiếm. Cuộc sống gia đình lúc đầu gặp nhiều khó khăn – bà Kiếm là đầu tàu gánh vác. Ông Hiệp ngày ngày đi kiếm tôm cá. Chẳng bao lâu gia đã khá giàu rồi trở nên giàu có. Người ta nói là ông Hiệp đặt nò mà được vàng nên danh truyền là ông Hiệp Nò."
+    <p class="bodyText"><b>Ghi chú:</b> Ngoài hai ông Huỳnh Văn Hòa và Huỳnh Văn Hơn, còn có một người chị thứ hai – bà Tổ Đ2 T2 <b>Huỳnh Thị Mậu</b> – là trưởng nữ của Cao tổ Huỳnh Văn Báu. Chúng ta không biết bà sinh từ ngày nào, chồng con ra sao; có lẽ bà là phận gái phải chịu ảnh hưởng phong hóa, có chồng phải theo chồng xa xứ, bặt hẳn liên lạc với họ hàng thâm tộc. Hơn nữa sinh con phải chuyển sang họ chồng và tin tức về bà mờ dầm nên trong gia phả cổ họ HUỲNH không ghi rõ. (Tham khảo phần Huỳnh Thị Khoẻ trang 34 có nhiều chi tiết khả tín về bà Huỳnh Thị Mậu.)</p>
+    <p class="bodyText">Ông HUỲNH VĂN HƠN còn có người chị (nằm ở vị trí T2 trong anh em) đã đi theo cùng các ông trên đường vào Nam. Sau khi lực lượng du kích ta bị tan rã, bà chị này ra dân, có chồng họ Võ, sinh đàn hậu duệ. (Tham khảo chi tiết ở mục Huỳnh Thị Khoẻ trang 35.)</p>
+  </div>
+
+  <div class="secH2">Nhánh 2 – Tổ Đ2 T6 Huỳnh Văn Hơn (Trang 19–60)</div>
+  <div class="soDo">
+<b>Đ2 T6. HUỲNH VĂN HƠN</b> + bà DƯƠNG THỊ LIỄU (Quý Mùi 1823 – Bính Ngọ 1906): 7 con
+  ├─ <b>Đ3 T2. HUỲNH KHẮC CẦN</b>       → <em>xem Chi Cần (trang 20–40)</em>
+  ├─ <b>Đ3 T3. HUỲNH KHẮC KIỆM</b>      → <em>xem Chi Kiệm (trang 41–48)</em>
+  ├─ <b>Đ3 T4. HUỲNH THỊ ĐÂY</b>         → <em>xem Chi Đây (trang 41–48)</em>
+  ├─ <b>Đ3 T5. HUỲNH THỊ TẰM</b>         → <em>xem Chi Tằm (trang 49–50)</em>
+  ├─ <b>Đ3 T6. HUỲNH THỊ KIẾM</b>       → <em>xem Chi Kiếm (trang 50–51)</em>
+  ├─ <b>Đ3 T7. HUỲNH KHẮC DOÃN</b>     → <em>xem Chi Doãn (trang 51–54)</em>
+  └─ <b>Đ3 T8. HUỲNH VĂN TÚ</b> (mất tích lúc 8 tuổi)
+
+<em>+ bà kế (không biết tên):</em>
+  └─ <b>Đ3 T9. HUỲNH THỊ TÀI</b>         → <em>xem Chi Tài (trang 54–60)</em>
+
+<em>+ bà hầu VI:</em> 1 trai (sau theo Pháp, bị ta giết)
+  </div>
+
+  <div class="secH2">Sơ Đồ Chi Cần – Đ3 T2 Huỳnh Khắc Cần (Trang 19)</div>
+  <div class="soDo">
+<b>Đ3 T2. CẦN</b> + LÊ THỊ LANG → 8 con:
+  <b>Đ4</b>: DUNG† · HỌC† · <b>LƯỢNG</b> · <b>VÀNG</b> · [Đ4 chết 5-6t] · <b>ĐẦU</b> · <b>CHỢ</b> · <b>MỸ</b>
+
+<b>Đ4 LƯỢNG</b> + CÚC → <em>Đ5 TỬU</em> + ch. NGHĨA:
+  Đ6: Hoa · Hường · Bông · Bình · Lễ · <b>Trí</b> · Thành · Biên · [chết] · Ơn · Ẩm · Sáu · Ấm · Bửu
+
+<b>Đ4 VÀNG</b> + KHUÊ → không con (Cao Đài Giáo sư Tòa Thánh Tây Ninh)
+
+<b>Đ4 ĐẦU</b> + V1 CHỔI → <em>Đ5 NGỌC</em> + ch. TỒN → Đ6: Châu · Hương · Long · Yến · <b>Đạo</b> · <b>Thạnh</b>
+<b>Đ4 ĐẦU</b> + V2 ĐẶNG THỊ DÀNH →
+  Đ5 CHIẾU† · <em>Đ5 TIẾNG</em> + V1 XI (→Miếng·Thạch) · <em>Đ5 TIẾNG</em> + V2 CHÚC (→Cẩm·Trường)
+  <em>Đ5 LỰA</em> + CÒN (13 con: Liên·Xuân†·Thư†·Kim Hoàng·Kim Vân·Mai·Y·Bé·Ẩm·Nguyệt·Quang·Oanh·Xuyến)
+  Đ5 HẾN + V1 PHƯƠNG (→Hiếu) · V2 BÉ (→Mầu)
+  Đ5 MINH + RỈ (→Kim·Thành·Tâm·V.Anh·Thiêm·T.Anh·L.Anh)
+  Đ5 KHỎE + Q. (→Lệ Anh·Loan Anh·Ph.Anh)
+
+<b>Đ4 CHỢ</b> + DƯ →
+  Đ5 NHO + TIÊN (→Đ6 Hoa)
+  Đ5 PHƯỚC + V1 THẢO (→Thanh·Tâm) · V2 CHUM (→Ánh·Nhâm·Hiểu·Sĩ)
+  Đ5 NANG + V1 LỢI (→Thu·Hảo) · V2 NHỚN (→Phái·Ba·Hưng·Tùng·Vân)
+  Đ5 HÓA + LONG (→Phụng·Hoàng·Minh)
+
+<b>Đ4 MỸ</b> + V1 HẬU → <em>Đ5 TRỌNG</em> + NGỌ (→Cẩu·Hưởng·Thời·Lai·Bửu·Tất·Kính)
+<b>Đ4 MỸ</b> + V2 LÊN → <em>Đ5 LỰC</em> + LIÊN (→Hằng·Hứa)
+<b>Đ4 MỸ</b> + V3 (?) → Đ5 XUỒNG · Đ5 chết nhỏ
+<b>Đ4 MỸ</b> + V4 BÌNH →
+  Đ5 NHƠM (→Đơn·Liêm·Viêm·Dừa) · Đ5 chết nhỏ
+  Đ5 HIỀN + LỄ (→Thu·chết nhỏ) · Đ5 PHÚC + KIÊN (→Khôi·Ngô·Hoàng)
+  Đ5 NỮ + ƠN (→Sinh·Sĩ·Trước·Đèo·Nguyên·Bay)
+  Đ5 LỘC + KÊNH (→Hoàng·Nga·Sô·Gấm·Nhung·Tơ)
+  </div>
+
+  <!-- ═══ SECTION 4: LƯỢC SỬ ═══ -->
+  <span class="secAnchor" id="sec-luocsu"></span>
+  <div class="secH1">⚔️ Lược Sử</div>
+  <div class="infoCard">
+    <p class="bodyText"><em>Trước khi nói đến hai ông Tổ Đời 2, chúng ta hãy lược qua sử liệu Việt Nam vào mạt thời nhà Nguyễn trước khi đất nước rơi vào vòng đô hộ của người Pháp.</em></p>
+    <p class="bodyText">Liên quân Pháp – Tây Ban Nha mở màn xâm lược bằng đợt tấn công đầu tiên vào <b>Đà Nẵng ngày 01-9-1858</b>. Năm 1859, với 16 tàu chiến, 2.200 quân và 4 tàu lương thực tiến chiếm miền Nam.</p>
+    <p class="bodyText">Sau ngày quân Pháp chiếm ba tỉnh miền Tây, ông <b>Phan Thanh Giản</b> được lệnh triều đình nhà Nguyễn thương thuyết chuộc lại ba tỉnh này. Cuộc thương lượng thất bại mà binh lực ta lúc bấy giờ ở vào thế yếu, lại không được triều đình Huế tiếp viện. Ông Phan Thanh Giản nhận xét, nếu đánh nữa chỉ tổn hại sinh mạng nhân dân mà không nắm được phần thắng nên ông uống độc dược quyên sinh vì không làm tròn trách nhiệm. Vua Tự Đức (nguyên niên 1848) kết tội cụ Phan.</p>
+    <p class="bodyText">Các võ quan chống Pháp lớp bị giết, lớp chạy theo ông <b>Trương Định</b> tiếp tục kháng chiến. Nhân dân tôn ông Trương Định làm Đại Đầu Mục và xin vua cho tiếp tục kháng chiến. Ông Định không về, liền bị cách chức hàm. Ông Trương Định lúc bấy giờ là Phó Lãnh binh Gia Định, rút về trấn thủ Gò Công, tìm cách đánh Pháp quyết liệt. Ai lại không biết chiến công đốt tàu <em>Espérance</em> của Pháp trên dòng sông Nhật Tảo:</p>
+    <div class="quote"><em>Hỏa hồng Nhật Tảo oanh thiên địa,<br>Kiếm bạt Kiên Giang khấp quỷ thần.</em></div>
+    <p class="bodyText">Tin chiến thắng bay về triều đình Huế; vua vui mừng, lập tức phái <b>ba vị Lãnh binh</b> vào Nam tiếp viện Trương Định (1820–1864). Đó là các ông <b>Huỳnh Công Tấn</b> (giữ Trung quân), ông <b>Huỳnh Văn Hòa</b> (Hữu quân), và ông <b>Huỳnh Văn Hơn</b> (Tả quân) chỉ huy toàn bộ 45.000 quân. (Ông Hòa và ông Hơn là anh em ruột.)</p>
+    <p class="bodyText">Thời ấy quân Pháp chưa thiện du kích chiến nên thua mãi, phải rút về Châu Đốc, Hà Tiên. Đạo quân ông Định do ông Huỳnh Công Tấn cai quản, có tên phản thần móc nối ông Tấn hợp tác với Pháp. Ông Tấn được Pháp phong quan ba (capitaine).</p>
+    <p class="bodyText">Hai ông <b>Huỳnh Văn Hòa</b> và <b>Huỳnh Văn Hơn</b> không đồng ý nên vẫn tiếp tục đánh; nhưng vì bọn phản bội tay sai cho Pháp khắp mọi nơi khiến các ông rơi vào thế bị động, phải rút về <b>Bình Đại</b> (thuộc tỉnh Bến Tre ngày nay). Tiếp đấy, do quan ba Tấn phối hợp với binh lực Pháp hành quân tảo thanh kháng chiến; lực lượng ta bị tan rã.</p>
+    <p class="bodyText">Ông Hòa phải lánh vào tu ở một chùa vùng Bình Đại và biệt tăm từ đấy. Còn ông Hơn rút về làng <b>Phước Định</b> tức cù lao An Hóa nay là cù lao Phước Thạnh thuộc tỉnh Bến Tre. Vua Tự Đức thương tài phong ông chức <b>Chánh Lãnh binh</b> và cho quyền bảo tiêu, có dấu son Lãnh binh; nhiệm vụ là kiểm soát ghe thương hồ, trừ bọn cướp, giết Việt gian phản quốc, đem lại an ninh cho nhân dân trong vùng khiến dân chúng mến mộ.</p>
+    <p class="bodyText">Hoạt động của ông bị bọn mật thám Pháp phát hiện; chúng chỉ chỗ trú ẩn, ông bị bắt giam tại Mỹ Tho. Con ông là <b>Huỳnh Khắc Kiệm</b> phải bán hết tài sản lo chuộc bọn Việt gian thả ông ra. Chánh quyền Pháp thưởng cho người chiêu hàng, ông không chịu. Sau bị bức bách nặng, ông phải giữ chức <b>Hương Cả 11 năm</b> tại xã Phước Thạnh Bến Tre chúng mới cho từ chức.</p>
+    <p class="bodyText">Ông mất tại đây và được an táng tại nghĩa trang riêng trước nhà của người cháu Đ5.T5 <b>Huỳnh Khắc Giàu</b> thuộc ấp 3 xã Phước Thạnh tỉnh Bến Tre ngày nay.</p>
+    <p class="bodyText">Ông Tổ <b>HUỲNH VĂN BÁU</b> sinh năm người con mà chỉ có hai người nối dõi được, ta chia ra hai Nhánh: Nhánh ông Thứ 5 <b>HUỲNH VĂN HÒA</b> (hay KHÁ) và ông Thứ 6 <b>HUỲNH VĂN HƠN</b> (hay Khắc Hơn). Trong tập sách <em>Địa danh chí Gò Công xưa và nay</em> vẫn ghi HUỲNH KHẮC HƠN.</p>
+  </div>
+
+  <!-- ═══ SECTION 5: NHÁNH 1 ═══ -->
+  <span class="secAnchor" id="sec-nhanh1"></span>
+  <div class="secH1">🏠 Nhánh 1 – Tổ Đời 2 T5: Huỳnh Văn Hòa</div>
+  <div class="infoCard">
+    <p class="bodyText">Ông <b>HUỲNH VĂN HÒA</b> là con thứ 5 của Tổ Đời 1 HUỲNH VĂN BÁU, là anh ruột của ông thứ 6 HUỲNH VĂN HƠN và là một trong ba vị Lãnh binh được triều đình nhà Nguyễn phái tăng cường lực lượng cho Tướng quân Trương Định chống Pháp. Sau ông bị tên phản thần Huỳnh Công Tấn dẫn đường quân Pháp tiêu diệt quân ta; lực lượng tan rã, ông lánh vào ẩn tu tại một ngôi chùa vùng Bình Đại Bến Tre.</p>
+    <p class="bodyText">Có một mối hoài nghi, ông Tổ HUỲNH VĂN HÒA lánh tu ở chùa; sau đấy có thể ông ra dân sinh đàn hậu duệ cư trú tại vùng <b>Tân Xuân – Ba Tri</b>. Ở xã Phước Thạnh có anh Huỳnh Khắc Kỳ, anh cũng không biết gốc gác mình từ đâu. Khi dò tìm tông tộc họ HUỲNH VĂN hay HUỲNH KHẮC, anh có giới thiệu tôi với đ/c Lê Ca Huỳnh Khắc Chiêu, ông này nói gốc mình ở vùng Tân Xuân – Ba Tri. Tôi có mời đ/c Lê Ca Huỳnh Khắc Chiêu về làng cũ lập lại gia phả. Anh rất hoan nghênh đề nghị, nhưng phải từ chối và cho biết anh là một trong những người cao niên còn sót lại trong chi tộc này, nay thân thể bệnh hoạn, không kham nổi việc đi đứng sưu tầm. Thế là việc truy tìm chi tộc Tổ HUỲNH VĂN HÒA coi như bị bế tắc!</p>
+    <p class="bodyText">Chúng ta không biết ông HUỲNH VĂN HÒA sinh từ năm nào và bà là ai; gia phả chỉ ghi lại ông có hai người con: <b>Huỳnh Thị Sáo</b> và <b>Huỳnh Văn Hào</b>.</p>
+  </div>
+  <div class="infoCard">
+    <div class="secH2">Đ3.T2 Huỳnh Thị Sáo</div>
+    <p class="bodyText">Là trưởng nữ của ông Huỳnh Văn Hòa, bà Huỳnh Thị Sáo (không biết năm sinh) mất năm 1899 (Kỷ Tị), có chồng họ <b>Đặng</b>, sinh 3 con: <b>Đặng Văn Hành</b> (2 con: Đặng Thị Ngọ, Đặng Thị Dậu), <b>Đặng Văn Đinh</b>, <b>Đặng Văn Mùi</b>.</p>
+    <div class="secH2">Đ3.T3 Huỳnh Văn Hào</div>
+    <p class="bodyText">Ông Huỳnh Văn Hào là con thứ 2 của ông Huỳnh Văn Hòa, có vợ sinh 4 con. Người con thứ 2 nối dõi là <b>Huỳnh Khắc Hộ</b> với 4 người con (Đ5 ĐIỂU, HẠCH GIA, THÂU, TRỪ). Người con thứ 3 là <b>Huỳnh Khắc Thông</b> với V1 (THANH, 9 con) và V2 (1 con NON). Người con thứ 4 là <b>Huỳnh Thị Thiện</b> (con út, chỉ biết có con tên Đổng).</p>
+    <p class="bodyText">Trong hậu duệ của nhánh Hào – Thông, nổi bật là <b>Đ5 Huỳnh Thủ Trung (tự Tư Chơi)</b> sinh 1907 – soạn giả kiêm kịch sĩ nổi tiếng thập niên 1930–40, cùng thời với Năm Châu, Phùng Há, Bảy Nhiêu. Ông có vợ đầu là cô <b>Bảy Phùng Há</b> – danh ca lừng lẫy của sân khấu cải lương Việt Nam. Con của Tư Chơi và Phùng Há là <b>Lý Bửu Trân</b> – cô gái thông minh, đẹp, giỏi 4 ngoại ngữ, học ở Trung Quốc và Hong Kong nhưng mất sớm ở tuổi 33 vì bệnh suy thận.</p>
+    <p class="bodyText">Con của Tư Chơi và V2 (Kim Thoa) là <b>Huỳnh Thủ Hiểu (tự Háo)</b> – tay trống nổi tiếng nhất Việt Nam thập niên 1960, được tập san <em>"Thế giới tự do"</em> khoảng 1960 nhận xét: <em>"Huỳnh Hiểu là tay trống cừ khôi nhất Việt Nam"</em>. Ông mất tháng 10 năm 1994 tại bệnh viện Hồng Bàng Tp.HCM.</p>
+  </div>
+
+  <!-- ═══ SECTION 6: NHÁNH 2 ═══ -->
+  <span class="secAnchor" id="sec-nhanh2"></span>
+  <div class="secH1">🏠 Nhánh 2 – Tổ Đời 2 T6: Huỳnh Văn Hơn và Hậu Duệ</div>
+  <div class="infoCard">
+    <p class="bodyText">Ông <b>HUỲNH VĂN HƠN</b> sinh năm <b>1824 (Giáp Thân)</b> thuộc Minh Mạng ngũ niên, mất ngày <b>9 tháng 8 năm Đinh Hợi</b> nhằm <b>16-9-1907</b> hồi 21 giờ, an táng tại ấp 4 xã Phước Thạnh, huyện Châu Thành Bến Tre, trước nhà cậu Huỳnh Khắc Giàu trong nghĩa trang gia đình. Ông có nhiều bà hầu Nam Bắc.</p>
+    <p class="bodyText">Nghe nói sau khi xa bà lớn, ông cưới có nghinh hôn giá thú bà <b>Dương Thị Liễu</b> sinh năm 1823 (Quý Mùi); bà mất vì chứng nhức đầu, rồi mù mắt, vào ngày 12-6 năm Bính Ngọ giờ Thìn (1906). Ông bà sinh <b>7 người con</b>:</p>
+    <div class="soDo">
+T2. <b>Huỳnh Khắc Cần</b>
+T3. <b>Huỳnh Khắc Kiệm</b>
+T4. <b>Huỳnh Thị Đây</b>
+T5. <b>Huỳnh Thị Tằm</b>
+T6. <b>Huỳnh Thị Kiếm</b>    (1857–1922)
+T7. <b>Huỳnh Khắc Doãn</b>
+T8. <b>Huỳnh Văn Tú</b>      (mất tích lúc 8 tuổi khi gia đình chạy loạn)
     </div>
-    <div class="quote">
-      "Hai ông Sửu và Thình (cháu bà Huỳnh Thị Tằm) đã tạo ra một giai thoại buồn cười: Một hôm thừa nhân túi, đến khoanh tay trước mặt ông ngoại tôi (ông Huỳnh Khắc Đầu) tỏ ra rầu rỉ, nói: 'Thứa cậu Bay, con buồn quá vì vợ con mới chết mà không có tiền chôn cất, con nhờ cậu Bay giúp đỡ.' Dĩ nhiên ông ngoại tôi phải chi ra; sau hỏi lại thì ông ta đâu có chết vợ bao giờ; thì ta hai ông dùng câu chuyện để kiếm tiền chơi tiếp."
-    </div>
-    <div class="quote">
-      "Ông Cố Huỳnh Khắc Kiệm (T3) – sinh 1848, mất 1895 – là giáo thọ dạy quốc ngữ và chữ Nho tại làng Giao Hòa, tổng Hòa Quới, tỉnh Bến Tre. Ông rất thích đọc sách và có hoa tay đáo khắc. Ông mất vì bệnh 'nóng đầu', thọ 48 tuổi."
-    </div>
+    <p class="bodyText">Ông HUỲNH VĂN HƠN còn có <b>bà kế</b> (không biết tên) sinh ra bà cố <b>HUỲNH THỊ TÀI</b>, thường được bà con vùng An Hóa gọi là bà Chín Tài; thứ 9 là tiếp nối thứ tự con của bà 1. Ông còn có <b>bà hầu tên VI</b>, sinh một trai, sau theo Pháp, bị ta giết.</p>
   </div>
+
+  <div class="infoCard">
+    <div class="secH2">Đ3.T2 – Huỳnh Khắc Cần và hậu duệ (Trang 20–40)</div>
+    <p class="bodyText">Ông <b>HUỲNH KHẮC CẦN</b> sinh năm <b>1846 (Bính Ngọ)</b> và mất năm <b>1911 (Tân Hợi)</b>, hưởng thọ 66 tuổi; vợ là bà <b>Lê Thị Lang</b> quê ở Chợ Giữa Châu Thành Bến Tre sinh năm 1848 (Mậu Thân) và mất năm 1904 (Giáp Thìn). Ông bà cố đều được mai táng tại đất nhà trước nhà cháu nội trai trưởng <b>Huỳnh Khắc Thành</b> (tự Nhành) ở ấp 4 xã Phước Thạnh, huyện Châu Thành Bến Tre.</p>
+    <p class="bodyText">Ta hãy nói đến truyền nhân của cố HUỲNH KHẮC CẦN và bà LÊ THỊ LANG; ông bà sinh <b>8 người con</b>:</p>
+    <div class="soDo">
+Đ4.T2. <b>HUỲNH THỊ DUNG</b>     – chết nhỏ.
+Đ4.T3. <b>HUỲNH VĂN HỌC</b>     – chết nhỏ.
+Đ4.T4. <b>HUỲNH VĂN LƯỢNG</b>   – sinh 1872. → <em>Đ5 TỬU</em> → Chi TỬU (15 con, trang 20–22)
+Đ4.T5. <b>HUỲNH THỊ VÀNG</b>    – sinh 1874. → Không con. (Cao Đài Giáo sư, mất 1950)
+Đ4.T6. [chết hồi 5–6 tuổi vì trúng độc vỏ khoai mì]
+Đ4.T7. <b>HUỲNH KHẮC ĐẦU</b>   → V1 CHỔI → Đ5 NGỌC → TỒN family (trang 23–28)
+                               → V2 ĐẶNG THỊ DÀNH → Đ5 CHIẾU·TIẾNG·LỰA·HẾN·MINH·KHỎE (trang 29–30)
+Đ4.T8. <b>HUỲNH THỊ CHỢ</b>     – → 4 con (NHO·PHƯỚC·NANG·HÓA)
+Đ4.T9. <b>HUỲNH THỊ MỸ</b>      – → 4 chồng, nhiều con (TRỌNG·LỰC·XUỒNG·NHƠM·HIỀN·PHÚC·NỮ·LỘC)
+    </div>
+    <div class="secH2">Đ3.T3 – Huỳnh Khắc Kiệm (Trang 41–48)</div>
+    <p class="bodyText">Ông <b>HUỲNH KHẮC KIỆM</b> (còn có tên gọi là Huỳnh Văn Qua / Kiện / Kim / hiệu <em>Huỳnh Phú</em>) là con T3 của ông Huỳnh Văn Hơn, sinh khoảng 1848, mất 1895 (Ất Mùi), thọ 48 tuổi. Ông là giáo thọ dạy quốc ngữ và chữ Nho tại làng Giao Hòa, tổng Hòa Quới, tỉnh Bến Tre. Mất vì bệnh <em>"nóng đầu"</em>. Vợ là bà <b>Nguyễn Thị Ngân</b> – mất ngày 14-9 Mậu Dần (1878), thọ 27 tuổi. Ông có con là <b>Huỳnh Khắc Thuận</b> (1872–1935) – sau thi đậu làm Tri huyện rồi Tri phủ Long An.</p>
+    <div class="secH2">Đ3.T6 – Huỳnh Thị Kiếm (Trang 50–51)</div>
+    <p class="bodyText">Bà <b>HUỲNH THỊ KIẾM</b> sinh năm <b>1857 (Đinh Tỵ)</b>, mất ngày <b>24-3-1922 (Nhâm Tuất)</b>, thọ 66 tuổi, được mai táng trong nhà mồ cao rộng tại xã <b>Phú An Hòa, Bến Tre</b>. Chồng là ông <b>Nguyễn Văn Ngạn</b> (huyện hàm, tự Hiệp Nò), gia đình rất giàu có. Ông bà sinh con là <b>Nguyễn Thị Thanh Liên</b> – sau lấy chồng là <b>Nguyễn Thanh Liêm</b> (1887–1968), người đầu tư mạnh vào việc học cho con cháu, tạo nên một gia đình nổi tiếng với con trai <b>Nguyễn Thành Lập</b> – Giám đốc Ngân hàng Việt Nam.</p>
+    <div class="secH2">Đ3.T7 – Huỳnh Khắc Doãn (Trang 51–54)</div>
+    <p class="bodyText">Ông <b>HUỲNH KHẮC DOÃN</b> là con T7 của ông Huỳnh Văn Hơn. Con ông là <b>Huỳnh Văn Bi</b> (sinh 1914) – sau này con cháu ông Bi định cư tại <b>Pháp</b> sau 1975. Dòng Doãn còn có <b>Huỳnh Thủ Trung (Tư Chơi)</b> – soạn giả sân khấu nổi tiếng, và <b>Huỳnh Thủ Hiểu</b> – tay trống cừ khôi nhất Việt Nam thập niên 1960.</p>
+    <div class="secH2">Đ3.T9 – Huỳnh Thị Tài (Trang 54–60)</div>
+    <p class="bodyText">Bà <b>HUỲNH THỊ TÀI</b> (còn gọi là bà Chín Tài) là con của bà kế ông Huỳnh Văn Hơn. Con cháu bà Tài sinh sống chủ yếu tại vùng An Hóa – Châu Thành, Bến Tre và Sài Gòn. Đây là chi tộc được ghi chép chi tiết từ trang 54 đến trang 60 trong gia phả.</p>
+  </div>
+
 </div>
 </div><!-- end #tabHistory -->
 
@@ -1167,9 +1377,34 @@ const DATA = {
                      birth:"1926 (Bính Dần)", spouse:"PHAN VĂN MINH (chết đuối 1960)",
                      notes:"T7. 9 con.",
                      children:[
-                       {id:"d7-hai-tri", name:"Trần Công Hải", gender:"male", gen:7, notes:"V1 1 trai (ly dị); V2 3 con – đi Mỹ.", children:[]},
-                       {id:"d7-son-tri", name:"Phạm Thanh Sơn", gender:"male", gen:7, notes:"Vợ 2 con, chạy đò An Hóa – Bến Tre.", children:[]},
-                       {id:"d7-the-tri", name:"Phan Minh Thệ", gender:"male", gen:7, notes:"Chìm xuồng chết 18 tuổi.", children:[]}
+                       {id:"d7-hai-tri", name:"Trần Công Hải", gender:"male", gen:7, notes:"T2. V1 1 trai (ly dị); V2 3 con – đi Mỹ.", children:[]},
+                       {id:"d7-son-tri", name:"Phạm Thanh Sơn", gender:"male", gen:7, notes:"T3. Vợ 2 con, chạy đò An Hóa – Bến Tre.", children:[]},
+                       {id:"d7-the-tri", name:"Phan Minh Thệ", gender:"male", gen:7, notes:"T4. Chìm xuồng chết 18 tuổi.", children:[]},
+                       {id:"d7-chet5-tri", name:"[T5 – chết nhỏ]", gender:"unknown", gen:7, notes:"T5. Chết nhỏ.", children:[]},
+                       {id:"d7-chet6-tri", name:"[T6 – chết nhỏ]", gender:"unknown", gen:7, notes:"T6. Chết nhỏ.", children:[]},
+                       {id:"d7-nham-tri", name:"Trần Văn Nhãm", gender:"male", gen:7,
+                        birth:"1957 (Đinh Dậu)", spouse:"Nguyễn Thị Phượng (giáo viên)",
+                        notes:"T7. Nhân viên văn phòng huyện Châu Thành, Bến Tre. 2 con.",
+                        children:[
+                          {id:"d8-bi-nham", name:"Trần Văn Bi", gender:"male", gen:8, children:[]},
+                          {id:"d8-gai-nham", name:"[gái – 3 tuổi]", gender:"female", gen:8, children:[]}
+                        ]},
+                       {id:"d7-thuy-tri", name:"Trần Thị Bích Thuỷ", gender:"female", gen:7,
+                        birth:"1959 (Kỷ Hợi)", spouse:"Tấn (làm vườn)",
+                        notes:"T8. 3 con: Chương, Hân và 1 gái.",
+                        children:[
+                          {id:"d8-chuong-thuy", name:"Chương", gender:"male", gen:8, children:[]},
+                          {id:"d8-han-thuy", name:"Hân", gender:"unknown", gen:8, children:[]},
+                          {id:"d8-gai-thuy", name:"[gái]", gender:"female", gen:8, children:[]}
+                        ]},
+                       {id:"d7-trieu-tri", name:"Trần Văn Triều", gender:"male", gen:7,
+                        notes:"T9. Vợ và 2 con ở Anh quốc.", children:[]},
+                       {id:"d7-tien-tri", name:"Trần Văn Tiên", gender:"male", gen:7,
+                        spouse:"Huỳnh Thanh Hồng",
+                        notes:"T10. Chạy đò máy. 1 gái (3 tuổi).",
+                        children:[
+                          {id:"d8-gai-tien", name:"[gái – 3 tuổi]", gender:"female", gen:8, children:[]}
+                        ]}
                      ]},
                     {id:"d6-thanh-tuu", name:"TRẦN CÔNG THÀNH", gender:"male", gen:6,
                      birth:"9-5-1927 (Đinh Mão)",
@@ -1439,25 +1674,38 @@ const DATA = {
                   notes:"T5 (con V2 Đặng Thị Dành). Tự Ố. 13 con.",
                   children:[
                     {id:"d6-lien-lua", name:"NGUYỄN THANH LIÊN", gender:"male", gen:6, birth:"1935 (Ất Hợi)", death:"1963 (Kỷ Mão)", notes:"Tự Louis. 4 con.", children:[
-                      {id:"d7-phong-lien", name:"Nguyễn Thanh Phong", gender:"male", gen:7, birth:"1960", notes:"Nhiếp ảnh. 1 gái.", children:[]},
+                      {id:"d7-phong-lien", name:"Nguyễn Thanh Phong", gender:"male", gen:7, birth:"1960", spouse:"Nga (1958)", notes:"Nhiếp ảnh. 1 gái.", children:[
+                        {id:"d8-lan-phong", name:"Nguyễn Thị Lan", gender:"female", gen:8, birth:"1994", children:[]}
+                      ]},
                       {id:"d7-t3-lien", name:"[T3 – không biết tên]", gender:"unknown", gen:7, children:[]},
-                      {id:"d7-nhan-lien", name:"Nguyễn Thanh Nhàn", gender:"male", gen:7, birth:"1961", notes:"Giáo viên; 1 con (chết).", children:[]},
+                      {id:"d7-nhan-lien", name:"Nguyễn Thanh Nhàn", gender:"male", gen:7, birth:"1961", spouse:"Nguyễn Thị Loan (1962, giáo viên)", notes:"Giáo viên; 1 con (chết).", children:[]},
                       {id:"d7-thuy-lien", name:"Nguyễn Thị Ngọc Thuý", gender:"female", gen:7, birth:"1963", notes:"Uốn tóc, độc thân.", children:[]}
                     ]},
                     {id:"d6-xuan-lua", name:"NGUYỄN QUANG XUÂN", gender:"male", gen:6, notes:"Chết nhỏ.", children:[]},
                     {id:"d6-thu-lua", name:"NGUYỄN QUANG THƯ", gender:"male", gen:6, notes:"Chết nhỏ.", children:[]},
                     {id:"d6-hoang-lua", name:"NGUYỄN THỊ KIM HOÀNG", gender:"female", gen:6, birth:"1940 (Canh Thìn)", spouse:"HÀ DIỆM (1938, người Hoa)", notes:"7 con.", children:[
-                      {id:"d7-linh-hoang", name:"Hà Thiếu Linh", gender:"female", gen:7, birth:"1958", notes:"Chồng Nguyễn Văn Chiếm, giáo viên.", children:[]},
-                      {id:"d7-banh-hoang", name:"Hà Văn Bánh", gender:"male", gen:7, birth:"1960", notes:"Bác sĩ thú y.", children:[]},
-                      {id:"d7-hoa-hoang", name:"Hà Siêu Hòa", gender:"male", gen:7, birth:"1962", notes:"Bác sĩ phòng dịch.", children:[]},
-                      {id:"d7-manh-hoang", name:"Hà Văn Mãnh", gender:"male", gen:7, birth:"1964", notes:"Giáo viên.", children:[]},
+                      {id:"d7-linh-hoang", name:"Hà Thiếu Linh", gender:"female", gen:7, birth:"1958", spouse:"Nguyễn Văn Chiếm (1957, giáo viên)", notes:"Thợ may. 2 con.", children:[
+                        {id:"d8-xmuoi-linh", name:"Nguyễn Xí Muội", gender:"female", gen:8, birth:"1980", children:[]},
+                        {id:"d8-vtri-linh", name:"Nguyễn Văn Trí", gender:"male", gen:8, birth:"1986", children:[]}
+                      ]},
+                      {id:"d7-banh-hoang", name:"Hà Văn Bánh", gender:"male", gen:7, birth:"1960", spouse:"Nguyễn Ngọc Nga (1959, Bác sĩ thú y)", notes:"Bác sĩ thú y. 1 con.", children:[
+                        {id:"d8-tan-banh", name:"Hà Trường An", gender:"male", gen:8, birth:"1989", children:[]}
+                      ]},
+                      {id:"d7-hoa-hoang", name:"Hà Siêu Hòa", gender:"male", gen:7, birth:"1962", spouse:"Nguyễn Thị Phượng (Y sĩ)", notes:"Bác sĩ phòng dịch. 1 gái.", children:[
+                        {id:"d8-tuyen-hoa", name:"Tố Uyên", gender:"female", gen:8, birth:"1989", children:[]}
+                      ]},
+                      {id:"d7-manh-hoang", name:"Hà Văn Mãnh", gender:"male", gen:7, birth:"1964", spouse:"Tuyền (1965, giáo viên)", notes:"Giáo viên. 1 trai.", children:[
+                        {id:"d8-duy-manh", name:"Hà Văn Duy", gender:"male", gen:8, birth:"1994", children:[]}
+                      ]},
                       {id:"d7-du-hoang", name:"Hà Văn Dư", gender:"male", gen:7, birth:"1968", children:[]},
                       {id:"d7-nphg", name:"Hà Thị Ngọc Phương", gender:"female", gen:7, birth:"1972", children:[]},
                       {id:"d7-vien-hoang", name:"Hà Phúc Viên", gender:"male", gen:7, birth:"1975", notes:"Giáo viên, độc thân.", children:[]}
                     ]},
                     {id:"d6-van-lua", name:"NGUYỄN THỊ KIM VÂN", gender:"female", gen:6, birth:"1942 (Nhâm Ngọ)", notes:"Chồng trước TRẦN NGỌC MINH (chết); chồng sau TRỊNH VÂN HỒNG (1925). Tổng 9 con.", children:[
                       {id:"d7-son-van", name:"Nguyễn Thanh Sơn", gender:"male", gen:7, birth:"1962", notes:"Độc thân.", children:[]},
-                      {id:"d7-thuy-van", name:"Nguyễn Thị Ngọc Thuý", gender:"female", gen:7, birth:"1967", spouse:"Hà Xuân Dung (1965)", children:[]},
+                      {id:"d7-thuy-van", name:"Nguyễn Thị Ngọc Thuý", gender:"female", gen:7, birth:"1967", spouse:"Hà Xuân Dung (1965)", children:[
+                        {id:"d8-tuan-thuyv", name:"Hà Xuân Tuấn", gender:"male", gen:8, birth:"1990", children:[]}
+                      ]},
                       {id:"d7-hang-van", name:"Nguyễn Thị Ngọc Hằng", gender:"female", gen:7, birth:"1968", spouse:"Lê Văn Luôn", children:[]}
                     ]},
                     {id:"d6-t7t13-lua", name:"[T7–T13 – các con còn lại của LỰA]", gender:"unknown", gen:6, notes:"Các con thứ 7 đến 13 của LỰA và CÒN chưa được ghi chép đầy đủ trong gia phả.", children:[]}
@@ -2955,6 +3203,18 @@ window.switchTab = function(btn, panelId){
   if(panelId==='tabTree'){
     requestAnimationFrame(()=>{ onResize(); });
   }
+};
+
+/* Sub-nav scroll within tabHistory */
+window.scrollToSec = function(secId, btn){
+  event.preventDefault();
+  const panel = document.querySelector('#tabHistory .scrollPanel');
+  const target = document.getElementById(secId);
+  if(!panel || !target) return;
+  const navH = document.getElementById('histSubNav')?.offsetHeight || 0;
+  panel.scrollTo({ top: target.offsetTop - navH - 8, behavior:'smooth' });
+  document.querySelectorAll('#histSubNav .subNavBtn').forEach(b=>b.classList.remove('cur'));
+  if(btn) btn.classList.add('cur');
 };
 </script>
 </body>
