@@ -183,7 +183,7 @@ Sơ đồ nhánh phát triển từ Tổ Đời 2 HUỲNH VĂN HÒA:
 
 ---
 
-# BÀ TỔ ĐỜI 2 T2: [H]-/UỲNH [T]-/HỊ [M]--/[Á]U
+# BÀ TỔ ĐỜI 2 T2: HUỲNH THỊ MẬU
 
 Bà là trưởng nữ của Cao tổ HUỲNH VĂN BÁU. Chúng ta không biết Bà HUỲNH THỊ MẬU sinh từ ngày nào, chồng con ra sao; có lẽ bà là phận gái phải chịu ảnh hưởng phong hóa, có chồng phải theo chồng xa xứ, bặt hẳn liên lạc với họ hàng thâm tộc. Hơn nữa sinh con phải chuyển sang họ chồng và tin tức về bà mờ dầm nên trong gia phả cổ họ HUỲNH không ghi rõ. (Xin tham khảo phần Huỳnh Thị Khoẻ nơi trang 34 có nhiều chi tiết khả tín về bà HUỲNH THỊ MẬU.)
 
