@@ -317,6 +317,28 @@ body{
 .storyCard blockquote em{color:#e0d0a8;font-style:italic}
 .storyCard blockquote b{color:var(--gold-light)}
 .storyTag{font-size:10px;color:rgba(200,150,12,.65);background:rgba(200,150,12,.12);padding:2px 7px;border-radius:10px;margin-left:6px;font-weight:normal;vertical-align:middle}
+/* ── Stats Tab ── */
+#tabStats .scrollPanel{padding:22px 28px}
+.sk-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+.sk{flex:1 1 120px;background:rgba(200,150,12,.1);border:1px solid rgba(200,150,12,.25);border-radius:9px;padding:14px 16px;text-align:center;min-width:110px}
+.sk-n{display:block;font-size:1.85em;font-weight:700;color:var(--gold-light);line-height:1}
+.sk-l{display:block;font-size:.71em;color:#c8b898;margin-top:5px;line-height:1.3}
+.sc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.sc{background:rgba(255,255,255,.04);border:1px solid rgba(200,150,12,.2);border-radius:10px;padding:16px 18px}
+.sc-h{color:var(--gold-light);font-size:.76em;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin:0 0 14px;padding-bottom:8px;border-bottom:1px solid rgba(200,150,12,.18)}
+.sb-row{display:flex;align-items:center;gap:7px;margin:5px 0}
+.sb-label{width:155px;flex-shrink:0;font-size:.79em;color:#c8b898;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:default}
+.sb-wrap{flex:1;height:11px;background:rgba(255,255,255,.07);border-radius:3px;overflow:hidden}
+.sb-bar{height:100%;background:linear-gradient(90deg,rgba(180,130,10,.85),rgba(225,185,55,.95));border-radius:3px;min-width:2px}
+.sb-count{width:30px;text-align:right;font-size:.79em;color:var(--gold)}
+.sg-section{margin-top:4px}
+.sg-male .sb-bar{background:linear-gradient(90deg,rgba(60,120,215,.8),rgba(95,155,245,.9))}
+.sg-female .sb-bar{background:linear-gradient(90deg,rgba(195,70,115,.8),rgba(230,105,145,.9))}
+.pie-leg-wrap{margin-top:8px}
+.pl{display:flex;align-items:center;gap:5px;margin:2px 0;font-size:.75em}
+.pd{width:9px;height:9px;border-radius:50%;flex-shrink:0;display:inline-block}
+.plb{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:#c8b898}
+.plc{white-space:nowrap;color:var(--gold);min-width:68px;text-align:right}
 </style>
 </head>
 <body>
@@ -347,6 +369,7 @@ body{
   <button class="tabBtn" onclick="switchTab(this,'tabTimeline')">📅 Niên Biểu</button>
   <button class="tabBtn" onclick="switchTab(this,'tabSources')">📚 Tài Liệu</button>
   <button class="tabBtn" onclick="switchTab(this,'tabStories')">📖 Câu Chuyện</button>
+  <button class="tabBtn" onclick="switchTab(this,'tabStats')">📊 Thống Kê</button>
 </div>
 
 <div id="tabContent">
@@ -1096,7 +1119,7 @@ body{
 
     <div class="tlItem">
       <div class="tlYear"><span class="tlTag tag-event">Gia phả</span>1995–1997</div>
-      <div class="tlDesc"><b>Gia Phả Họ Huỳnh Văn – Huỳnh Khắc – Lần in thứ 2</b> được hoàn thành và phổ biến trong dòng họ. Tài liệu ghi chép gần <b>200 năm lịch sử gia tộc (1800–1997)</b>, <span class="nodeCount">1145</span> người được ghi nhận qua 8 thế hệ, do <b>Nguyễn Tấn Long</b> sưu tầm và biên soạn.</div>
+      <div class="tlDesc"><b>Gia Phả Họ Huỳnh Văn – Huỳnh Khắc – Lần in thứ 2</b> được hoàn thành và phổ biến trong dòng họ. Tài liệu ghi chép gần <b>200 năm lịch sử gia tộc (1800–1997)</b>, <span class="nodeCount"></span> người được ghi nhận qua 8 thế hệ, do <b>Nguyễn Tấn Long</b> sưu tầm và biên soạn.</div>
     </div>
 
   </div>
@@ -1118,7 +1141,7 @@ body{
       <p><b>In lần:</b> Thứ 2 (Có kiểu chính và bổ sung)</p>
       <p><b>Năm hoàn thành:</b> 24 tháng 12 năm 1997 tại Nhà Trang Minh</p>
       <p><b>Số trang:</b> 60 trang + bìa và mục lục</p>
-      <p><b>Phạm vi:</b> ~8 thế hệ, khoảng 200 năm, <span class="nodeCount">1145</span> người</p>
+      <p><b>Phạm vi:</b> ~8 thế hệ, khoảng 200 năm, <span class="nodeCount"></span> người</p>
       <p><b>Vùng địa lý:</b> Chủ yếu Bến Tre, Tiền Giang, Sài Gòn; sau 1975 có thêm Pháp, Mỹ</p>
     </div>
   </div>
@@ -1567,6 +1590,13 @@ body{
 
 </div><!-- end storyContent -->
 </div><!-- end #tabStories -->
+
+<!-- ── TAB: THỐNG KÊ ─────────────────────────────── -->
+<div class="tabPanel" id="tabStats">
+<div class="scrollPanel">
+  <div id="statsContent" style="color:#888;font-size:.85em;padding:20px">Đang tính toán...</div>
+</div>
+</div>
 
 </div><!-- end #tabContent -->
 
@@ -4842,6 +4872,219 @@ window.scrollToSec = function(secId, btn){
     });
   }, {root:cont, threshold:0.25});
   cont.querySelectorAll('.storyCard[id]').forEach(c => obs.observe(c));
+})();
+
+/* ══════════════════════════════════════════════════════
+   THỐNG KÊ (Statistics Tab)
+══════════════════════════════════════════════════════ */
+(function buildStatsTab(){
+  // KPI & giới tính: toàn bộ allNodes (khớp với header)
+  const totalAll = allNodes.length;
+  let male=0, female=0, unk=0;
+  allNodes.forEach(n => {
+    if(n.gender==='male') male++;
+    else if(n.gender==='female') female++;
+    else unk++;
+  });
+
+  // Phân tích text: chỉ node có nghĩa (bỏ root gen:0 và tên [...]
+  const nodes = allNodes.filter(n => n.gen > 0 && n.name && !n.name.startsWith('['));
+
+  /* ── Thập niên sinh ── */
+  const decade={};
+  let withBirth=0;
+  nodes.forEach(n => {
+    if(!n.birth) return;
+    const m = n.birth.match(/\b(1[7-9]\d\d|20\d\d)\b/);
+    if(!m) return;
+    withBirth++;
+    const d = Math.floor(parseInt(m[1])/10)*10;
+    decade[d]=(decade[d]||0)+1;
+  });
+
+  /* ── 3. Trình độ học vấn ── */
+  const edu={};
+  const eduRules=[
+    ['Tiến sĩ',            /tiến sĩ/],
+    ['Thạc sĩ',            /thạc sĩ/],
+    ['Đại học / Cao đẳng', /cử nhân|đại học|kỹ sư|bác sĩ|dược sĩ|y sĩ|nha sĩ|luật sư|kiến trúc sư|cao đẳng/],
+    ['THPT – Lớp 10–12',  /lớp 1[0-2]|tú tài/],
+    ['THCS – Lớp 6–9',    /lớp [6-9]|th cấp 2/],
+    ['Tiểu học – Lớp 1–5',/lớp [1-5]|tiểu học/],
+  ];
+  nodes.forEach(n => {
+    const t = ((n.notes||'')+' '+(n.intro||'')).toLowerCase();
+    for(const [k,rx] of eduRules){ if(rx.test(t)){ edu[k]=(edu[k]||0)+1; break; } }
+  });
+
+  /* ── 4. Nghề nghiệp ── */
+  const occ={};
+  const occRules=[
+    ['Y tế',                /bác sĩ|dược sĩ|y tá|y sĩ|nha sĩ|phòng mạch/],
+    ['Giáo dục',            /giáo viên|giáo sư|giảng viên|dạy học/],
+    ['Quân sự / Công an',   /quân nhân|bộ đội|sĩ quan|thiếu tướng|trung tướng|đại tá|thiếu tá|trung tá|công an/],
+    ['Kỹ sư / Kỹ thuật',   /kỹ sư|kỹ thuật|kiến trúc sư/],
+    ['Nông nghiệp',         /làm vườn|làm ruộng|xay lúa|nấu muối|nghề biển|chài lưới/],
+    ['Buôn bán / Kinh doanh',/buôn bán|kinh doanh|xuất bản|nhà in/],
+    ['CNV / Hành chính',    /cnv|cán bộ|công chức|hành chính/],
+    ['Nội trợ',             /nội trợ/],
+    ['Nghệ thuật / Báo chí',/nghệ sĩ|nhà báo|nhà thơ|họa sĩ|viết sách/],
+    ['Thợ / Lao động',      /thợ hồ|thợ may|thợ tiện|lao động/],
+  ];
+  nodes.forEach(n => {
+    const t = ((n.notes||'')+' '+(n.intro||'')).toLowerCase();
+    for(const [k,rx] of occRules){ if(rx.test(t)){ occ[k]=(occ[k]||0)+1; break; } }
+  });
+
+  /* ── 5. Quốc gia ngoài Việt Nam ── */
+  const ctr={};
+  const ctrRules=[
+    ['Mỹ / Hoa Kỳ',          /ở mỹ|đi mỹ|hoa kỳ|định cư mỹ/],
+    ['Pháp',                  /ở pháp|đi pháp|định cư pháp|nước pháp/],
+    ['Úc / Australia',        /ở úc|đi úc|australia/],
+    ['Canada',                /canada/],
+    ['Ý / Italy',             /người ý|đại sứ phu|ở ý /],
+    ['Trung Quốc / Hoa kiều', /người hoa|về tàu|trung quốc/],
+  ];
+  nodes.forEach(n => {
+    const t = ((n.notes||'')+' '+(n.spouse||'')+' '+(n.intro||'')).toLowerCase();
+    for(const [k,rx] of ctrRules){ if(rx.test(t)){ ctr[k]=(ctr[k]||0)+1; break; } }
+  });
+
+  /* ── 6. Tỉnh / thành phố ── */
+  const prov={};
+  const provRules=[
+    ['Bến Tre',         /bến tre|bình đại|ba tri|mỏ cày|giồng trôm|phước thạnh/],
+    ['TP. Hồ Chí Minh', /tp\.hcm|tp hcm|sài gòn|hồ chí minh|chợ lớn|quận \d|q\.\d/],
+    ['Cần Thơ',         /cần thơ/],
+    ['Hà Nội',          /hà nội/],
+    ['Tiền Giang',      /tiền giang|mỹ tho/],
+    ['Vĩnh Long',       /vĩnh long/],
+    ['Kiên Giang',      /kiên giang|rạch giá|gò quao/],
+    ['Long An',         /long an/],
+    ['Trà Vinh',        /trà vinh/],
+    ['Đồng Tháp',       /đồng tháp|sa đéc/],
+    ['An Giang',        /an giang|châu đốc/],
+    ['Đồng Nai',        /đồng nai|biên hòa/],
+    ['Bình Dương',      /bình dương/],
+    ['Lâm Đồng',        /đà lạt|lâm đồng/],
+    ['Khánh Hòa',       /nha trang|khánh hòa/],
+  ];
+  nodes.forEach(n => {
+    const t = ((n.notes||'')+' '+(n.intro||'')+' '+(n.birth||'')).toLowerCase();
+    for(const [k,rx] of provRules){ if(rx.test(t)){ prov[k]=(prov[k]||0)+1; break; } }
+  });
+
+  /* ── Render helpers ── */
+  function bars(obj, chron){
+    const arr = Object.entries(obj);
+    if(!chron) arr.sort((a,b)=>b[1]-a[1]);
+    if(!arr.length) return '<div style="color:#555;font-size:.8em;padding:6px 0">Không có dữ liệu</div>';
+    const mx = Math.max(1, ...arr.map(e=>e[1]));
+    return arr.map(([l,c])=>`<div class="sb-row">
+      <div class="sb-label" title="${l}">${l}</div>
+      <div class="sb-wrap"><div class="sb-bar" style="width:${Math.round(c/mx*100)}%"></div></div>
+      <div class="sb-count">${c}</div>
+    </div>`).join('');
+  }
+
+  function card(h, body){
+    return `<div class="sc"><div class="sc-h">${h}</div>${body}</div>`;
+  }
+
+  /* ── Biểu đồ tròn SVG ── */
+  /* PIE_C: 8 màu gốc (xen kẽ lạnh/ấm) + 8 màu nhạt cách đúng +8 vị trí
+     → màu cùng họ luôn cách nhau 8 lát cắt, không bao giờ kề nhau */
+  const PIE_C = [
+    /* 0-7: primary – cách nhau tối đa trên vòng màu */
+    '#3a7abf', /* 0  xanh dương  lạnh */
+    '#d44e4e', /* 1  đỏ          ấm   */
+    '#3aaa64', /* 2  xanh lá     lạnh */
+    '#e5832e', /* 3  cam         ấm   */
+    '#8858b0', /* 4  tím         lạnh */
+    '#c8a820', /* 5  vàng đậm    ấm   */
+    '#27a89a', /* 6  xanh ngọc   lạnh */
+    '#c05580', /* 7  hồng đậm    ấm   */
+    /* 8-15: secondary – phiên bản nhạt của primary[i-8] */
+    '#6fa8d8', /* 8  xanh dương nhạt (họ 0) */
+    '#e88f8f', /* 9  hồng cá hồi       (họ 1) */
+    '#7ac88a', /* 10 xanh lá nhạt      (họ 2) */
+    '#f0b870', /* 11 cam nhạt          (họ 3) */
+    '#b08ad0', /* 12 tím nhạt          (họ 4) */
+    '#e8d870', /* 13 vàng nhạt         (họ 5) */
+    '#68c8bc', /* 14 ngọc nhạt         (họ 6) */
+    '#e890b8', /* 15 hồng nhạt         (họ 7) */
+    /* 16-17: màu trung tính */
+    '#9e9e9e', /* 16 xám trung */
+    '#7c5c38', /* 17 nâu ấm    */
+  ];
+  const GENDER_C = ['#4a80d4','#c05080','#888888'];
+
+  function svgPie(pairs, colors) {
+    const filt = pairs.filter(([,v]) => v > 0);
+    const total = filt.reduce((a,[,v]) => a+v, 0);
+    if(!total) return '<div style="color:#555;font-size:.8em;padding:6px">Không có dữ liệu</div>';
+    const W=160, H=140, cx=W/2, cy=H/2, r=54;
+    let svg='', ang=-Math.PI/2;
+    filt.forEach(([,c], i) => {
+      const frac=c/total, sweep=frac*Math.PI*2, col=colors[i%colors.length];
+      if(frac>0.9998){
+        svg+=`<circle cx="${cx}" cy="${cy}" r="${r}" fill="${col}"/>`;
+      } else {
+        const x1=(cx+r*Math.cos(ang)).toFixed(1), y1=(cy+r*Math.sin(ang)).toFixed(1);
+        const a2=ang+sweep;
+        const x2=(cx+r*Math.cos(a2)).toFixed(1), y2=(cy+r*Math.sin(a2)).toFixed(1);
+        svg+=`<path d="M${cx},${cy}L${x1},${y1}A${r},${r},0,${sweep>Math.PI?1:0},1,${x2},${y2}Z" fill="${col}" stroke="rgba(0,0,0,.22)" stroke-width="0.8"/>`;
+        ang=a2;
+      }
+    });
+    const leg=filt.map(([l,c],i)=>{
+      const pct=Math.round(c/total*100);
+      return `<div class="pl"><span class="pd" style="background:${colors[i%colors.length]}"></span><span class="plb" title="${l}">${l}</span><span class="plc">${c}&nbsp;(${pct}%)</span></div>`;
+    }).join('');
+    return `<svg viewBox="0 0 ${W} ${H}" style="display:block;margin:0 auto;width:${W}px;max-width:100%">${svg}</svg><div class="pie-leg-wrap">${leg}</div>`;
+  }
+
+  /* KPI */
+  const totalCtr  = Object.values(ctr).reduce((a,b)=>a+b,0);
+  const provTotal = Object.values(prov).reduce((a,b)=>a+b,0);
+  const mPct = male+female>0 ? Math.round(male/(male+female)*100) : 50;
+  const fPct = 100-mPct;
+
+  const kpi = `<div class="sk-row">
+    <div class="sk"><span class="sk-n">${totalAll.toLocaleString()}</span><span class="sk-l">Tổng thành viên</span></div>
+    <div class="sk"><span class="sk-n">${male.toLocaleString()}</span><span class="sk-l">Nam (${mPct}%)</span></div>
+    <div class="sk"><span class="sk-n">${female.toLocaleString()}</span><span class="sk-l">Nữ (${fPct}%)</span></div>
+    <div class="sk"><span class="sk-n">${withBirth}</span><span class="sk-l">Có năm sinh</span></div>
+    <div class="sk"><span class="sk-n">${totalCtr}</span><span class="sk-l">Định cư ngoài VN</span></div>
+    <div class="sk"><span class="sk-n">${provTotal}</span><span class="sk-l">Có ghi tỉnh thành</span></div>
+  </div>`;
+
+  /* Decade bars (chronological) */
+  const decLabeled = {};
+  Object.entries(decade).sort((a,b)=>+a[0]-+b[0]).forEach(([d,c])=>{
+    decLabeled[d+'–'+(+d+9)] = c;
+  });
+
+  /* Pie data */
+  const genderPairs = [['Nam',male],['Nữ',female]];
+  if(unk) genderPairs.push(['Không rõ',unk]);
+  const eduPairs  = Object.entries(edu).sort((a,b)=>b[1]-a[1]);
+  const ctrAll    = {...ctr};
+  if(provTotal > 0) ctrAll['Việt Nam'] = provTotal;
+  const ctrPairs  = Object.entries(ctrAll).sort((a,b)=>b[1]-a[1]);
+  const provPairs = Object.entries(prov).sort((a,b)=>b[1]-a[1]);
+
+  const sub = s=>`<span style="font-size:.8em;font-weight:400;opacity:.55;text-transform:none;letter-spacing:0">${s}</span>`;
+
+  document.getElementById('statsContent').innerHTML = kpi + `<div class="sc-grid">
+    ${card('Giới Tính', svgPie(genderPairs, GENDER_C))}
+    ${card('Phân Bố Thập Niên Sinh', bars(decLabeled, true))}
+    ${card('Trình Độ Học Vấn '+sub('(theo ghi chú)'), svgPie(eduPairs, PIE_C))}
+    ${card('Nghề Nghiệp '+sub('(theo ghi chú)'), bars(occ))}
+    ${card('Quốc Gia', svgPie(ctrPairs, PIE_C))}
+    ${card('Tỉnh Thành '+sub('(đề cập trong ghi chú)'), svgPie(provPairs, PIE_C))}
+  </div>`;
 })();
 </script>
 </body>
