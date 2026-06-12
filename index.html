@@ -4580,14 +4580,14 @@ function highlightAncestors(d){
   gNodes.selectAll('g.node')
     .classed('hl', n=>ancs.has(n.data.id) && n.data.id!==d.data.id)
     .classed('sel', n=>n.data.id===d.data.id)
-    .classed('dim', n=>!ancs.has(n.data.id));
+    .classed('dim', false);
   gLinks.selectAll('path.link')
     .classed('hl', l=>ancs.has(l.source.data.id) && ancs.has(l.target.data.id))
     .classed('dim', l=>!(ancs.has(l.source.data.id) && ancs.has(l.target.data.id)));
 }
 
 function clearHighlights(){
-  gNodes.selectAll('g.node').classed('hl sel dim sm',false);
+  gNodes.selectAll('g.node').classed('hl sel sm',false);
   gLinks.selectAll('path.link').classed('hl dim',false);
   selectedNode=null;
   document.getElementById('panel').classList.remove('open');
@@ -4720,12 +4720,11 @@ function highlight(str, q){
 function highlightSearch(ids){
   const idSet=new Set(ids);
   gNodes.selectAll('g.node')
-    .classed('sm', d=>idSet.has(d.data.id))
-    .classed('dim', d=>!idSet.has(d.data.id));
+    .classed('sm', d=>idSet.has(d.data.id));
   gLinks.selectAll('path.link').classed('dim',true);
 }
 function clearSearchHighlight(){
-  gNodes.selectAll('g.node').classed('sm dim',false);
+  gNodes.selectAll('g.node').classed('sm',false);
   gLinks.selectAll('path.link').classed('dim',false);
 }
 document.addEventListener('click', e=>{
