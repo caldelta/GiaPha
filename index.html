@@ -286,6 +286,19 @@ body{
   font-family:monospace;line-height:1.9;overflow-x:auto;margin-bottom:14px}
 .soDo b{color:var(--gold-light)}
 .soDo em{color:var(--gold)}
+/* Family Tree bullet list */
+.famTree,.famTree ul{list-style:none;margin:0;padding:0}
+.famTree{background:rgba(255,255,255,.03);border:1px solid rgba(200,150,12,.18);border-radius:8px;padding:12px 16px;margin-bottom:14px}
+.famTree>li{padding:5px 0 5px 20px;position:relative;color:#c8b898;font-size:.82em;line-height:1.7}
+.famTree>li::before{content:'◆';position:absolute;left:0;top:6px;font-size:.65em;color:var(--gold-light)}
+.famTree ul{padding-left:16px;margin:4px 0}
+.famTree ul li{padding:3px 0 3px 18px;position:relative;color:#c8b898;font-size:1em;line-height:1.65}
+.famTree ul li::before{content:'◇';position:absolute;left:0;top:4px;font-size:.65em;color:var(--gold)}
+.famTree ul ul li::before{content:'▸';color:#c8a020}
+.famTree ul ul ul li::before{content:'›';color:#906010}
+.famTree b{color:var(--gold-light)}
+.famTree em{color:var(--gold);font-style:italic}
+.famTree .ft-dead{color:#888;font-size:.93em}
 /* Stories Tab */
 #tabStories{flex-direction:row!important}
 .storyNav{width:190px;flex-shrink:0;overflow-y:auto;background:rgba(0,0,0,.42);border-right:1px solid rgba(200,150,12,.35)}
@@ -456,83 +469,136 @@ body{
   </div>
 
   <div class="secH2">Nhánh 1 – Tổ Đ2 T5 Huỳnh Văn Hòa (Trang 6–18)</div>
-  <div class="soDo">
-<b>Đ2 T5. HUỲNH VĂN HÒA</b> + vợ (?): 2 con
-  ├─ <b>Đ3 SÁO</b> + ch. Đặng → Đ4 HÀNH (→Đ5 Ngọ, Đ5 Dậu) · Đ4 ĐINH · Đ4 MÙI
-  └─ <b>Đ3 HÀO</b> + vợ: 4 con
-       ├─ Đ4 (không rõ tên)
-       ├─ <b>Đ4 HỘ</b> + vợ: 4 con
-       │    ├─ Đ5 ĐIỂU + ch. Liễng (7 con: [chết nhỏ×2]·Đồ·Chạm·Kiều·Út·Ngữ·Inh)
-       │    ├─ Đ5 HẠCH GIA (→Đ6 [mất,5con]·Như)
-       │    ├─ Đ5 THÂU + ch. ng. Hoa (về Tàu)
-       │    └─ Đ5 TRỪ + vợ Quí (→Đ6 Anh·Ấu·Em·Ánh·Tiên)
-       ├─ <b>Đ4 THÔNG</b> + V1 THANH: 9 con
-       │    ├─ Đ5 T2 – T3 (?)
-       │    ├─ Đ5 TRUNG + V2 Há (→Chánh) · V2 Thoa (→Hiếu·Rinh) · V3 Am (→Tâm)
-       │    ├─ Đ5 T5 (mất)
-       │    ├─ Đ5 GIỎI + ch. Sao (→Bé·Tất)
-       │    ├─ Đ5 BIÊN + vợ Bông (→Sem·Đằng·Huệ·Lê·Tuyền·Quí·Bé·Tuyết·Bội·Bằng·Môn·Phú)
-       │    ├─ Đ5 LƯƠNG + vợ Chim (→Nở·Yến·Bé·Vân·Nết·Oanh·Uyên·Chín·Hiếu)
-       │    ├─ Đ5 ĐÓ + ch. Khâm (→Hưởng·Tặng·Khen)
-       │    └─ Đ5 TỀ + vợ (→Hồng)
-       ├─ <b>Đ4 THÔNG</b> + V2 → Đ5 NON
-       └─ <b>Đ4 THIỆN</b> + vợ (→Đ5 Đổng)
-  </div>
+  <ul class="famTree">
+    <li><b>Đ2.T5 HUỲNH VĂN HÒA</b> + vợ (?): 2 con
+      <ul>
+        <li><b>Đ3.T2 HUỲNH THỊ SÁO</b> + chồng họ Đặng
+          <ul>
+            <li>Đ4 <b>ĐẶNG VĂN HÀNH</b> → Đ5 Ngọ · Đ5 Dậu</li>
+            <li>Đ4 <b>ĐẶNG VĂN ĐINH</b></li>
+            <li>Đ4 <b>ĐẶNG VĂN MÙI</b></li>
+          </ul>
+        </li>
+        <li><b>Đ3.T3 HUỲNH VĂN HÀO</b> + vợ: 4 con
+          <ul>
+            <li>Đ4 – <span class="ft-dead">không rõ tên</span></li>
+            <li><b>Đ4 HUỲNH KHẮC HỘ</b> + vợ: 4 con
+              <ul>
+                <li>Đ5 <b>ĐIỂU</b> + ch. Liễng → 7 con: <span class="ft-dead">[chết nhỏ ×2]</span> · Đồ · Chạm · Kiều · Út · Ngữ · Inh</li>
+                <li>Đ5 <b>HẠCH GIA</b> → Đ6: <span class="ft-dead">[mất, 5 con]</span> · Như</li>
+                <li>Đ5 <b>THÂU</b> + chồng người Hoa <span class="ft-dead">(về Tàu)</span></li>
+                <li>Đ5 <b>TRỪ</b> + vợ Quí → Đ6: Anh · Ấu · Em · Ánh · Tiên</li>
+              </ul>
+            </li>
+            <li><b>Đ4 HUỲNH KHẮC THÔNG</b> + V1 THANH: 9 con
+              <ul>
+                <li>Đ5 T2, T3 <span class="ft-dead">(không rõ)</span></li>
+                <li>Đ5 <b>TRUNG</b> + V1 Há → Chánh &nbsp;·&nbsp; V2 Thoa → Hiếu, Rinh &nbsp;·&nbsp; V3 Am → Tâm</li>
+                <li>Đ5 T5 <span class="ft-dead">(mất)</span></li>
+                <li>Đ5 <b>GIỎI</b> + ch. Sao → Bé · Tất</li>
+                <li>Đ5 <b>BIÊN</b> + vợ Bông → Sem · Đằng · Huệ · Lê · Tuyền · Quí · Bé · Tuyết · Bội · Bằng · Môn · Phú</li>
+                <li>Đ5 <b>LƯƠNG</b> + vợ Chim → Nở · Yến · Bé · Vân · Nết · Oanh · Uyên · Chín · Hiếu</li>
+                <li>Đ5 <b>ĐÓ</b> + ch. Khâm → Hưởng · Tặng · Khen</li>
+                <li>Đ5 <b>TỀ</b> + vợ → Hồng</li>
+              </ul>
+            </li>
+            <li><b>Đ4 HUỲNH KHẮC THÔNG</b> + V2 → Đ5 NON</li>
+            <li><b>Đ4 HUỲNH THỊ THIỆN</b> + vợ → Đ5 Đổng</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
   <div class="infoCard">
     <p class="bodyText"><b>Ghi chú:</b> Ngoài hai ông Huỳnh Văn Hòa và Huỳnh Văn Hơn, còn có một người chị thứ hai – bà Tổ Đ2 T2 <b>Huỳnh Thị Mậu</b> – là trưởng nữ của Cao tổ Huỳnh Văn Báu. Chúng ta không biết bà sinh từ ngày nào, chồng con ra sao; có lẽ bà là phận gái phải chịu ảnh hưởng phong hóa, có chồng phải theo chồng xa xứ, bặt hẳn liên lạc với họ hàng thâm tộc. Hơn nữa sinh con phải chuyển sang họ chồng và tin tức về bà mờ dầm nên trong gia phả cổ họ HUỲNH không ghi rõ. (Tham khảo phần Huỳnh Thị Khoẻ trang 34 có nhiều chi tiết khả tín về bà Huỳnh Thị Mậu.)</p>
     <p class="bodyText">Ông HUỲNH VĂN HƠN còn có người chị (nằm ở vị trí T2 trong anh em) đã đi theo cùng các ông trên đường vào Nam. Sau khi lực lượng du kích ta bị tan rã, bà chị này ra dân, có chồng họ Võ, sinh đàn hậu duệ. (Tham khảo chi tiết ở mục Huỳnh Thị Khoẻ trang 35.)</p>
   </div>
 
   <div class="secH2">Nhánh 2 – Tổ Đ2 T6 Huỳnh Văn Hơn (Trang 19–60)</div>
-  <div class="soDo">
-<b>Đ2 T6. HUỲNH VĂN HƠN</b> + bà DƯƠNG THỊ LIỄU (Quý Mùi 1823 – Bính Ngọ 1906): 7 con
-  ├─ <b>Đ3 T2. HUỲNH KHẮC CẦN</b>       → <em>xem Chi Cần (trang 20–40)</em>
-  ├─ <b>Đ3 T3. HUỲNH KHẮC KIỆM</b>      → <em>xem Chi Kiệm (trang 41–48)</em>
-  ├─ <b>Đ3 T4. HUỲNH THỊ ĐÂY</b>         → <em>xem Chi Đây (trang 41–48)</em>
-  ├─ <b>Đ3 T5. HUỲNH THỊ TẰM</b>         → <em>xem Chi Tằm (trang 49–50)</em>
-  ├─ <b>Đ3 T6. HUỲNH THỊ KIẾM</b>       → <em>xem Chi Kiếm (trang 50–51)</em>
-  ├─ <b>Đ3 T7. HUỲNH KHẮC DOÃN</b>     → <em>xem Chi Doãn (trang 51–54)</em>
-  └─ <b>Đ3 T8. HUỲNH VĂN TÚ</b> (mất tích lúc 8 tuổi)
-
-<em>+ bà kế (không biết tên):</em>
-  └─ <b>Đ3 T9. HUỲNH THỊ TÀI</b>         → <em>xem Chi Tài (trang 54–60)</em>
-
-<em>+ bà hầu VI:</em> 1 trai (sau theo Pháp, bị ta giết)
-  </div>
+  <ul class="famTree">
+    <li><b>Đ2.T6 HUỲNH VĂN HƠN</b> + bà <b>DƯƠNG THỊ LIỄU</b> (1823–1906): 7 con
+      <ul>
+        <li><b>Đ3.T2 HUỲNH KHẮC CẦN</b> → <em>xem Chi Cần (trang 20–40)</em></li>
+        <li><b>Đ3.T3 HUỲNH KHẮC KIỆM</b> → <em>xem Chi Kiệm (trang 41–48)</em></li>
+        <li><b>Đ3.T4 HUỲNH THỊ ĐÂY</b> → <em>xem Chi Đây (trang 41–48)</em></li>
+        <li><b>Đ3.T5 HUỲNH THỊ TẰM</b> → <em>xem Chi Tằm (trang 49–50)</em></li>
+        <li><b>Đ3.T6 HUỲNH THỊ KIẾM</b> (1857–1922) → <em>xem Chi Kiếm (trang 50–51)</em></li>
+        <li><b>Đ3.T7 HUỲNH KHẮC DOÃN</b> → <em>xem Chi Doãn (trang 51–54)</em></li>
+        <li><b>Đ3.T8 HUỲNH VĂN TÚ</b> – <span class="ft-dead">mất tích lúc 8 tuổi khi chạy loạn</span></li>
+      </ul>
+    </li>
+    <li><b>+ Bà kế</b> (không biết tên)
+      <ul>
+        <li><b>Đ3.T9 HUỲNH THỊ TÀI</b> → <em>xem Chi Tài (trang 54–60)</em></li>
+      </ul>
+    </li>
+    <li><b>+ Bà hầu VI</b>: 1 trai <span class="ft-dead">(sau theo Pháp, bị ta giết)</span></li>
+  </ul>
 
   <div class="secH2">Sơ Đồ Chi Cần – Đ3 T2 Huỳnh Khắc Cần (Trang 19)</div>
-  <div class="soDo">
-<b>Đ3 T2. CẦN</b> + LÊ THỊ LANG → 8 con:
-  <b>Đ4</b>: DUNG† · HỌC† · <b>LƯỢNG</b> · <b>VÀNG</b> · [Đ4 chết 5-6t] · <b>ĐẦU</b> · <b>CHỢ</b> · <b>MỸ</b>
-
-<b>Đ4 LƯỢNG</b> + CÚC → <em>Đ5 TỬU</em> + ch. NGHĨA:
-  Đ6: Hoa · Hường · Bông · Bình · Lễ · <b>Trí</b> · Thành · Biên · [chết] · Ơn · Ẩm · Sáu · Ấm · Bửu
-
-<b>Đ4 VÀNG</b> + KHUÊ → không con (Cao Đài Giáo sư Tòa Thánh Tây Ninh)
-
-<b>Đ4 ĐẦU</b> + V1 CHỔI → <em>Đ5 NGỌC</em> + ch. TỒN → Đ6: Châu · Hương · Long · Yến · <b>Đạo</b> · <b>Thạnh</b>
-<b>Đ4 ĐẦU</b> + V2 ĐẶNG THỊ DÀNH →
-  Đ5 CHIẾU† · <em>Đ5 TIẾNG</em> + V1 XI (→Miếng·Thạch) · <em>Đ5 TIẾNG</em> + V2 CHÚC (→Cẩm·Trường)
-  <em>Đ5 LỰA</em> + CÒN (13 con: Liên·Xuân†·Thư†·Kim Hoàng·Kim Vân·Mai·Y·Bé·Ẩm·Nguyệt·Quang·Oanh·Xuyến)
-  Đ5 HẾN + V1 PHƯƠNG (→Hiếu) · V2 BÉ (→Mầu)
-  Đ5 MINH + RỈ (→Kim·Thành·Tâm·V.Anh·Thiêm·T.Anh·L.Anh)
-  Đ5 KHỎE + Q. (→Lệ Anh·Loan Anh·Ph.Anh)
-
-<b>Đ4 CHỢ</b> + DƯ →
-  Đ5 NHO + TIÊN (→Đ6 Hoa)
-  Đ5 PHƯỚC + V1 THẢO (→Thanh·Tâm) · V2 CHUM (→Ánh·Nhâm·Hiểu·Sĩ)
-  Đ5 NANG + V1 LỢI (→Thu·Hảo) · V2 NHỚN (→Phái·Ba·Hưng·Tùng·Vân)
-  Đ5 HÓA + LONG (→Phụng·Hoàng·Minh)
-
-<b>Đ4 MỸ</b> + V1 HẬU → <em>Đ5 TRỌNG</em> + NGỌ (→Cẩu·Hưởng·Thời·Lai·Bửu·Tất·Kính)
-<b>Đ4 MỸ</b> + V2 LÊN → <em>Đ5 LỰC</em> + LIÊN (→Hằng·Hứa)
-<b>Đ4 MỸ</b> + V3 (?) → Đ5 XUỒNG · Đ5 chết nhỏ
-<b>Đ4 MỸ</b> + V4 BÌNH →
-  Đ5 NHƠM (→Đơn·Liêm·Viêm·Dừa) · Đ5 chết nhỏ
-  Đ5 HIỀN + LỄ (→Thu·chết nhỏ) · Đ5 PHÚC + KIÊN (→Khôi·Ngô·Hoàng)
-  Đ5 NỮ + ƠN (→Sinh·Sĩ·Trước·Đèo·Nguyên·Bay)
-  Đ5 LỘC + KÊNH (→Hoàng·Nga·Sô·Gấm·Nhung·Tơ)
-  </div>
+  <ul class="famTree">
+    <li><b>Đ3.T2 HUỲNH KHẮC CẦN</b> + LÊ THỊ LANG: 8 con
+      <ul>
+        <li>Đ4.T2 <b>HUỲNH THỊ DUNG</b> – <span class="ft-dead">chết nhỏ</span></li>
+        <li>Đ4.T3 <b>HUỲNH VĂN HỌC</b> – <span class="ft-dead">chết nhỏ</span></li>
+        <li>Đ4.T4 <b>HUỲNH VĂN LƯỢNG</b> (1872) + CÚC
+          <ul>
+            <li><b>Đ5 HUỲNH THỊ TỬU</b> (1897) + TRẦN VĂN NGHĨA
+              <ul>
+                <li>Đ6: Hoa · Hường · Bông · Bình · Lễ · <b>Trí</b> · Thành · Biên · <span class="ft-dead">[chết]</span> · Ơn · Ẩm · Sáu · Ấm · Bửu</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>Đ4.T5 <b>HUỲNH THỊ VÀNG</b> (1874) + KHUÊ – không con <span class="ft-dead">(Cao Đài Giáo sư, Tòa Thánh Tây Ninh, mất 1950)</span></li>
+        <li>Đ4.T6 – <span class="ft-dead">chết hồi 5–6 tuổi (trúng độc vỏ khoai mì)</span></li>
+        <li>Đ4.T7 <b>HUỲNH KHẮC ĐÂU</b> (1879–1965)
+          <ul>
+            <li>+ V1 NGUYỄN THỊ CHỔI → <b>Đ5 HUỲNH THỊ NGỌC</b> + NGUYỄN TẤN TỒN
+              <ul>
+                <li>Đ6: Châu · Hương · Long · Yến · <b>Đạo</b> · <b>Thạnh</b></li>
+              </ul>
+            </li>
+            <li>+ V2 ĐẶNG THỊ DÀNH
+              <ul>
+                <li>Đ5 CHIẾU – <span class="ft-dead">mất</span></li>
+                <li><b>Đ5 HUỲNH VĂN TIẾNG</b> + V1 XI → Miếng · Thạch &nbsp;·&nbsp; V2 CHÚC → Cẩm · Trường</li>
+                <li><b>Đ5 HUỲNH THỊ LỰA</b> + CÒN → 13 con: Liên · <span class="ft-dead">Xuân†</span> · <span class="ft-dead">Thư†</span> · Kim Hoàng · Kim Vân · Mai · Y · Bé · Ẩm · Nguyệt · Quang · Oanh · Xuyến</li>
+                <li><b>Đ5 HUỲNH VĂN HẾN</b> + V1 PHƯƠNG → Hiếu &nbsp;·&nbsp; V2 BÉ → Mầu</li>
+                <li><b>Đ5 HUỲNH VĂN MINH</b> + RỈ → Kim · Thành · Tâm · V.Anh · Thiêm · T.Anh · L.Anh</li>
+                <li><b>Đ5 HUỲNH THỊ KHỎE</b> + Q. → Lệ Anh · Loan Anh · Ph.Anh</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>Đ4.T8 <b>HUỲNH THỊ CHỢ</b> + DƯ
+          <ul>
+            <li>Đ5 NHO + TIÊN → Đ6 Hoa</li>
+            <li>Đ5 PHƯỚC + V1 THẢO → Thanh · Tâm &nbsp;·&nbsp; V2 CHUM → Ánh · Nhâm · Hiểu · Sĩ</li>
+            <li>Đ5 NANG + V1 LỢI → Thu · Hảo &nbsp;·&nbsp; V2 NHỚN → Phái · Ba · Hưng · Tùng · Vân</li>
+            <li>Đ5 HÓA + LONG → Phụng · Hoàng · Minh</li>
+          </ul>
+        </li>
+        <li>Đ4.T9 <b>HUỲNH THỊ MỸ</b>
+          <ul>
+            <li>+ V1 HẬU → <b>Đ5 TRỌNG</b> + NGỌ → Cẩu · Hưởng · Thời · Lai · Bửu · Tất · Kính</li>
+            <li>+ V2 LÊN → <b>Đ5 LỰC</b> + LIÊN → Hằng · Hứa</li>
+            <li>+ V3 (?) → Đ5 XUỒNG · Đ5 <span class="ft-dead">chết nhỏ</span></li>
+            <li>+ V4 BÌNH
+              <ul>
+                <li>Đ5 NHƠM → Đơn · Liêm · Viêm · Dừa</li>
+                <li>Đ5 <span class="ft-dead">chết nhỏ</span></li>
+                <li>Đ5 HIỀN + LỄ → Thu · <span class="ft-dead">chết nhỏ</span></li>
+                <li>Đ5 PHÚC + KIÊN → Khôi · Ngô · Hoàng</li>
+                <li>Đ5 NỮ + ƠN → Sinh · Sĩ · Trước · Đèo · Nguyên · Bay</li>
+                <li>Đ5 LỘC + KÊNH → Hoàng · Nga · Sô · Gấm · Nhung · Tơ</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
 
 </div>
 </div><!-- end #tabHistory -->
