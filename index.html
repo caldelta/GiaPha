@@ -286,6 +286,24 @@ body{
   font-family:monospace;line-height:1.9;overflow-x:auto;margin-bottom:14px}
 .soDo b{color:var(--gold-light)}
 .soDo em{color:var(--gold)}
+/* Stories Tab */
+#tabStories{flex-direction:row!important}
+.storyNav{width:190px;flex-shrink:0;overflow-y:auto;background:rgba(0,0,0,.42);border-right:1px solid rgba(200,150,12,.35)}
+.sn-era{display:block;color:rgba(200,150,12,.65);font-size:10px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;padding:14px 12px 5px;border-top:1px solid rgba(200,150,12,.15)}
+.sn-era:first-child{border-top:none;padding-top:10px}
+.storyNav a{display:block;color:rgba(210,190,150,.78);text-decoration:none;padding:5px 8px 5px 14px;font-size:11.5px;line-height:1.38;border-left:2px solid transparent;transition:all .15s;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.storyNav a:hover{color:var(--gold-light);background:rgba(200,150,12,.1);border-left-color:var(--gold)}
+.storyNav a.sn-active{color:var(--gold-light);background:rgba(200,150,12,.15);border-left-color:var(--gold-light)}
+.storyContent{overflow-y:auto;padding:20px 24px;flex:1}
+.storyCard{background:rgba(0,0,0,.22);border:1px solid rgba(200,150,12,.2);border-radius:8px;padding:20px;margin-bottom:22px}
+.storyCard h3{color:var(--gold-light);margin:0 0 10px;font-size:1.05em;border-bottom:1px solid rgba(200,150,12,.25);padding-bottom:8px}
+.storyCard h4{color:var(--gold);margin:14px 0 6px;font-size:.92em}
+.storyCard p{margin:7px 0;line-height:1.75;color:#c8b898}
+.storyCard ul{color:#c8b898;line-height:1.9;padding-left:20px;margin:6px 0}
+.storyCard blockquote{border-left:3px solid rgba(200,150,12,.55);margin:10px 0 10px 6px;padding:10px 14px;background:rgba(200,150,12,.06);color:#d4c49a;line-height:1.85;font-size:.93em}
+.storyCard blockquote em{color:#e0d0a8;font-style:italic}
+.storyCard blockquote b{color:var(--gold-light)}
+.storyTag{font-size:10px;color:rgba(200,150,12,.65);background:rgba(200,150,12,.12);padding:2px 7px;border-radius:10px;margin-left:6px;font-weight:normal;vertical-align:middle}
 </style>
 </head>
 <body>
@@ -311,9 +329,11 @@ body{
 <!-- TAB NAVIGATION -->
 <div id="tabBar">
   <button class="tabBtn active" onclick="switchTab(this,'tabTree')">🌳 Cây Gia Phả</button>
-  <button class="tabBtn" onclick="switchTab(this,'tabHistory')">📜 Giới Thiệu & Lược Sử</button>
+  <button class="tabBtn" onclick="switchTab(this,'tabHistory')">📜 Giới Thiệu</button>
+  <button class="tabBtn" onclick="switchTab(this,'tabLuocSu')">⚔️ Lược Sử</button>
   <button class="tabBtn" onclick="switchTab(this,'tabTimeline')">📅 Niên Biểu</button>
   <button class="tabBtn" onclick="switchTab(this,'tabSources')">📚 Tài Liệu</button>
+  <button class="tabBtn" onclick="switchTab(this,'tabStories')">📖 Câu Chuyện</button>
 </div>
 
 <div id="tabContent">
@@ -370,9 +390,6 @@ body{
     <a class="subNavBtn" href="#sec-lnc" onclick="scrollToSec('sec-lnc',this)">📝 Lời Nói Chung</a>
     <a class="subNavBtn" href="#sec-tlhk" onclick="scrollToSec('sec-tlhk',this)">📚 Tài Liệu Tham Khảo</a>
     <a class="subNavBtn" href="#sec-sodo" onclick="scrollToSec('sec-sodo',this)">🌳 Sơ Đồ Phả Hệ</a>
-    <a class="subNavBtn" href="#sec-luocsu" onclick="scrollToSec('sec-luocsu',this)">⚔️ Lược Sử</a>
-    <a class="subNavBtn" href="#sec-nhanh1" onclick="scrollToSec('sec-nhanh1',this)">🏠 Nhánh 1 – Huỳnh Văn Hòa</a>
-    <a class="subNavBtn" href="#sec-nhanh2" onclick="scrollToSec('sec-nhanh2',this)">🏠 Nhánh 2 – Huỳnh Văn Hơn</a>
   </div>
 
   <!-- ═══ SECTION 1: LỜI NÓI CHUNG ═══ -->
@@ -385,7 +402,7 @@ body{
     <p class="bodyText">Tôi có ý nghĩ, làm sao gìn giữ họ tộc được trường cửu? Một vài thế kỷ tới đây, phần mộ mà thế hệ hiện tại đang nâng niu bảo quản biết còn tồn tại mãi không khi những người của thế hệ này lần lượt theo ông bà; con cháu chúng ta hằng trăm năm sau sẽ lạt tình máu mủ, xa dần dòng họ, quên đi quá khứ của mình. Hơn nữa, quan niệm <em>'sống cái nhà, thác cái mồ'</em> có lẽ rồi đây sẽ bị thay đổi, nấm mồ sẽ được rút gọn hình dáng chỉ còn một 'cái hũ'.</p>
     <p class="bodyText">Vì sự bất lực của con người trước sức hủy diệt của thời gian nên người ta nghĩ ra phương thức bảo tồn dòng họ trên phương diện tinh thần tức là lưu truyền giống dòng mình xuyên qua cái tình máu mủ ruột thịt thiêng liêng. Người ta nghĩ ra cách bảo vệ qua việc thiết lập <b>Gia Phả</b> để thắt chặt sợi dây thân ái trong họ tộc từ đời này sang đời khác. Việc làm này bên họ NGUYỄN TẤN... cha tôi, Nguyễn Tấn Tồn có ghi lại nhiều chi tiết đi sâu vào lai lịch Tổ tông đời trước, nhưng tiếc thay trong quá trình làm cách mạng đầy gian nguy, tài liệu bị thất lạc; nay anh Nguyễn Tấn Hằng có ghi phần nào những người trong họ tộc gần; bên họ HUỲNH KHẮC... có cậu <b>Huỳnh Khắc Chung</b> tiếp nối việc làm của cha Huỳnh Khắc Thuận ghi thêm hậu duệ đến năm 1980.</p>
     <p class="bodyText">Đúng như cậu Huỳnh Khắc Chung nhận định: <em>"Người mình ít ai chịu khó làm gia phả; nếu có cũng chỉ ghi lại đơn sơ những người trong họ tộc gần, ít đi sâu vào dòng họ xa, vì việc làm này phải tốn nhiều thời gian và công sức mà lẽ sống thường nhật không cho phép. Hơn nữa, việc làm thì đơn độc, âm thầm, buồn tẻ, phải bền bỉ, thậm chí nó đòi hỏi cả sự quên mình."</em></p>
-    <p class="bodyText">Em tôi, cô <b>Nguyễn Thị Yếm</b> cũng có ý định làm tập <em>'Tiểu gia phả'</em> gói ghém trong bà con, anh em họ tộc gần. Em <b>Nguyễn Tấn Đạo</b>, thiết thực hơn, đi tìm lại gia phả bên ngoại, phối hợp với gia phả bên nội, định lập gia phả cả hai họ NGUYỄN – HUỲNH; nhưng cả hai chưa có điều kiện thực hiện mong ước của mình.</p>
+    <p class="bodyText">Em tôi, cô <b>Nguyễn Thị Yến</b> cũng có ý định làm tập <em>'Tiểu gia phả'</em> gói ghém trong bà con, anh em họ tộc gần. Em <b>Nguyễn Tấn Đạo</b>, thiết thực hơn, đi tìm lại gia phả bên ngoại, phối hợp với gia phả bên nội, định lập gia phả cả hai họ NGUYỄN – HUỲNH; nhưng cả hai chưa có điều kiện thực hiện mong ước của mình.</p>
     <p class="bodyText">Riêng quan điểm tôi, gia phả đầy đủ phải là một <b>Cây Gia Phả</b>, một cổ thụ đi từ gốc rễ lên thân cây, sang cành nhánh, chi, cho đến ngọn. Chúng ta khó có thể đạt được đỉnh cao tinh thần lập gia phả; cho nên người làm công tác này thường xuyên bị bế tắc trước thông tin về những gia đình họ tộc tản mạn khắp nơi.</p>
     <p class="bodyText">Nếu gặp phải ít nhiều nỗi khó khăn trong việc sưu tập tư liệu để thiết lập một gia phả không ngoài mục đích tập hợp danh sách người cùng họ tộc, còn một việc thiết yếu nữa là chúng ta làm sao xây dựng một ngôi <b>Từ Đường</b>, rồi cử ra một <b>Hội đồng họ tộc</b>, điều hành hoạt động tạo nền tảng vững chắc để củng cố cộng đồng họ tộc ngày càng phát triển sâu rộng hơn. Việc làm này chủ yếu không ngoài hai điều cơ bản sau đây:</p>
   </div>
@@ -517,7 +534,21 @@ body{
   Đ5 LỘC + KÊNH (→Hoàng·Nga·Sô·Gấm·Nhung·Tơ)
   </div>
 
-  <!-- ═══ SECTION 4: LƯỢC SỬ ═══ -->
+</div>
+</div><!-- end #tabHistory -->
+
+<!-- ── TAB: LƯỢC SỬ ─────────────────────────────── -->
+<div class="tabPanel" id="tabLuocSu">
+<div class="scrollPanel">
+
+  <!-- Sticky sub-navigation -->
+  <div class="subNav" id="lsSubNav">
+    <a class="subNavBtn" href="#sec-luocsu" onclick="scrollToSec('sec-luocsu',this)">⚔️ Lược Sử</a>
+    <a class="subNavBtn" href="#sec-nhanh1" onclick="scrollToSec('sec-nhanh1',this)">🏠 Nhánh 1 – Huỳnh Văn Hòa</a>
+    <a class="subNavBtn" href="#sec-nhanh2" onclick="scrollToSec('sec-nhanh2',this)">🏠 Nhánh 2 – Huỳnh Văn Hơn</a>
+  </div>
+
+  <!-- ═══ LƯỢC SỬ ═══ -->
   <span class="secAnchor" id="sec-luocsu"></span>
   <div class="secH1">⚔️ Lược Sử</div>
   <div class="infoCard">
@@ -535,7 +566,7 @@ body{
     <p class="bodyText">Ông Tổ <b>HUỲNH VĂN BÁU</b> sinh năm người con mà chỉ có hai người nối dõi được, ta chia ra hai Nhánh: Nhánh ông Thứ 5 <b>HUỲNH VĂN HÒA</b> (hay KHÁ) và ông Thứ 6 <b>HUỲNH VĂN HƠN</b> (hay Khắc Hơn). Trong tập sách <em>Địa danh chí Gò Công xưa và nay</em> vẫn ghi HUỲNH KHẮC HƠN.</p>
   </div>
 
-  <!-- ═══ SECTION 5: NHÁNH 1 ═══ -->
+  <!-- ═══ NHÁNH 1 ═══ -->
   <span class="secAnchor" id="sec-nhanh1"></span>
   <div class="secH1">🏠 Nhánh 1 – Tổ Đời 2 T5: Huỳnh Văn Hòa</div>
   <div class="infoCard">
@@ -552,7 +583,7 @@ body{
     <p class="bodyText">Con của Tư Chơi và V2 (Kim Thoa) là <b>Huỳnh Thủ Hiểu (tự Háo)</b> – tay trống nổi tiếng nhất Việt Nam thập niên 1960, được tập san <em>"Thế giới tự do"</em> khoảng 1960 nhận xét: <em>"Huỳnh Hiểu là tay trống cừ khôi nhất Việt Nam"</em>. Ông mất tháng 10 năm 1994 tại bệnh viện Hồng Bàng Tp.HCM.</p>
   </div>
 
-  <!-- ═══ SECTION 6: NHÁNH 2 ═══ -->
+  <!-- ═══ NHÁNH 2 ═══ -->
   <span class="secAnchor" id="sec-nhanh2"></span>
   <div class="secH1">🏠 Nhánh 2 – Tổ Đời 2 T6: Huỳnh Văn Hơn và Hậu Duệ</div>
   <div class="infoCard">
@@ -580,7 +611,7 @@ T8. <b>Huỳnh Văn Tú</b>      (mất tích lúc 8 tuổi khi gia đình chạ
 Đ4.T4. <b>HUỲNH VĂN LƯỢNG</b>   – sinh 1872. → <em>Đ5 TỬU</em> → Chi TỬU (15 con, trang 20–22)
 Đ4.T5. <b>HUỲNH THỊ VÀNG</b>    – sinh 1874. → Không con. (Cao Đài Giáo sư, mất 1950)
 Đ4.T6. [chết hồi 5–6 tuổi vì trúng độc vỏ khoai mì]
-Đ4.T7. <b>HUỲNH KHẮC ĐẦU</b>   → V1 CHỔI → Đ5 NGỌC → TỒN family (trang 23–28)
+Đ4.T7. <b>HUỲNH KHẮC ĐÂU</b>   → V1 CHỔI → Đ5 NGỌC → TỒN family (trang 23–28)
                                → V2 ĐẶNG THỊ DÀNH → Đ5 CHIẾU·TIẾNG·LỰA·HẾN·MINH·KHỎE (trang 29–30)
 Đ4.T8. <b>HUỲNH THỊ CHỢ</b>     – → 4 con (NHO·PHƯỚC·NANG·HÓA)
 Đ4.T9. <b>HUỲNH THỊ MỸ</b>      – → 4 chồng, nhiều con (TRỌNG·LỰC·XUỒNG·NHƠM·HIỀN·PHÚC·NỮ·LỘC)
@@ -588,15 +619,15 @@ T8. <b>Huỳnh Văn Tú</b>      (mất tích lúc 8 tuổi khi gia đình chạ
     <div class="secH2">Đ3.T3 – Huỳnh Khắc Kiệm (Trang 41–48)</div>
     <p class="bodyText">Ông <b>HUỲNH KHẮC KIỆM</b> (còn có tên gọi là Huỳnh Văn Qua / Kiện / Kim / hiệu <em>Huỳnh Phú</em>) là con T3 của ông Huỳnh Văn Hơn, sinh khoảng 1848, mất 1895 (Ất Mùi), thọ 48 tuổi. Ông là giáo thọ dạy quốc ngữ và chữ Nho tại làng Giao Hòa, tổng Hòa Quới, tỉnh Bến Tre. Mất vì bệnh <em>"nóng đầu"</em>. Vợ là bà <b>Nguyễn Thị Ngân</b> – mất ngày 14-9 Mậu Dần (1878), thọ 27 tuổi. Ông có con là <b>Huỳnh Khắc Thuận</b> (1872–1935) – sau thi đậu làm Tri huyện rồi Tri phủ Long An.</p>
     <div class="secH2">Đ3.T6 – Huỳnh Thị Kiếm (Trang 50–51)</div>
-    <p class="bodyText">Bà <b>HUỲNH THỊ KIẾM</b> sinh năm <b>1857 (Đinh Tỵ)</b>, mất ngày <b>24-3-1922 (Nhâm Tuất)</b>, thọ 66 tuổi, được mai táng trong nhà mồ cao rộng tại xã <b>Phú An Hòa, Bến Tre</b>. Chồng là ông <b>Nguyễn Văn Ngạn</b> (huyện hàm, tự Hiệp Nò), gia đình rất giàu có. Ông bà sinh con là <b>Nguyễn Thị Thanh Liên</b> – sau lấy chồng là <b>Nguyễn Thanh Liêm</b> (1887–1968), người đầu tư mạnh vào việc học cho con cháu, tạo nên một gia đình nổi tiếng với con trai <b>Nguyễn Thành Lập</b> – Giám đốc Ngân hàng Việt Nam.</p>
+    <p class="bodyText">Bà <b>HUỲNH THỊ KIẾM</b> sinh năm <b>1857 (Đinh Tỵ)</b>, mất ngày <b>24-3-1922 (Nhâm Tuất)</b>, thọ 66 tuổi, được mai táng trong nhà mồ cao rộng tại xã <b>Phú An Hòa, Bến Tre</b>. Chồng là ông <b>Nguyễn Văn Ngạn</b> (huyện hàm, tự Hiệp Nò), gia đình rất giàu có. Ông bà sinh được 6 người con; nổi bật là con trai thứ 6 <b>Nguyễn Thanh Liêm</b> (sinh 15-8-1887, mất 18-1-1968, thọ 82 tuổi) – người đầu tư mạnh vào việc học cho con cháu, tạo nên một gia đình nổi tiếng với con trai <b>Nguyễn Thành Lập</b> – Giám đốc Việt Nam Ngân hàng.</p>
     <div class="secH2">Đ3.T7 – Huỳnh Khắc Doãn (Trang 51–54)</div>
-    <p class="bodyText">Ông <b>HUỲNH KHẮC DOÃN</b> là con T7 của ông Huỳnh Văn Hơn. Con ông là <b>Huỳnh Văn Bi</b> (sinh 1914) – sau này con cháu ông Bi định cư tại <b>Pháp</b> sau 1975. Dòng Doãn còn có <b>Huỳnh Thủ Trung (Tư Chơi)</b> – soạn giả sân khấu nổi tiếng, và <b>Huỳnh Thủ Hiểu</b> – tay trống cừ khôi nhất Việt Nam thập niên 1960.</p>
+    <p class="bodyText">Ông <b>HUỲNH KHẮC DOÃN</b> là con T7 của ông Huỳnh Văn Hơn. Con ông là <b>Huỳnh Văn Bi</b> (sinh 1914) – sau này con cháu ông Bi định cư tại <b>Pháp</b> sau 1975.</p>
     <div class="secH2">Đ3.T9 – Huỳnh Thị Tài (Trang 54–60)</div>
     <p class="bodyText">Bà <b>HUỲNH THỊ TÀI</b> (còn gọi là bà Chín Tài) là con của bà kế ông Huỳnh Văn Hơn. Con cháu bà Tài sinh sống chủ yếu tại vùng An Hóa – Châu Thành, Bến Tre và Sài Gòn. Đây là chi tộc được ghi chép chi tiết từ trang 54 đến trang 60 trong gia phả.</p>
   </div>
 
 </div>
-</div><!-- end #tabHistory -->
+</div><!-- end #tabLuocSu -->
 
 <!-- ── TAB: NIÊN BIỂU ───────────────────────────── -->
 <div class="tabPanel" id="tabTimeline">
@@ -893,7 +924,7 @@ T8. <b>Huỳnh Văn Tú</b>      (mất tích lúc 8 tuổi khi gia đình chạ
 
     <div class="tlItem">
       <div class="tlYear"><span class="tlTag tag-death">Mất</span>24-4-1961</div>
-      <div class="tlDesc"><b>Bà Huỳnh Thị Sẽn</b> (vợ Tri huyện Huỳnh Khắc Thuận, sinh từ cha người Hoa và mẹ bà Nguyễn Thị Ngay) mất ngày <b>24-4-1961</b>, thọ 83 tuổi.</div>
+      <div class="tlDesc"><b>Bà Dương Thị Thể</b> (V1 vợ Tri huyện Huỳnh Khắc Thuận, sinh 19-6-1878 Mậu Dần) mất lúc 15 giờ ngày <b>24-4 Tân Sửu (1961)</b>, thọ 83 tuổi.</div>
     </div>
 
     <div class="tlItem">
@@ -923,7 +954,7 @@ T8. <b>Huỳnh Văn Tú</b>      (mất tích lúc 8 tuổi khi gia đình chạ
 
     <div class="tlItem">
       <div class="tlYear"><span class="tlTag tag-death">Mất</span>18-1-1968</div>
-      <div class="tlDesc"><b>Nguyễn Thanh Liêm</b> (cháu bà Huỳnh Thị Kiếm) mất ngày <b>18-1-1968 (Mậu Thân)</b>, thọ 82 tuổi. Người đã đầu tư toàn bộ tài sản vào việc học của các con; con trai <b>Nguyễn Thành Lập</b> trở thành <b>Giám đốc Ngân hàng Việt Nam</b>.</div>
+      <div class="tlDesc"><b>Nguyễn Thanh Liêm</b> (Đ4.T6, con bà Huỳnh Thị Kiếm) mất ngày <b>18-1-1968 (Mậu Thân)</b>, thọ 82 tuổi. Người đã đầu tư toàn bộ tài sản vào việc học của các con; con trai <b>Nguyễn Thành Lập</b> trở thành <b>Giám đốc Việt Nam Ngân hàng</b>.</div>
     </div>
 
     <div class="tlItem">
@@ -995,7 +1026,7 @@ T8. <b>Huỳnh Văn Tú</b>      (mất tích lúc 8 tuổi khi gia đình chạ
 
     <div class="tlItem">
       <div class="tlYear"><span class="tlTag tag-event">Gia phả</span>1995–1997</div>
-      <div class="tlDesc"><b>Gia Phả Họ Huỳnh Văn – Huỳnh Khắc – Lần in thứ 2</b> được hoàn thành và phổ biến trong dòng họ. Tài liệu ghi chép gần <b>200 năm lịch sử gia tộc (1800–1997)</b>, hơn 220 người được ghi nhận qua 8 thế hệ, do <b>Nguyễn Tấn Long</b> sưu tầm và biên soạn.</div>
+      <div class="tlDesc"><b>Gia Phả Họ Huỳnh Văn – Huỳnh Khắc – Lần in thứ 2</b> được hoàn thành và phổ biến trong dòng họ. Tài liệu ghi chép gần <b>200 năm lịch sử gia tộc (1800–1997)</b>, <span class="nodeCount">1145</span> người được ghi nhận qua 8 thế hệ, do <b>Nguyễn Tấn Long</b> sưu tầm và biên soạn.</div>
     </div>
 
   </div>
@@ -1017,7 +1048,7 @@ T8. <b>Huỳnh Văn Tú</b>      (mất tích lúc 8 tuổi khi gia đình chạ
       <p><b>In lần:</b> Thứ 2 (Có kiểu chính và bổ sung)</p>
       <p><b>Năm hoàn thành:</b> 24 tháng 12 năm 1997 tại Nhà Trang Minh</p>
       <p><b>Số trang:</b> 60 trang + bìa và mục lục</p>
-      <p><b>Phạm vi:</b> ~8 thế hệ, khoảng 200 năm, hàng trăm người</p>
+      <p><b>Phạm vi:</b> ~8 thế hệ, khoảng 200 năm, <span class="nodeCount">1145</span> người</p>
       <p><b>Vùng địa lý:</b> Chủ yếu Bến Tre, Tiền Giang, Sài Gòn; sau 1975 có thêm Pháp, Mỹ</p>
     </div>
   </div>
@@ -1027,7 +1058,7 @@ T8. <b>Huỳnh Văn Tú</b>      (mất tích lúc 8 tuổi khi gia đình chạ
     <div class="srcIcon">👤</div>
     <div class="srcBody">
       <h4>Nguyễn Tấn Long</h4>
-      <p>Ông là con của ông <b>Nguyễn Tấn Tân</b> và bà <b>Huỳnh Thị Ngọc</b>, thuộc dòng họ Huỳnh Khắc (nhánh Huỳnh Văn Hơn). Ông là cháu ngoại của Huỳnh Khắc Đầu (đời 4) qua bà Huỳnh Thị Ngọc.</p>
+      <p>Ông là con của ông <b>Nguyễn Tấn Tồn</b> và bà <b>Huỳnh Thị Ngọc</b>, thuộc dòng họ Huỳnh Khắc (nhánh Huỳnh Văn Hơn). Ông là cháu ngoại của Huỳnh Khắc Đâu (đời 4) qua bà Huỳnh Thị Ngọc.</p>
       <p>Ông bắt đầu sưu tầm tài liệu từ khoảng 1988–1990, lần đầu có in tập, và hoàn thành lần thứ 2 (có kiểu chính, bổ sung) vào năm 1997.</p>
     </div>
   </div>
@@ -1063,7 +1094,7 @@ T8. <b>Huỳnh Văn Tú</b>      (mất tích lúc 8 tuổi khi gia đình chạ
     <div class="srcIcon">👥</div>
     <div class="srcBody">
       <h4>Người Đóng Góp Thông Tin Trực Tiếp</h4>
-      <p><b>Bà Lưu Thị Bình (Lưu Thị Ân):</b> Vợ ông Huỳnh Khắc Chung, cung cấp nhiều thông tin về nhánh Kiệm – Thuận – Giàu từ ký ức gia đình qua nhiều thế hệ.</p>
+      <p><b>Bà Lưu Thị Đính (tự Lưu Thị An):</b> Vợ ông Huỳnh Khắc Chung (con Đ5 của Thuận, cháu Đ3 Kiệm), cung cấp nhiều thông tin về nhánh Kiệm – Thuận từ ký ức gia đình qua nhiều thế hệ.</p>
       <p><b>Bà Huỳnh Thị Ngọc:</b> Mẹ tác giả, kể lại nhiều chuyện của bà cố, bà sơ – là nguồn thông tin truyền khẩu quan trọng về hai dòng họ Nguyễn và Huỳnh.</p>
       <p><b>Các bậc cao niên trong họ:</b> Ông Nguyễn Tấn Long đã trực tiếp phỏng vấn nhiều người cao tuổi trong họ qua các chuyến về quê năm 1993, 1994, 1995 để thu thập thông tin chính xác.</p>
     </div>
@@ -1102,6 +1133,371 @@ T8. <b>Huỳnh Văn Tú</b>      (mất tích lúc 8 tuổi khi gia đình chạ
 </div>
 </div><!-- end #tabSources -->
 
+<div class="tabPanel" id="tabStories">
+<div class="storyNav">
+  <span class="sn-era">Thế Kỷ 19</span>
+  <a href="#st-tu">HV Tú – mất tích (~1820s)</a>
+  <a href="#st-vang2">Hũ vàng – ông Hiệp</a>
+  <a href="#st-vang">HT Vàng – Cao Đài (1874)</a>
+  <a href="#st-liem">NT Liêm – giáo dục (1887)</a>
+  <span class="sn-era">Đầu Thế Kỷ 20</span>
+  <a href="#st-saura">Cô Sáu Rạch Cạn</a>
+  <a href="#st-choi">Tư Chơi – Tứ đổ tường</a>
+  <a href="#st-tran">Lý Bửu Trân</a>
+  <a href="#st-hieu">Nghệ sĩ Huỳnh Hiểu</a>
+  <a href="#st-chung">HK Chung – gia phả (1914)</a>
+  <span class="sn-era">Kháng Chiến 1919–1950</span>
+  <a href="#st-hen">HV Hên – 4 câu chuyện (1919)</a>
+  <a href="#st-ton">NT Tồn – cách mạng</a>
+  <a href="#st-chau">NT Châu (1921)</a>
+  <a href="#st-huong">NT Hương – liệt sĩ (1924)</a>
+  <a href="#st-minh">HV Minh – ẩn số (1925)</a>
+  <a href="#st-long">NT Long – biên soạn (1926)</a>
+  <a href="#st-tin">TC Thành – quân y (1927)</a>
+  <a href="#st-khoe">HT Khoẻ – ký ức (1929)</a>
+  <a href="#st-yen">NT Yến &amp; HB Phúc (1929)</a>
+  <a href="#st-dao">NT Đạo – Côn Đảo (1931)</a>
+  <a href="#st-thanh">NT Thạnh – Đại tá (1936)</a>
+  <span class="sn-era">Giai Thoại &amp; Chú Thích</span>
+  <a href="#st-bai">Giai thoại bài bạc</a>
+  <a href="#st-tieng">Tên khai sinh sai</a>
+  <a href="#st-gia-pha">Từ chối ghi gia phả</a>
+  <a href="#st-nhau">Đặt tên "Nhậu" (1986)</a>
+</div>
+<div class="storyContent">
+
+<div class="storyCard" id="st-hieu">
+  <h3>NHẬN XÉT: Nghệ Sĩ Huỳnh Thủ Hiểu – Cuộc Đời Buồn Của Người Nghệ Sĩ <span class="storyTag">Đ6 · Nhánh Hòa</span></h3>
+  <p>Huỳnh Thủ Hiểu – nghệ sĩ cải lương, cháu trong họ, con nuôi tinh thần của NSND Phùng Há. Ông hoạt động nghệ thuật suốt đời nhưng cuối đời rơi vào cảnh nghèo túng và bệnh tật.</p>
+  <p><em>Trích nguyên văn từ tài liệu gia phả (Trang 11–12):</em></p>
+  <blockquote>
+    Nghệ sĩ không phải là nhà kinh doanh. Suốt đời Huỳnh Hiểu chỉ đem nghệ thuật phô diễn cho thiên hạ thưởng lãm; sản nghiệp trong tay không quá vài cây đàn, đôi dàn trống. Tuổi đời càng chồng chất mà sự gạn lọc của nhu cầu quần chúng thì không dung thứ khi người ta chỉ tuyển chọn những nghệ sĩ trẻ, thể hình đẹp có sức thu hút cảm quan khán thính giả. Huỳnh Hiểu đã bị luật đào thải nghiệt ngã chi phối trong hoàn cảnh này; lại vướng thêm bệnh hiểm nghèo là lao phổi kèm theo viêm gan siêu vi B và những biến chứng của nó đua nhau tàn phá hình hài rồi cướp đi mạng sống của người nghệ sĩ về chiều tại bệnh viện Hồng Bàng Tp.HCM trong cảnh nghèo đầy buồn tủi vào tháng 10 năm 1994.
+    <br><br>
+    Thần hài của Huỳnh Hiểu được đưa về quạng tại Nhà Truyền thống ban ái hữu nghệ sĩ (133 Cô Bắc Tp.HCM) do sự giúp đỡ hết lòng trong tình thân thuộc của mợ Phùng Há; mợ phải tổ chức một đêm hát vở Gánh cải Trạng nguyên để trang trải mọi chi phí hỏa thiêu; tro cốt được người vợ sau cùng là cô Quách Muội bảo quản sau bao tháng năm tận tụy nuôi chồng.
+    <br><br>
+    Có thể nói đây là hai niềm thân thương còn đọng lại mà vong linh Huỳnh Hiểu ôm ấp mãi để mang sang bên kia thế giới.
+  </blockquote>
+</div>
+
+<div class="storyCard" id="st-choi">
+  <h3>Cậu Tư Chơi Và Bộ "Tứ Đổ Tường" <span class="storyTag">Đ5 · Nhánh Hòa</span></h3>
+  <p>Cậu Tư Chơi – thuộc thế hệ Đ5 nhánh Huỳnh Văn Hòa, có tài viết tuồng kịch, nhiều vợ, và cuối cùng sa vào rượu chè. Ông là bác ruột của NSND Phùng Há.</p>
+  <p><em>Trích nguyên văn từ tài liệu gia phả (Trang 12–13):</em></p>
+  <blockquote>
+    Như thế đấy, ta những tưởng Cậu chỉ dồi dập qua "những đợt sóng ngầm" tình ái; nhưng không, Cậu tôi còn vướng phải cái thú vui thứ nhất trong bộ Tứ đổ tường "Tửu, Sắc, Tài, Khí", đó là rượu. Thoạt đầu rượu là thú vui, là nguồn hứng phẩm khi viết tuồng kịch, dần đà độc tố tác hại của nó thâm nhiễm vào máu, trở thành nghiện nặng. Nó có sức tàn phá ghê gớm: huỷ diệt hình hài, làm suy giảm niềm thương yêu của người thân thuộc, ngăn trở bước tiến trên sự nghiệp tinh thần của Cậu. Tôi rất lấy làm thương cảm Cậu khi viết những dòng này.
+  </blockquote>
+</div>
+
+<div class="storyCard" id="st-tran">
+  <h3>Lý Bửu Trân – Con Gái Của Tư Chơi Và NSND Phùng Há <span class="storyTag">Đ6 · Nhánh Hòa</span></h3>
+  <p>Lý Bửu Trân – con gái của Cậu Tư Chơi và NSND Phùng Há (nghệ danh của bà Trương Ánh Loan, ngôi sao cải lương lừng danh). Bà thừa hưởng tài năng của cả cha lẫn mẹ nhưng mất sớm.</p>
+  <p><em>Trích từ tài liệu gia phả (Trang 11):</em></p>
+  <blockquote>
+    Lý Bửu Trân thừa hưởng năng khiếu nghệ thuật từ cha mẹ, tinh thông bốn thứ tiếng. Bà mất lúc 33 tuổi vì bệnh thận, để lại tiếc nuối sâu sắc cho gia đình và những người thân thuộc.
+  </blockquote>
+</div>
+
+<div class="storyCard" id="st-vang">
+  <h3>Bà Đ4.T5 Huỳnh Thị Vàng – Người Ly Hôn Rồi Đi Tu Cao Đài <span class="storyTag">Đ4 · Chi Cần</span></h3>
+  <p>Huỳnh Thị Vàng (sinh 1874) – con thứ 5 của Huỳnh Khắc Cần và Lê Thị Lang. Ly hôn không con, sau quy y Cao Đài và sống trọn đời tại Tòa Thánh Tây Ninh.</p>
+  <p><em>Trích nguyên văn từ tài liệu gia phả (Trang 22–23):</em></p>
+  <blockquote>
+    Sinh năm 1874 (Giáp Tuất). Bà là con thứ 5 của Cố Huỳnh Khắc Cần và Lê Thị Lang. Chồng là ông Trường tòa KHUÊ quê ở Nha Mân, Sa Đéc; ông bà ở với nhau 9 năm không con, cả hai đồng ý xé hôn thú, chia đôi gia tài. Bà sống một mình với người giúp việc tên Lụa tại ngôi nhà khá khang trang ở ấp 4 xã Phước Thạnh.
+    <br><br>
+    Sau bà gia nhập đạo Cao Đài tu tại gia. Về già bà rời nhà đến ở tại Tòa thánh Cao Đài, Tây Ninh, thời giáo chủ Phạm Công Tắc. Vườn đất bà giao lại cho em Huỳnh Khắc Đâu quản lý rồi chia lại con cháu, chỉ đem tư trang theo mình đến tu hành tại Tòa Thánh giữ chức Giáo Sư cho đến mất ngày 30-3 Canh Dần (16-5-1950) thì hài được mai táng tại Cực Lạc cũ, thuộc Tòa Thánh Tây Ninh. Hằng năm vào dịp cận Nguyên đán, có người cháu con ông em thứ 7 là dì Huỳnh Thị Khoẻ và em Huỳnh Thị Hiếu đến Tây Ninh làm lễ tảo mộ cúng viếng.
+  </blockquote>
+</div>
+
+<div class="storyCard" id="st-ton">
+  <h3>MỘT ÍT TIỂU SỬ: Nguyễn Tấn Tồn – Người Cha Cách Mạng <span class="storyTag">Đ5 · Chi Cần</span></h3>
+  <p>Nguyễn Tấn Tồn – chồng bà Huỳnh Thị Ngọc (Đ5.T2 của Huỳnh Khắc Đâu), cha ruột của người biên soạn Nguyễn Tấn Long. Ông hoạt động cách mạng từ trước 1930, bị bắt và chết trong tù Pháp ngày 20-7-1946 tại bốt Catinat.</p>
+  <p><em>Trích nguyên văn từ tài liệu gia phả (Trang 23–24) – lời Nguyễn Tấn Long:</em></p>
+  <blockquote>
+    Một điều không may cho anh chị em chúng tôi và cũng là điều thiếu sót của chúng tôi, không còn tìm gặp những bạn bè cùng chí hướng của cha chúng tôi, đã tham gia hoạt động cách mạng trước tháng 8-1945, vì các bác, các chú, người đã hy sinh, người vì tuổi già sức yếu, bệnh hoạn, thậm chí không nói được, do đấy chúng tôi chỉ còn tìm đôi chút hiểu biết qua ký ức của một số ít người lớn kể lại hoặc do sự hiểu biết nông cạn của chúng tôi về những hoạt động cách mạng của cha chúng tôi.
+    <br><br>
+    Là một thầy giáo có tinh thần cấp tiến và tình thương yêu Đất nước, dân tộc đang sống trong gông cùm ngoại bang, cha chúng tôi bỏ nghề dạy trẻ, tham gia phong trào Thanh niên cách mạng đồng chí Hội; được tổ chức tuyển chọn là thanh niên trí thức tiến bộ định đưa sang Quảng Châu (Trung Quốc) học, nhưng vì lỡ việc móc nối nên phải trở về. Không bỏ chí hướng, cha chúng tôi tham gia các tổ chức yêu nước như Phong trào Đông Du, Cuộc khởi nghĩa Nam Kỳ, Hội Khuyến học (một tổ chức chống Pháp công khai) v.v... Các bạn bè của cha chúng tôi đều là những người có tâm huyết, có xu hướng tiến bộ hoặc đảng viên Đảng Cộng sản.
+    <br><br>
+    Theo sự hiểu biết của riêng tôi (Nguyễn Tấn Long), cha tôi hoạt động cách mạng trước năm 1930, vì lúc ấy tôi 13 tuổi (1939) thường phải đến trông coi ngôi nhà cất trên vùng đất trống sáu mẫu, gần ngã tư Tuần Đậu, xã Hữu Định Bến Tre. Nhà xây có cái chòi cao nhô lên khỏi nóc, có thể trông ra xa mà sau này tôi được anh Tư Tôn (hiện 1995 còn ở trên mảnh đất này) kể lại: <em>"Nơi ấy thường tụ họp các nhà hoạt động cách mạng."</em>
+    <br><br>
+    Tháng 8-1945, Cách mạng cướp chánh quyền từ tay Nhựt, thành lập chánh quyền Cách mạng lâm thời tỉnh Bến Tre: một mặt xây dựng lực lượng quân sự để phòng thủ, mặt khác cử cha chúng tôi làm Ủy viên tài chánh phụ trách Ngân khố tỉnh với chức vụ Trưởng ty Ngân khố, Ủy viên kháng chiến hành chánh tỉnh Bến Tre, in bạc Tín dụng tạo nền tài chánh cho tỉnh nhà; hoạt động phối hợp chung với các bạn cùng chí hướng giải phóng dân tộc mà sau này có người đi tù hay hy sinh hoặc trở thành đảng viên Đảng Cộng sản mà đa phần là do cha chúng tôi giác ngộ cách mạng đã nói lại, như các ông Nguyễn Văn Cái, Võ Văn Nhứt, Năm Hữu, Nguyễn Văn Kính, Nguyễn Văn Bá, Hồ Văn Ngôi, Nguyễn Văn Điểm, Ca Văn Thỉnh, Nguyễn Văn Chẩn v.v...
+    <br><br>
+    Năm 1946, với lực lượng quân sự mạnh hơn, Pháp chiếm lại tỉnh Bến Tre, cha chúng tôi được cử đi tìm Ủy ban hành chánh Nam bộ. Tôi được tháp tùng cùng chuyến; đến Sài Gòn, nhờ người bạn, chủ nhà in Hòa Chánh ở đường Cống Quỳnh, che giấu, móc nối ghe bầu chở nước mắm, định vượt ra miền Trung, nhưng trong khi chờ đợi, cha tôi bị bọn mật thám Liên bang Đông Dương phát hiện và bắt giam tại bốt Catinat, chịu nhiều tra tấn phải chết trong tù ngày 20-7-1946, chúng vùi xác ở đâu không rõ, vì những người lớn trong gia đình đều bị bắt ngay sau cái chết này.
+    <br><br>
+    Sau ngày giải phóng miền Nam, một sự trùng hợp ngẫu nhiên, chúng tôi đặt phần mộ tinh thần của cha ngay trên mảnh đất mà cha chúng tôi đã mua trước kia để cất nhà làm nơi tụ họp bạn cùng chí hướng, nay được trưng dụng làm Nghĩa trang Liệt sĩ tỉnh Bến Tre và cũng là nơi an nghỉ cuối cùng của một đời cách mạng.
+  </blockquote>
+
+  <h4>Trích Đoạn Sử Liệu Minh Chứng</h4>
+  <p><em>Trích từ "Hồi ký của Nguyễn Văn Điểm" (1995) – đảng viên kỳ cựu 90 tuổi, người được Nguyễn Tấn Tồn giác ngộ cách mạng:</em></p>
+  <blockquote>
+    "... Bước đầu tìm đường cách mạng, được bạn bè tốt hiểu biết nền tận tâm dìu dắt. Ở trong số những người bạn cùng chí hướng, giờ đây còn ghi nhớ mãi trong ký ức một kỷ niệm lịch sử của bước đầu đến đường cách mạng, gặp cách mạng và theo cách mạng đến ngày nay.
+    <br><br>
+    Chính đ/c Nguyễn Tấn Tồn và Võ Văn Nhứt, hai đồng chí sát cánh kề cận dìu dắt, hướng dẫn sinh hoạt chương trình Mặt trận Việt Minh, khai thông tư tưởng, xây dựng lập trường đấu tranh, đường lối cách mạng v.v... tạo dựng cho mình một hệ thống nhận thức mới, một tâm mới, một lòng tin sắt đá vào tiền đồ cách mạng.
+    <br><br>
+    Cao quý biết bao nhiệt tình của hai đồng chí. Đúng là ân nhân giải thoát cho mình và gia đình ra khỏi con đường đen tối của nô lệ, đổi đời mới, tiến theo đường hưng thạnh, chói lọi của thời đại Hồ Chí Minh. Hơn nữa, đó là những người thầy đầu lãnh đào tạo, xây dựng cho một động cơ tư tưởng tiến bộ, kiến thức khoa học cách mạng để có đủ tinh thần, khả năng cùng nhân dân đi đầu tranh giành lại quyền độc lập, tự do cho đất nước, cho dân tộc sau này."
+    <br>
+    <em>(Trích từ tập 'Hồi ký của NGUYỄN VĂN ĐIỂM')</em>
+  </blockquote>
+</div>
+
+<div class="storyCard" id="st-chau">
+  <h3>Đ6.T2 Nguyễn Tấn Châu – Con Trưởng Thời Kháng Chiến <span class="storyTag">Đ6 · Chi Cần</span></h3>
+  <p>Nguyễn Tấn Châu (sinh 1921) – con trai trưởng của Nguyễn Tấn Tồn và Huỳnh Thị Ngọc, anh cả của Nguyễn Tấn Long.</p>
+  <p><em>Trích nguyên văn từ tài liệu gia phả (Trang 24–25):</em></p>
+  <blockquote>
+    Sinh năm 1921 (Tân Dậu) tại xã Phước Thạnh. Nhỏ học trường Tiểu học Bến Tre, chuyển sang trường Trung học của ông Đốc Chưởng tỉnh Trà Vinh, sau học Trung học Chấn Thanh Sài Gòn. Ra trường về nhà điều hành hiệu tạp hóa Tân Thanh tại thị xã Bến Tre.
+    <br><br>
+    – 1945 tham gia phong trào Thanh niên tiền phong và tước vũ khí quân đội đầu hàng Nhựt Bản tại tỉnh nhà. – 1947 lên Sài Gòn, bị điềm chỉ viên của Pháp bắt đưa đi trại giam Cẩm Giàng (Tây Ninh). Trốn trại ra khu kháng chiến. – 1954 tập kết ra Bắc; đi bộ đội cấp Thiếu úy, được chuyển công tác Ty Cải cách ruộng đất. – 1963 lại chuyển tiếp qua Bộ Ngoại thương Hà Nội. – 1975 giải phóng miền Nam, anh về Tp. Hồ Chí Minh.
+    <br><br>
+    – 1976 nhận tiếp công tác tại Cty xuất nhập khẩu Nông sản thực phẩm (Agrexport) thuộc Bộ ngoại thương tại Tp. Hồ Chí Minh đến năm 1980 về hưu. – 1991 anh bị tai biến mạch máu não; mất ngày 22-8 Tân Mùi, hưởng thọ 71 tuổi.
+  </blockquote>
+</div>
+
+<div class="storyCard" id="st-huong">
+  <h3>Đ6.T3 Nguyễn Tấn Hương – Liệt Sĩ Hy Sinh Năm 1952 <span class="storyTag">Đ6 · Chi Cần</span></h3>
+  <p>Nguyễn Tấn Hương (sinh 1924) – em thứ 3 của Nguyễn Tấn Long, hy sinh trong cuộc ruồng bố lớn năm 1952 tại xã Định Thuỷ huyện Mỏ Cày, Bến Tre.</p>
+  <p><em>Trích nguyên văn từ tài liệu gia phả (Trang 25):</em></p>
+  <blockquote>
+    Sinh năm 1924 (Giáp Tý) tại xã Phước Thạnh Bến Tre. Thuở nhỏ học Tiểu học Phan Thanh Giản rồi Trung học Bến Tre. – 1943 đến Sài Gòn bổ túc Pháp văn, học thêm tiếng Nhựt. – 1945, Nhựt đảo chánh Pháp, không bao lâu thì đầu hàng Đồng Minh, anh tham gia phong trào cách mạng, tước vũ khí quân đội Nhựt tại Bến Tre. Chánh quyền cách mạng phát triển quân đội sâu rộng trong quần chúng, anh đảm trách chánh trị viên Đại đội 888 trực thuộc Trung đoàn 99 và mật đảng Cộng sản Việt Nam, anh là Ủy viên Trung đoàn. – 1949 được đề cử Trưởng ban địch vận tỉnh Bến Tre; rồi lên Thị đội trưởng thị xã Bến Tre năm 1951; hoạt động sát nách địch.
+    <br><br>
+    – 1952, trong cuộc ruồng bố lớn của địch, anh hy sinh ngày 4-2-1952 nhằm 9-1 Nhâm Thìn tại xã Định Thuỷ huyện Mỏ Cày, Bến Tre. Khi đình chiến 1954, được mẹ đưa hài cốt về quê nhà cải táng tại ấp 4 xã Phước Thạnh. Sau ngày giải phóng thống nhất Đất nước, gia đình đưa phần mộ tinh thần vào Nghĩa trang liệt sĩ tỉnh Bến Tre, đặt bên phần mộ của cha là Nguyễn Tấn Tồn. Được khen thưởng nhiều Huân chương. Anh không vợ con.
+  </blockquote>
+</div>
+
+<div class="storyCard" id="st-long">
+  <h3>Đ6.T4 Nguyễn Tấn Long – Người Biên Soạn Gia Phả <span class="storyTag">Đ6 · Chi Cần</span></h3>
+  <p>Nguyễn Tấn Long (sinh 27-10-1926) – con thứ 4 của Nguyễn Tấn Tồn, người đã dành gần 10 năm sưu tầm và biên soạn bộ gia phả này. Ông còn là nhà văn, nhà xuất bản có tiếng.</p>
+  <p><em>Trích nguyên văn từ tài liệu gia phả (Trang 25–26):</em></p>
+  <blockquote>
+    Sinh ngày 27-10-1926 (Bính Dần) tại xã Phước Thạnh, Bến Tre, hiện ngụ tại 25 LA đường Cư xá Đô thành, Quận 3 TP.HCM, Đ.T: 8322667. Lúc nhỏ học trường Tiểu học Phan Thanh Giản, rồi Trung học Châu và Minh Đức Bến Tre. Sau đó chuyển sang học tiếng Quảng Đông Trung Hoa tại trường Phục Hưng, Bến Tre. – 1944 lên Sài Gòn học tiếp tiếng Hoa tại trường Nam Thanh, Chợ Lớn. – 1945 Nhựt đầu hàng Đồng Minh, bị quân ta giải giới, thành lập chánh quyền cách mạng tại tỉnh Bến Tre. Tôi cùng bốn anh chị em tham dự lớp huấn luyện chánh trị đầu tiên tại tỉnh nhà; tiếp đấy học khoá quân sự Trường Quân Chính được tổ chức tại trường Tiểu học Phan Thanh Giản Bến Tre, rồi gia nhập Ban cứu thương tỉnh nhà.
+    <br><br>
+    – 1949 học lại tiếng Pháp tại Trường Huỳnh Khương Ninh. – 1952 vừa làm nhà in vừa học thêm Anh văn; rồi làm Quản lý nhà in vừa công tác trong Ban biên tập các báo. – 1957 là một trong hai sáng lập viên nhà xuất bản Sống Mới. – Cuối 1967, khởi viết bình luận thi ca, đã xuất bản bộ 3 quyển Việt Nam Thi nhân tiền chiến, 1 quyển Khuynh hướng thi ca tiền chiến, bộ 4 quyển Thi ca bình dân, 1 bộ Thi ca hiện đại thế hệ 1954–1973 (đã in 2 quyển), toàn bộ tác phẩm 10 quyển gồm 6.000 trang sách. Làm công tác xuất bản, viết sách, đồng thời lập Nhà in Nguyễn Tấn Long tại 387 đường Võ Văn Tần Q.3 Sài Gòn.
+    <br><br>
+    – 1975 sau ngày giải phóng miền Nam, nhà in Nguyễn Tấn Long được chọn làm thí điểm trong chính sách cải tạo công thương nghiệp miền Nam, nhà nước bố trí cương vị Phó Giám đốc kinh doanh của Xí nghiệp Công tư hợp doanh in số 1; tiếp là chuyên viên kỹ thuật Nhà in Lê Quang Lộc của báo Tuổi Trẻ; sau cùng là Phụ tá Giám đốc Công tư hợp doanh in số 8 cho đến hưu.
+  </blockquote>
+</div>
+
+<div class="storyCard" id="st-yen">
+  <h3>Đ6.T5 Nguyễn Thị Yến Và Thiếu Tướng Hồ Bá Phúc <span class="storyTag">Đ6 · Chi Cần</span></h3>
+  <p>Nguyễn Thị Yến (sinh 26-1-1929) – em gái Nguyễn Tấn Long, trở thành Thứ trưởng và Ủy viên BCH Trung ương Đảng khóa V. Chồng bà là Thiếu tướng Hồ Bá Phúc.</p>
+  <p><em>Trích nguyên văn từ tài liệu gia phả (Trang 26–27):</em></p>
+  <blockquote>
+    <b>Nguyễn Thị Yến:</b> – 1947 vào Khu 8 hoạt động trong Cơ quan Phụ nữ Cứu quốc Nam bộ. – 19-12-1948 được kết nạp Đảng Cộng sản Việt Nam. – 1950–51 Phó Hội trưởng Phụ nữ huyện Gò Quao tỉnh Rạch Giá. – 1951–54 Chánh Văn phòng Phụ nữ Nam bộ. – 1955–58 Phó Văn phòng Phụ nữ Trung ương. – 1960–73 Giám đốc Nhà máy hoa quả Hà Nội. – 1975–82 Tổng Giám đốc Cty Đồ hộp miền Nam. – 1982–88 Thứ trưởng Bộ Lương thực thực phẩm, sau là Bộ Nông nghiệp Công nghiệp thực phẩm. Đồng thời, tham gia BCH Trung ương Đảng CS V.N. khóa V 1982–88. – 1982 tham gia Quốc hội khoá 7 cùng lúc với chồng Hồ Bá Phúc. – 1988 về hưu.
+    <br><br>
+    <em>Được tặng:</em> Huy hiệu thành đồng Tổ quốc – Huân chương kháng chiến hạng 3 – Huân chương chống Mỹ cứu nước hạng 1 – Chiến sĩ thi đua công nghiệp toàn quốc 1958 – Liên tục chiến sĩ thi đua 8 năm liền – Huy chương vì sự nghiệp giải phóng phụ nữ – Huy hiệu 40 năm tuổi Đảng.
+    <br><br>
+    <b>Hồ Bá Phúc:</b> Sinh ngày 4-5-1921. – Tham gia cách mạng năm 16 tuổi. – Vào Đảng Cộng sản năm 1937. – Bị tù Bà Rá rồi đày ra Côn Đảo từ 1939–45. – Ra tù tiếp tục hoạt động tại Cần Thơ. – 10-1945 Chủ nhiệm báo Tiếng súng kháng địch. – 1949 ra Bắc dự lớp Quân chính Trung cao khoá 6 ở Trung Quốc. – 1952–54 Chính trị viên Tiểu đoàn 308. – 1957–61 Phó chủ nhiệm chính trị F.338. – 1961–79 Đại tá Cục phó Cục cán bộ. – 1979–83 Thiếu tướng Phó tư lệnh chính trị Quân khu 9, rồi Chính ủy Quân khu 9. – Tham gia Quốc hội khóa 7. – 1988 về hưu.
+    <br><br>
+    <em>Được tặng:</em> Huân chương kháng chiến hạng 1 – Huân chương quân công hạng 1, 2 – Huân chương chiến công hạng 2 – Huân chương chiến thắng hạng 2, 3 – Huân chương chiến sĩ vẻ vang 1, 2, 3 – Huy hiệu thành đồng Tổ quốc – Huân chương quân kỳ quyết thắng – Huy hiệu 50 năm tuổi Đảng.
+  </blockquote>
+</div>
+
+<div class="storyCard" id="st-dao">
+  <h3>Đ6.T6 Nguyễn Tấn Đạo – Tù Côn Đảo, Chung Thân Khổ Sai <span class="storyTag">Đ6 · Chi Cần</span></h3>
+  <p>Nguyễn Tấn Đạo (sinh 30-8-1931) – em út của Nguyễn Tấn Long, bị kết án tù chung thân và đày ra Côn Đảo 1959–1975.</p>
+  <p><em>Trích nguyên văn từ tài liệu gia phả (Trang 28):</em></p>
+  <blockquote>
+    Nhỏ học trường Tiểu học Phan Thanh Giản Bến Tre; chuyển học Hoa ngữ trường Tri Hành. Sau được cha gửi theo nhà cách mạng Thanh Giang; và đau xương đùi, không thể tiếp tục theo ý định, được anh Võ Văn Khoái đem về Sài Gòn mở năm 1946. – Học tiếp Trung học Nguyễn Văn Khuê. – 1951 tham gia biểu tình của sinh viên cùng lượt với Trần Văn Ơn, rồi ra chiến khu công tác trong Ban Địch vận Bến Tre, chuyển sang Xứ ủy Nam bộ, sau về nhận công tác Phòng Hoa kiều vụ Nam bộ.
+    <br><br>
+    – 1954 đình chiến, không tập kết ra Bắc, được bố trí vào Ban Bình vận đặc khu Sài Gòn – Chợ Lớn cho đến bị bắt năm 1959, bị kết án tù chung thân khổ sai đày ra Côn Đảo. – Ra tù, 1975 giải phóng Sài Gòn, được bố trí ở Ban Tổ chức Quận ủy Quận 2 Tp. Hồ Chí Minh, rồi chuyển qua nhiều cương vị liên tục cho đến là Giám đốc Cty Cung ứng vật tư tổng hợp Quận 1; rồi nghỉ hưu 1992.
+  </blockquote>
+</div>
+
+<div class="storyCard" id="st-thanh">
+  <h3>Đ6.T7 Nguyễn Tấn Thạnh – Đại Tá Quân Đội Nhân Dân <span class="storyTag">Đ6 · Chi Cần</span></h3>
+  <p>Nguyễn Tấn Thạnh (sinh 25-2-1936) – con trai của Nguyễn Tấn Tồn, em út Nguyễn Tấn Đạo, trở thành Đại tá QĐND Việt Nam.</p>
+  <p><em>Trích nguyên văn từ tài liệu gia phả (Trang 28):</em></p>
+  <blockquote>
+    Nhỏ học trường Tiểu học Phan Thanh Giản Bến Tre; rồi lên Trung học năm thứ 1. – 1948 tham gia bộ đội. – 1954 tập kết ra Bắc. – 1959 học Trung cấp Nông lâm Trung ương lớp 10/10. – 1965 về miền Đông Nam bộ cấp Đại úy. – 1989 Đại tá Quân đội Nhân dân Việt Nam. – 1990 về hưu. – 1992 Phó bí thư Đảng ủy Phường 11 Quận 5.
+    <br><br>
+    <em>Được tặng:</em> Huy hiệu thành đồng Tổ quốc – Huân chương chiến thắng hạng 3 – Huân chương chiến sĩ vẻ vang 1, 2, 3 – Huân chương chiến công 2, 3 – Huân chương kháng chiến hạng 1 – Huân chương quân công hạng 3 – Huy chương quân kỳ quyết thắng.
+  </blockquote>
+</div>
+
+<div class="storyCard" id="st-tin">
+  <h3>Trần Công Thành (Tám Tín) – Quân Y Sĩ Chiến Trận <span class="storyTag">Đ6 · Chi Cần</span></h3>
+  <p>Trần Công Thành (tự Tám Tín, sinh 9-5-1927) – con của Trần Thị Trí (cháu gái Huỳnh Khắc Đâu). Ông tham gia kháng chiến từ 1945, phục vụ quân y suốt 30 năm.</p>
+  <p><em>Trích nguyên văn từ tài liệu gia phả (Trang 22):</em></p>
+  <blockquote>
+    1945 tham gia Cộng Hòa Vệ binh tỉnh Mỹ Tho, kháng Pháp. 1947 nhập ngũ Vệ quốc đoàn Mỹ Tho trong Ban Cứu thương. 1950 học y tá trong chiến đấu. 1954 tập kết ra Bắc. 1961 ra trường cấp Thiếu úy quân y sĩ và về Nam trong đợt đầu tiên. 1965 bị thương, lúc bấy giờ là Đội trưởng đội phẫu thuật quân khu (Trung úy), công tác suốt 1972 lên Thượng úy quân khu. 1978 về hưu.
+    <br><br>
+    <em>Trong quá trình công tác được khen:</em> Huân chương chiến thắng hạng 3 – Huân chương kháng chiến 1, 2, 3 – Huân chương chiến sĩ vẻ vang 1, 2, 3 – Huân chương chiến công – Huy hiệu thành đồng Tổ quốc – Huy hiệu quân kỳ – Tuyên công trạng chống càn Đồng Tháp Mười của Bộ tư lệnh Nam bộ – Kỷ niệm kháng chiến.
+  </blockquote>
+</div>
+
+<div class="storyCard" id="st-hen">
+  <h3>Cậu Đ5.T6 Huỳnh Văn Hên – Bốn Câu Chuyện Về Người "Ngoại Hạng" <span class="storyTag">Đ5 · Chi Cần</span></h3>
+  <p>Huỳnh Văn Hên (sinh 1919, con của Huỳnh Khắc Đâu và bà Đặng Thị Dành) – Cán bộ tuyên truyền huyện An Hóa, Liệt sĩ hy sinh 1947. Con người thông minh, ngông nghênh, đầy cá tính.</p>
+  <p><em>Trích nguyên văn từ tài liệu gia phả (Trang 32–33) – lời Nguyễn Tấn Long:</em></p>
+  <blockquote>
+    Nói đến cậu Huỳnh Văn Hên là nói đến con người "ngoại hạng". Cậu có những đặc tính khác thường thể hiện qua cuộc sống thường nhật. Con người cậu chứa đựng cá tính và tư tưởng đặc thù: thông minh, hoạt bát, bình đẳng, ngông và có máu giang hồ được biểu hiện qua những câu chuyện sau đây:
+  </blockquote>
+
+  <h4>1) Không Rườm Rà, Nhưng Giản Dị Thái Quá!</h4>
+  <blockquote>
+    Cậu nguyên là Cán bộ tuyên truyền; nơi nào cần thuyết trình thì cậu đáp ứng ngay; không cầu kỳ, chờ đợi chuẩn bị hành trang gì cả, nhất là phương tiện cá nhân. Làm việc bốn năm ngày, khi cần thay đổi quần áo, cậu chỉ xuống sông trầm mình tắm, cởi quần áo ra vò giặt, rồi vắt ráo nước, lên bờ mặc lại; một vài giờ sau với thân nhiệt sẽ làm khô ngay.
+  </blockquote>
+
+  <h4>2) Ai Vậy?</h4>
+  <blockquote>
+    Có một buổi đang thuyết trình đề tài về tình hình thế giới, cậu nói lưu loát, nhuần nhuyễn, phụ họa thêm những hình vẽ bằng đồ các nước liên hệ cho thính giả dễ tiếp thu. Một đồng chí trong phái đoàn tỉnh ghé tham quan hoạt động tuyên truyền huyện, mới hỏi: "Ai vậy?"
+    <br>
+    Được trả lời: "Thuyết trình viên là con một điền chủ."
+    <br>
+    – Con điền chủ mà tiến bộ thế sao?
+  </blockquote>
+
+  <h4>3) Nếu Các Em Muốn 'Chơi' Một Chuyến</h4>
+  <blockquote>
+    Cậu thường giao du với anh em nghèo và muốn thỏa mãn mong ước của anh em. Một hôm cậu giả bệnh nằm dưỡng gần tủ sắt của ông ngoại tôi (cha cậu), rình thấy ông già mở tủ lấy tiền chi hằng ngày, xong cất giấu chìa khóa. Cậu lén lấy mở tủ đánh cắp một cây vàng, rồi đổi ra tiền mua cho anh em mỗi người một bộ đồ và đôi guốc vông mới. Thầy trò xun xoe lên xe kéo nhau ra chợ Bến Tre, vào tiệm cơm cạnh bờ sông, ăn uống no nê, thừa mứa. Cậu bảo nhau ra cầu tàu móc họng ói mửa thức ăn rồi trở lại quán ăn tiếp. Chơi 'sứa' cả cuộc đời mấy ngày liền hết nhẵn cả túi. Cậu ra lệnh: "Mạnh thằng nào lỗi bộ về nhà nấy."
+    <br><br>
+    Vụ việc đổ bể, ông già phát giác mất vàng, nổi giận lấy chĩa dừa rượt đánh cậu và phóng chĩa vào người cậu; cậu né khỏi. Sau đó cậu cạo đầu trọc lốc, nằm nhà cả tháng trời để ăn năn về việc làm của mình.
+  </blockquote>
+
+  <h4>4) Tàn Sát Để Trả Thù – Cuộc Giỗ Hội 06-1-1947</h4>
+  <blockquote>
+    Câu chuyện mang tính chất bi kịch. Số là trước cuộc tàn sát làng Phước Thạnh không lâu, cha vợ của quan hai Leroy (Pháp lai Việt) bị V.M. giết tại Bình Đại. Leroy mang hận thù, lại vừa nhận được lệnh của Toàn quyền Đông Dương thực thi qua Bộ Tham mưu quân lực Pháp chủ trương Ba sạch: Đốt sạch, giết sạch, phá sạch những vùng có lực lượng mạnh của V.M. để răn đe. Cuộc hành quân tảo thanh dưới quyền chỉ huy của Leroy phối hợp đa số lính Maroc và lính ngụy gồm hai tiểu đoàn chia ba cánh.
+    <br><br>
+    <b>a) Kẻ Chết:</b> Khi con người mang lòng căm hận, chúng không từ bỏ hành động hung dữ, tàn bạo đến dã man. Quần chúng Phước Thạnh phải gánh chịu nạn kiếp này. Chúng điên cuồng bắn giết người không loại trừ già trẻ bé lớn, cướp của, đốt nhà. Cả gia đình Bác Tư tôi 7 người bị tiêu diệt, chị Đẹp và đứa con nhỏ bị ném vào lửa nhà đang cháy; mấy ấp trên có 3 nhà mỗi gia đình bị giết 5 người. Thảm họa đi qua như những nhát vụt ngang của lưỡi hái tử thần, cướp đi 50–60 sinh mạng người dân xã Phước Thạnh. Hành động khủng bố được nổi tiếng nghe đến mà rùng rợn, đó là: <b>"Cuộc tàn sát ngày 06-1-1947 (nhằm ngày 15-12 năm Bính Tuất)."</b> Hằng năm, người dân xã Phước Thạnh lấy ngày này làm ngày Giỗ Hội mà người chủ tế cũng như khách tham dự vẫn còn đọng mãi trong lòng nỗi ngậm ngùi tưởng nhớ ngày kinh hoàng đầy tang tóc mà con cháu họ đời đời không bao giờ quên được.
+    <br><br>
+    <em>Đôi lời thơ của nhà thơ Truy Phong minh họa:</em><br>
+    <em>... Anh bắn, anh giết, / Anh băm, anh dầm, / Anh đày Bà Rá, Côn Nôn, / Anh đọa Sơn La, Lao Bảo. / Anh giựt hết cơm hết áo, / Anh đoạt hết bạc hết vàng. / Chặt đầu ông lão phơi hàng thịt. / Mổ mật thanh niên giữa chiến trường. / Cối quyết trẻ thơ văng máu óc, / Phanh thây sản phụ ném vào than.</em>
+    <br><br>
+    <b>b) Người Sống:</b> Đồng thời với cuộc hành quân của hai cánh trên, cánh 3 từ bến đò ở cuối xã Phước Thạnh đi lên; chúng gom bắt thanh niên, đàn ông 70–80 người, xếp hàng tư đi dài đến nhà ông ngoại tôi; chúng ghé thấy gia đình đang ăn cơm gồm ông ngoại, cậu Hên, dì Khoẻ, em Miêng v.v... Cậu Hên được kêu ra. Tên chỉ huy người Pháp chỉ đám người bị bắt hỏi, có phải Việt Minh không? Cậu trả lời trôi chảy bằng tiếng Pháp rằng họ là dân làm ăn chân chất ở đây. Việt Minh đã rút đi rồi.
+    <br><br>
+    Câu chuyện trao đổi diễn tiến trong không khí bớt dần căng thẳng. Cuối cùng tên chỉ huy người Pháp ra lệnh thả và mời cậu tôi hợp tác. Cậu từ chối nói rằng còn phải lo phụng dưỡng ông già mà các ông vừa thấy ban nãy. Cậu dẫn và giới thiệu nhà mình với đám quân. Sau đấy bắt con heo làm thịt đãi đằng. Thế là chúng tránh được tội ác giết người lương thiện, mà dân ấp 4 nhờ đấy cũng tránh được đại họa phải tăng thêm danh sách "giỗ hội" cho người thân tộc.
+    <br><br>
+    Nhưng... Sau đấy cậu phải chết trong một cuộc ruồng bố khác. Giữa lúc quân khủng bố tràn tới, người ta thấy cậu chạy về phía sông hồ, rồi mất tích không tìm thấy xác sau cuộc ruồng bố. Tôi nghĩ, có lẽ cậu chui trốn vào bụi ô rô nào đấy ở ven sông; mà thói thường lính ruồng bố hay ria bắn vãi đạn vào những bụi rậm tình nghi. Có thể cậu bị chết vì những loạt đạn ấy, xác bị gài cứng trong đám ô rô mà sau đấy nhiều ngày người ta vẫn không tìm thấy xác nổi lên. Cho nên mãi đến nay cái chết của cậu Hên vẫn nằm trong bóng tối đầy nghĩ vấn của mọi người.
+    <br><br>
+    <em>Cậu chết để lại 2 vợ và 2 con.</em>
+  </blockquote>
+</div>
+
+<div class="storyCard" id="st-khoe">
+  <h3>Dì Đ5.T9 Huỳnh Thị Khoẻ – Người Giữ Ký Ức Dòng Họ <span class="storyTag">Đ5 · Chi Cần</span></h3>
+  <p>Huỳnh Thị Khoẻ (sinh 1929, con út của Huỳnh Khắc Đâu và bà Đặng Thị Dành) – người duy nhất còn lại trong chi hệ, là kho lưu trữ sống về lịch sử dòng họ Huỳnh.</p>
+  <p><em>Trích nguyên văn từ tài liệu gia phả (Trang 34–35):</em></p>
+  <blockquote>
+    Có thể nói Dì Khoẻ là người cuối cùng của một chi hệ xưa còn sót lại rất am tường về dòng họ HUỲNH. Dì có điều kiện tốt nhất mà khó có người nào được hưởng. Dì được truyền đạt mọi diễn biến trong dòng họ; sự truyền đạt này coi như bài tập thường nhật do người cha kể lại. Nó như bài kinh nhật tụng mỗi sáng của nhà chùa.
+    <br><br>
+    Số là ông ngoại tôi có bệnh ho đêm, cứ khoảng 4, 5 giờ sáng sương muối xuống là cơn ho nổi lên, phải dậy uống trà nóng mới hết. Thế là dì Khoẻ cũng phải dậy nấu nước cung phụng. Uống vào vài chung trà nóng, cổ họng thoải mái; nhưng đã gần sáng thì làm sao ngủ lại được, nhất là người già. Thế là ông ngoại tôi quay lại hồi ức về những sự kiện từng người việc lần lượt thuật lại. Người nghe phải kính cẩn lắng tai; rồi góp ý, rồi hỏi thêm và được giải thích. Cứ thế năm này qua năm khác 'văn ôn võ luyện', cả khối thông tin về dòng họ thẩm thấu lưu trữ trong đầu óc Dì nên tôi dám kết luận như trên.
+    <br><br>
+    Chính Dì đã cung cấp nguồn tin tức về các bà Cố Huỳnh Thị Đây, Huỳnh Thị Tầm, Huỳnh Văn Tú, Huỳnh Thị Tài và bổ sung nhiều chi tiết khác về tám người con của Tổ HUỲNH VĂN HƠN mà trong gia phả của cậu Huỳnh Khắc Chung bị tắt nghẽn.
+    <br><br>
+    Có những cái phức tạp hoặc bặt tin quá lâu mà Dì không còn liên lạc được, tôi chỉ cho tôi ai là người có thể tháo gỡ được. Đặc biệt Dì cho biết hai ông Tổ Đời 2 HUỲNH VĂN HÒA và HUỲNH VĂN HƠN còn có người chị thứ hai là bà Tằng Bành Đại Bến Tre gần cửa Sông Đại, Sông Tiểu đổ ra biển. Bà Sơ Hai nay có chồng và con cháu chuyển sang họ VÕ. Dì cho biết cách đây vài năm (1993), có người cháu nội bà Sơ Hai đến xã Phước Thạnh tìm bà con họ HUỲNH theo lời di chúc của bà Sơ trước lúc lâm chung. Dì Khoẻ cung cấp sơ lược thông tin về họ Huỳnh và có đi thăm trả lễ đến Thủ Ba Lai; được những trưởng thượng tiếp đón ân cần.
+    <br><br>
+    Trong quá trình sưu tầm thiết lập lại gia phả, tôi có cái may gặp được Dì út Khoẻ bên họ Huỳnh, và cậu chín Tương bên họ Lê (họ của bà Cố Lê Thị Lang) là những người có khả năng cung cấp các dữ kiện cần thiết để hoàn thành phần lớn gia phả họ Huỳnh, họ Lê, bằng không tôi sẽ bị rơi vào tình trạng bế tắc hoặc thiếu nhiều tài liệu.
+  </blockquote>
+</div>
+
+<div class="storyCard" id="st-minh">
+  <h3>Đ5.T8 Huỳnh Văn Minh – "Còn Là Ẩn Số" <span class="storyTag">Đ5 · Chi Cần</span></h3>
+  <p>Huỳnh Văn Minh (sinh 1925, con Huỳnh Khắc Đâu và bà Đặng Thị Dành) – hoạt động cách mạng nhiều năm, về hưu năm 1983 rồi qua đời bí ẩn.</p>
+  <p><em>Trích từ tài liệu gia phả (Trang 34):</em></p>
+  <blockquote>
+    Nhỏ học trường Tiểu học Phan Thanh Giản, rồi Trung học Trung Châu Bến Tre; tiếp đó Trung học Lê Bá Cang Sài Gòn; ra trường về cưới vợ. – 1945 hoạt động cách mạng ở xã Phước Thạnh. – Cán bộ tuyên truyền huyện An Hóa. – 1949 chuyển công tác quân sự làm Tổ trưởng tuyên truyền huyện đội; chuyển tiếp làm Cán bộ huấn luyện Trường Dân quân thuộc Bộ Tư lệnh Khu 8. – 1950 Phó Giám đốc Trường Quân chính Bến Tre. – 1951–54 Huyện ủy Huyện Long Mỹ Cần Thơ. – 1956 hoạt động chính trị địa phương Phước Thạnh bị bể. – 1957–59 lánh né lên Chợ Lớn. – 1960 trở về huyện đến khi mất năm 1983, 59 tuổi.
+    <br><br>
+    <em>(Sự mất mát cậu Huỳnh Văn Minh còn là ẩn số của một vấn đề.)</em>
+  </blockquote>
+</div>
+
+<div class="storyCard" id="st-tieng">
+  <h3>Cái Tên Khai Sinh Sai Vì Ông Chánh Lục Bộ Kém Văn Hóa <span class="storyTag">Đ5 · Chi Cần</span></h3>
+  <p>Chuyện về tên "Huỳnh Văn Tiếng" – một cái tên sai từ đầu vì lỗi của người làm khai sinh, và hậu quả kéo dài qua nhiều thế hệ.</p>
+  <p><em>Trích nguyên văn từ tài liệu gia phả (Trang 29):</em></p>
+  <blockquote>
+    Có một sai lầm do kém văn hóa và thiếu tinh thần trách nhiệm của ông Chánh lục bộ xã Phước Thạnh là viết vào khai sinh cậu tư tôi tên Tiếng <em>(có G, chữ văn Tiếng không có trong tự điển)</em>; lẽ ra theo ý ông ngoại tôi (Nguyễn Tấn Long) đặt tên Tuyển để rồi đặt tiếp con thứ 5 tên Lựa <em>(tên dì Năm tôi, Tuyển Lựa)</em>. Chữ Tiếng tai hại này đã dính chết vào khai sinh của các con mà không sao thay đổi được.
+  </blockquote>
+</div>
+
+<div class="storyCard" id="st-chung">
+  <h3>Đ5.T9 Huỳnh Khắc Chung – Người Bảo Tồn Gia Phả Dòng Họ <span class="storyTag">Đ5 · Chi Kiệm</span></h3>
+  <p>Huỳnh Khắc Chung (sinh 31-8-1914, con Huỳnh Khắc Thuận) – giáo viên, người đã dày công sưu tầm và lưu giữ gia phả trong những năm tháng thất nghiệp sau 1975.</p>
+  <p><em>Trích nguyên văn từ tài liệu gia phả (Trang 44) – lời Nguyễn Tấn Long:</em></p>
+  <blockquote>
+    Sinh ngày 11-7 Giáp Thân (31-8-1914). Cuộc đời trải qua nhiều thăng trầm, dạy học qua các trường Tân Thanh, Đạt Đức, Văn Hiến, Bồ Đề, Đông Hồ, Nguyễn Bá Tòng.
+    <br><br>
+    Từ 1975 đến 1980, ông chịu cảnh thất nghiệp, dành thời gian nghiên cứu, sưu tầm tài liệu bổ sung hoàn thành tập Gia phả dày 25 trang đánh máy vào cuối tháng 10-1980.
+    <br><br>
+    Xác nhận tập gia phả cổ khổ 16x25cm gồm 32 trang viết trên giấy dày do cậu Huỳnh Khắc Chung lưu giữ là một báu vật dòng họ.
+    <br><br>
+    Ông bà Chung – Đính không có con, nên nuôi các cháu: Huỳnh Khắc Khiêm, Huỳnh Thị Trinh Khiết, Huỳnh Thị Minh Nguyệt, Huỳnh Khắc Phùng (con cậu Giàu) và Huỳnh Khắc Tiên (con cậu Trừ). Hiện nay bà Chung ở neo đơn tại căn nhà nhỏ hẻm đối diện trường Bùi Thị Xuân, được Huỳnh Khắc Khiêm cấp dưỡng hằng tháng.
+  </blockquote>
+</div>
+
+<div class="storyCard" id="st-saura">
+  <h3>Nghi Vấn Lịch Sử: Cô Sáu Rạch Cạn Là Ai? <span class="storyTag">Đ4 · Chi Kiệm</span></h3>
+  <p>Trong gia phả cũ của Huỳnh Khắc Chung, có ghi chú về một người con gái của Huỳnh Khắc Kiệm mà lai lịch cho đến nay vẫn là bí ẩn.</p>
+  <p><em>Trích nguyên văn từ tài liệu gia phả (Trang 48):</em></p>
+  <blockquote>
+    Theo gia phả xưa, ông Kiệm có 3 bà mà chỉ đề cập hậu duệ của 2 bà (Bà chánh Nguyễn Thị Ngàn và Bà kế Lê Thị Hàng). Cậu Chung ghi chú có một người con gái gọi là <b>Cô Sáu Rạch Cạn</b>. Lai lịch của bà vẫn là một nghi vấn, có giả thuyết cho rằng bà là con của người vợ thứ 3 không chính thức nào đó của ông Kiệm.
+  </blockquote>
+</div>
+
+<div class="storyCard" id="st-bai">
+  <h3>Giai Thoại Vui: Hai Anh Em Ngô Văn Sửu – Trình Gạt Ông Ngoại Tiền Đánh Bạc <span class="storyTag">Đ5 · Chi Kiếm</span></h3>
+  <p>Ngô Văn Sửu và Ngô Văn Trình – hai con trai của Ngô Văn Viên (cháu ngoại Huỳnh Thị Tằm) – hai anh em mê bài bạc đến mức dàn dựng câu chuyện dối trá để xin tiền ông ngoại.</p>
+  <p><em>Trích nguyên văn từ tài liệu gia phả (Trang 50):</em></p>
+  <blockquote>
+    Hai ông Sửu và Trình chơi bài thua sạch tiền, đã dựng lên câu chuyện gạt ông ngoại (ông Huỳnh Khắc Đâu) rằng vợ mới chết không có tiền chôn cất để xin tiền ăn gian đi đánh bài tiếp.
+  </blockquote>
+</div>
+
+<div class="storyCard" id="st-vang2">
+  <h3>Truyền Thuyết Hũ Vàng Của Ông Bà Nguyễn Văn Ngạn <span class="storyTag">Đ3 · Chi Kiếm</span></h3>
+  <p>Nguyễn Văn Ngạn (Huyện hàm) – chồng của bà Huỳnh Thị Kiếm (Đ3.T6, con Huỳnh Văn Hơn). Ông bà từng nghèo khó nhưng trở nên giàu có bất ngờ, và dân gian lưu truyền câu chuyện về hũ vàng.</p>
+  <p><em>Trích nguyên văn từ tài liệu gia phả (Trang 50):</em></p>
+  <blockquote>
+    Ông Nguyễn Thanh Phong (cha ông Ngạn) đến lập nghiệp tại vùng Phú An Hòa. Ông Hiệp (con thứ 11) cưới bà Huỳnh Thị Kiếm. Ban đầu cuộc sống nghèo khó đi mò tôm bắt cá, sau đó nhờ chí thú làm ăn trở nên vô cùng giàu có. Người ta truyền tai nhau rằng ông Hiệp khi xóc cột nhà đã đụng phải hũ vàng.
+  </blockquote>
+</div>
+
+<div class="storyCard" id="st-liem">
+  <h3>NHẬN XÉT: Gia Đình Nguyễn Thanh Liêm – Chí Lớn Đầu Tư Giáo Dục <span class="storyTag">Đ4 · Chi Kiếm</span></h3>
+  <p>Nguyễn Thanh Liêm (Đ4.T6, con bà Huỳnh Thị Kiếm – sinh 15-8-1887, mất 18-1-1968) – người đã đầu tư toàn bộ tài sản vào học vấn các con, tạo nên một gia đình nổi danh.</p>
+  <p><em>Trích nguyên văn từ tài liệu gia phả (Trang 51) – nhận xét của Nguyễn Tấn Long:</em></p>
+  <blockquote>
+    Sự thành đạt trong sự nghiệp của gia đình này, theo tôi nghĩ, do ông Nguyễn Thanh Liêm là người có chí lớn. Ông đã đầu tư mạnh vào trí tuệ các con. Với ý nghĩa tên mình và của các con, ta có thể đúc kết một câu: <em>"Làm người thì phải trong sạch và có chí lớn để tạo lập cơ nghiệp."</em> Cái chí lớn và ước vọng của ông đã thành hiện thực. Con cái hiểu được ý ông nên tự rèn luyện khả năng xây dựng sự nghiệp đời mình mà điển hình ông Nguyễn Thành Lập là chủ Ngân hàng Việt Nam đầu tiên kinh doanh đồng thời với các chủ Ngân hàng nước ngoài. Các người khác đều tự tạo cho mình một vị trí đáng kính trong xã hội.
+  </blockquote>
+  <p>Các con của Nguyễn Thanh Liêm (với bà Đặng Thị Tích):</p>
+  <ul>
+    <li><b>Nguyễn Thành Đại</b> (Albert) – mất tại Pháp năm 1994</li>
+    <li><b>Nguyễn Thị Tạo</b> (Marite) – chồng Nhơn, chủ Hãng Olympic Sài Gòn</li>
+    <li><b>Nguyễn Thành Lập</b> – du học Cao học thương mại Pháp; Giám đốc Việt Nam Ngân hàng (Société annamite de crédit); mất tại Pháp 1993 vì bệnh tim</li>
+    <li><b>Nguyễn Thành Cơ</b> (Jean) – mất tại Pháp khoảng 1988</li>
+    <li><b>Nguyễn Thị Nhơn</b> (Marie) – lấy chồng Mỹ, định cư Hoa Kỳ</li>
+  </ul>
+</div>
+
+<div class="storyCard" id="st-nhau">
+  <h3>Chuyện Đặt Tên "Nhậu" Vì Cha Uống Rượu Trì Hoãn Khai Sinh <span class="storyTag">Đ6 · Chi Tài</span></h3>
+  <p>Một chi tiết hài hước trong gia phả về việc đặt tên khai sinh bị trì hoãn vì người cha say rượu.</p>
+  <p><em>Trích nguyên văn từ tài liệu gia phả (Trang 40):</em></p>
+  <blockquote>
+    <b>Nguyễn Văn Nhậu</b> sinh 1986 (Bính Dần) – <em>(do cha uống rượu, trì hoãn đặt tên khai sinh nên thành danh .... Nhậu).</em>
+  </blockquote>
+</div>
+
+<div class="storyCard" id="st-gia-pha">
+  <h3>Gia Chủ Từ Chối Không Cho Ghi Tên Vào Gia Phả <span class="storyTag">Đ6 · Chi Tài</span></h3>
+  <p>Một trường hợp hiếm có trong gia phả: một thành viên gia đình đã yêu cầu không được ghi tên mình vào tài liệu.</p>
+  <p><em>Trích nguyên văn từ tài liệu gia phả (Trang 58):</em></p>
+  <blockquote>
+    <em>(1) Gia chủ có yêu cầu đừng ghi tên anh vào gia phả, vì lẽ đó mà chi tiết về các con không được đầy đủ.</em>
+  </blockquote>
+</div>
+
+<div class="storyCard" id="st-tu">
+  <h3>Đ3.T8 Huỳnh Văn Tú – Người Con Mất Tích Hồi 8 Tuổi <span class="storyTag">Đ3 · Huỳnh Văn Hơn</span></h3>
+  <p>Huỳnh Văn Tú – con út dòng chính thất của Tổ Huỳnh Văn Hơn (Đ2.T6), bị thất lạc trong thời chạy loạn khi còn thơ bé và không bao giờ tìm lại được.</p>
+  <p><em>Trích nguyên văn từ tài liệu gia phả (Trang 54):</em></p>
+  <blockquote>
+    Trong tập gia phả của cậu Huỳnh Khắc Chung không đề cập ông Cố HUỲNH VĂN TÚ. Chuyện do ông Cố tôi là Huỳnh Khắc Cần kể lại cho con là Huỳnh Khắc Đâu (cha của dì Huỳnh Thị Khoẻ) thì ông Cố Đời 2 HUỲNH VĂN HƠN có người con út dòng chính thất tên HUỲNH VĂN TÚ bị thất lạc hồi 8 tuổi trong thời chạy loạn, coi như mất tích nên không ghi lại sự kiện.
+  </blockquote>
+</div>
+
+</div><!-- end storyContent -->
+</div><!-- end #tabStories -->
+
 </div><!-- end #tabContent -->
 
 <div id="tip"><div class="tName" id="tipName"></div><div class="tInfo" id="tipInfo"></div></div>
@@ -1122,7 +1518,7 @@ const DATA = {
       title:"Trưởng Nữ Đời 2 – Bà Sơ Hai",
       spouse:"Chồng họ Võ (không rõ tên)",
       residence:"Vùng Tằng Bành Đại, Bến Tre (gần cửa Sông Đại, Sông Tiểu đổ ra biển)",
-      notes:"Trưởng nữ (T2) của Cao Tổ HUỲNH VĂN BÁU. Không rõ năm sinh và ngày mất. Là chị của hai ông Tổ Đời 2 HUỲNH VĂN HÒA (Nhánh 1) và HUỲNH VĂN HƠN (Nhánh 2).\n\nTheo phong hóa xưa, bà là phận gái có chồng phải theo chồng xa xứ, nên bặt liên lạc với họ hàng. Con cái chuyển sang họ chồng, tin tức về bà mờ dần – vì vậy gia phả cổ họ Huỳnh không ghi rõ về bà.\n\nTheo lời kể của Dì út HUỲNH THỊ KHOẺ (sinh 1929, con út ông HUỲNH KHẮC ĐẦU, người am tường nhất dòng họ): Bà theo chân các em trên đường vào Nam. Sau khi lực lượng kháng chiến tan rã, bà ra dân, lấy chồng họ Võ, định cư tại vùng Tằng Bành Đại – Bến Tre (gần cửa Sông Đại, Sông Tiểu đổ ra biển). Hậu duệ mang họ Võ, còn gọi bà là 'Bà Sơ Hai'.\n\nKhoảng năm 1993, có người cháu nội của bà (họ Võ) tìm về xã Phước Thạnh theo di chúc của bà trước lúc lâm chung để tìm lại bà con họ Huỳnh. Dì Khoẻ cung cấp thông tin và đi thăm trả lễ tại Thủ Ba Lai; được các trưởng thượng họ Võ tiếp đón ân cần.",
+      notes:"Trưởng nữ (T2) của Cao Tổ HUỲNH VĂN BÁU. Không rõ năm sinh và ngày mất. Là chị của hai ông Tổ Đời 2 HUỲNH VĂN HÒA (Nhánh 1) và HUỲNH VĂN HƠN (Nhánh 2).\n\nTheo phong hóa xưa, bà là phận gái có chồng phải theo chồng xa xứ, nên bặt liên lạc với họ hàng. Con cái chuyển sang họ chồng, tin tức về bà mờ dần – vì vậy gia phả cổ họ Huỳnh không ghi rõ về bà.\n\nTheo lời kể của Dì út HUỲNH THỊ KHOẺ (sinh 1929, con út ông HUỲNH KHẮC ĐÂU, người am tường nhất dòng họ): Bà theo chân các em trên đường vào Nam. Sau khi lực lượng kháng chiến tan rã, bà ra dân, lấy chồng họ Võ, định cư tại vùng Tằng Bành Đại – Bến Tre (gần cửa Sông Đại, Sông Tiểu đổ ra biển). Hậu duệ mang họ Võ, còn gọi bà là 'Bà Sơ Hai'.\n\nKhoảng năm 1993, có người cháu nội của bà (họ Võ) tìm về xã Phước Thạnh theo di chúc của bà trước lúc lâm chung để tìm lại bà con họ Huỳnh. Dì Khoẻ cung cấp thông tin và đi thăm trả lễ tại Thủ Ba Lai; được các trưởng thượng họ Võ tiếp đón ân cần.",
       children:[
         {id:"d3-vo-con-mau", name:"Con của Bà Mậu (họ Võ, không rõ tên)", gender:"unknown", gen:3,
          notes:"Con trực tiếp của bà Huỳnh Thị Mậu và chồng họ Võ. Tên không được ghi lại trong gia phả. Hậu duệ định cư vùng Tằng Bành Đại, Bến Tre.",
@@ -1596,8 +1992,8 @@ const DATA = {
           title:"Con thứ 2 (T2) – Chi Cố Tổ",
           birth:"1846 (Bính Ngọ)", death:"1911 (Tân Hợi)",
           spouse:"LÊ THỊ LANG (1848 Mậu Thân – 1904 Giáp Thìn)",
-          intro:"◇ CHI CỐ TỔ ĐỜI 3 – HUỲNH KHẮC CẦN VÀ HẬU DUỆ\n\nÔng Cố Tổ Huỳnh Khắc Cần (1846–1911) là con thứ 2 (T2) của Tằng Tổ Huỳnh Văn Hơn và bà Dương Thị Liễu. Bà vợ là Lê Thị Lang (1848–1904), quê ở Chợ Giữa, Châu Thành, Bến Tre. Ông bà cố đều được mai táng tại đất nhà trước nhà cháu nội trai trưởng Huỳnh Khắc Thành (tự Nhành) ở ấp 4 xã Phước Thạnh. Ông bà sinh được 8 người con: T2 Dung (chết nhỏ), T3 Học (chết nhỏ), T4 Lượng, T5 Vàng, T6 (chết nhỏ vì độc khoai mì), T7 Đầu, T8 Chợ, T9 Mỹ. Tài liệu gia phả chi tiết từ trang 19–40.",
-          notes:"Con thứ 2 (T2) của Tổ Đ2 Huỳnh Văn Hơn và bà Dương Thị Liễu. Sinh 1846 (Bính Ngọ), mất 1911 (Tân Hợi), thọ 66 tuổi. Vợ là LÊ THỊ LANG (1848 Mậu Thân – 1904 Giáp Thìn), quê Chợ Giữa, Châu Thành, Bến Tre. Sinh 8 con (T2–T9): T2 Huỳnh Thị Dung (chết nhỏ), T3 Huỳnh Văn Học (chết nhỏ), T4 Huỳnh Văn Lượng (1872, vợ Trương Thị Cúc), T5 Huỳnh Thị Vàng (1874, không con), T6 (chết 5-6 tuổi, trúng độc khoai mì), T7 Huỳnh Khắc Đầu (1879, V1 Chổi + V2 Dành), T8 Huỳnh Thị Chợ (1884), T9 Huỳnh Thị Mỹ (1886). Hậu duệ ghi chép ở trang 19–40 gia phả.",
+          intro:"◇ CHI CỐ TỔ ĐỜI 3 – HUỲNH KHẮC CẦN VÀ HẬU DUỆ\n\nÔng Cố Tổ Huỳnh Khắc Cần (1846–1911) là con thứ 2 (T2) của Tằng Tổ Huỳnh Văn Hơn và bà Dương Thị Liễu. Bà vợ là Lê Thị Lang (1848–1904), quê ở Chợ Giữa, Châu Thành, Bến Tre. Ông bà cố đều được mai táng tại đất nhà trước nhà cháu nội trai trưởng Huỳnh Khắc Thành (tự Nhành) ở ấp 4 xã Phước Thạnh. Ông bà sinh được 8 người con: T2 Dung (chết nhỏ), T3 Học (chết nhỏ), T4 Lượng, T5 Vàng, T6 (chết nhỏ vì độc khoai mì), T7 Đâu, T8 Chợ, T9 Mỹ. Tài liệu gia phả chi tiết từ trang 19–40.",
+          notes:"Con thứ 2 (T2) của Tổ Đ2 Huỳnh Văn Hơn và bà Dương Thị Liễu. Sinh 1846 (Bính Ngọ), mất 1911 (Tân Hợi), thọ 66 tuổi. Vợ là LÊ THỊ LANG (1848 Mậu Thân – 1904 Giáp Thìn), quê Chợ Giữa, Châu Thành, Bến Tre. Sinh 8 con (T2–T9): T2 Huỳnh Thị Dung (chết nhỏ), T3 Huỳnh Văn Học (chết nhỏ), T4 Huỳnh Văn Lượng (1872, vợ Trương Thị Cúc), T5 Huỳnh Thị Vàng (1874, không con), T6 (chết 5-6 tuổi, trúng độc khoai mì), T7 Huỳnh Khắc Đâu (1879, V1 Chổi + V2 Dành), T8 Huỳnh Thị Chợ (1884), T9 Huỳnh Thị Mỹ (1886). Hậu duệ ghi chép ở trang 19–40 gia phả.",
           children:[
             {id:"d4-dung-can", name:"HUỲNH THỊ DUNG", gender:"female", gen:4, notes:"T2. Chết nhỏ, không có hậu duệ.", children:[]},
             {id:"d4-hoc-can", name:"HUỲNH VĂN HỌC", gender:"male", gen:4, notes:"T3. Chết nhỏ, không có hậu duệ.", children:[]},
@@ -1793,7 +2189,7 @@ const DATA = {
               children:[]
             },
             {
-              id:"d4-dau", name:"HUỲNH KHẮC ĐẦU", gender:"male", gen:4,
+              id:"d4-dau", name:"HUỲNH KHẮC ĐÂU", gender:"male", gen:4,
               birth:"1879 (Kỷ Mão)", death:"23-8-1965 (Ất Tỵ, hồi 19 giờ)",
               spouse:"V1 NGUYỄN THỊ CHỔI (hay GIỎI, 1883 Quý Mùi – 20-7-1964 Giáp Thìn); V2 ĐẶNG THỊ DÀNH (1886 Bính Tuất – 6-3-1964 Giáp Thìn)",
               notes:"T7. Sinh 1879 (Kỷ Mão), mất 23-8 Ất Tỵ (1965) hồi 19 giờ, an táng cận mộ hai bà chánh-thứ, nghĩa trang gia đình ấp 4 xã Phước Thạnh. Chánh lục bộ → Hương cả → Chánh bái. V1 CHỔI sinh 1 con (NGỌC). V2 DÀNH sinh 7 con.",
@@ -1802,7 +2198,7 @@ const DATA = {
                   id:"d5-ngoc", name:"HUỲNH THỊ NGỌC", gender:"female", gen:5,
                   birth:"1902 (Nhâm Dần)", death:"3-8-1958 (18-6 Mậu Tuất)",
                   spouse:"NGUYỄN TẤN TỒN (1901 Tân Sửu, Trưởng ty Ngân khố tỉnh Bến Tre 1945, chết tù Pháp 20-7-1946)",
-                  notes:"Con V1 của Huỳnh Khắc Đầu và Nguyễn Thị Chổi. Mất 3-8-1958, an táng ấp 4 xã Phước Thạnh. 6 con.",
+                  notes:"Con V1 của Huỳnh Khắc Đâu và Nguyễn Thị Chổi. Mất 3-8-1958, an táng ấp 4 xã Phước Thạnh. 6 con.",
                   children:[
                     {
                       id:"d6-chau-ton", name:"NGUYỄN TẤN CHÂU", gender:"male", gen:6,
@@ -2162,7 +2558,7 @@ const DATA = {
                 {
                   id:"d5-khoe-dau", name:"HUỲNH THỊ KHOẺ", gender:"female", gen:5,
                   birth:"1929 (Kỷ Tỵ)",
-                  notes:"T9 (con V2 Đặng Thị Dành). Sinh 1929 (Kỷ Tỵ). Tiểu học, làm vườn. Độc thân.\n\nLà người cuối cùng của chi hệ xưa còn sót lại, am tường nhất về dòng họ Huỳnh. Ông ngoại (HUỲNH KHẮC ĐẦU) có bệnh ho đêm – khoảng 4-5 giờ sáng Dì phải dậy nấu nước trà. Sau khi uống trà, ông kể lại hồi ức về từng người trong dòng họ; Dì lắng nghe, góp ý và hỏi thêm – cứ thế năm này qua năm khác như 'văn ôn võ luyện', cả khối thông tin về dòng họ thẩm thấu vào đầu óc Dì.\n\nDì cung cấp nguồn tin về bà Cố Huỳnh Thị Đây, Huỳnh Thị Tầm, Huỳnh Văn Tú, Huỳnh Thị Tài và bổ sung nhiều chi tiết về 8 người con của Tổ HUỲNH VĂN HƠN mà gia phả cũ bị tắt nghẽn. Đặc biệt cho biết về bà Sơ Hai (Huỳnh Thị Mậu) và hậu duệ họ Võ tại Tằng Bành Đại. Hằng năm đến Tây Ninh tảo mộ bà Vàng.",
+                  notes:"T9 (con V2 Đặng Thị Dành). Sinh 1929 (Kỷ Tỵ). Tiểu học, làm vườn. Độc thân.\n\nLà người cuối cùng của chi hệ xưa còn sót lại, am tường nhất về dòng họ Huỳnh. Ông ngoại (HUỲNH KHẮC ĐÂU) có bệnh ho đêm – khoảng 4-5 giờ sáng Dì phải dậy nấu nước trà. Sau khi uống trà, ông kể lại hồi ức về từng người trong dòng họ; Dì lắng nghe, góp ý và hỏi thêm – cứ thế năm này qua năm khác như 'văn ôn võ luyện', cả khối thông tin về dòng họ thẩm thấu vào đầu óc Dì.\n\nDì cung cấp nguồn tin về bà Cố Huỳnh Thị Đây, Huỳnh Thị Tầm, Huỳnh Văn Tú, Huỳnh Thị Tài và bổ sung nhiều chi tiết về 8 người con của Tổ HUỲNH VĂN HƠN mà gia phả cũ bị tắt nghẽn. Đặc biệt cho biết về bà Sơ Hai (Huỳnh Thị Mậu) và hậu duệ họ Võ tại Tằng Bành Đại. Hằng năm đến Tây Ninh tảo mộ bà Vàng.",
                   children:[]
                 }
               ]
@@ -2932,7 +3328,7 @@ const DATA = {
           title:"Con thứ 5 (T5)",
           birth:"không rõ", death:"không rõ",
           spouse:"Họ Ngô (không biết tên chồng)",
-          intro:"◇ CHI TỔ ĐỜI 3 – HUỲNH THỊ TẰM VÀ HẬU DUỆ\n\nBà Huỳnh Thị Tằm là con thứ 5 (T5) của Tổ Đ2 Huỳnh Văn Hơn. Tài liệu gia phả không ghi ngày sinh và ngày mất. Bà có chồng họ Ngô, sinh 3 người con: Ngô Văn Viêm (T2), Ngô Thị Sầm (T3), Ngô Thị Quế (T4).\n\nMột câu chuyện thú vị: Hai ông Sửu và Thình (cháu bà Tằm) đã tạo ra một giai thoại buồn cười: 'Một hôm thừa nhân túi, đến khoanh tay trước mặt ông ngoại tôi (ông Huỳnh Khắc Đầu) tỏ ra rầu rỉ, bị thương, nói: Thứa cậu Bay, con buồn quá vì vợ con mới chết mà không có tiền chôn cất, con nhờ cậu Bay giúp đỡ. Dĩ nhiên ông ngoại tôi phải chi ra; sau hỏi lại thì ông ta đâu có chết vợ bao giờ; thì ta hai ông dùng cậu chuyện để kiếm tiền chơi tiếp.'",
+          intro:"◇ CHI TỔ ĐỜI 3 – HUỲNH THỊ TẰM VÀ HẬU DUỆ\n\nBà Huỳnh Thị Tằm là con thứ 5 (T5) của Tổ Đ2 Huỳnh Văn Hơn. Tài liệu gia phả không ghi ngày sinh và ngày mất. Bà có chồng họ Ngô, sinh 3 người con: Ngô Văn Viêm (T2), Ngô Thị Sầm (T3), Ngô Thị Quế (T4).\n\nMột câu chuyện thú vị: Hai ông Sửu và Thình (cháu bà Tằm) đã tạo ra một giai thoại buồn cười: 'Một hôm thừa nhân túi, đến khoanh tay trước mặt ông ngoại tôi (ông Huỳnh Khắc Đâu) tỏ ra rầu rỉ, bị thương, nói: Thứa cậu Bay, con buồn quá vì vợ con mới chết mà không có tiền chôn cất, con nhờ cậu Bay giúp đỡ. Dĩ nhiên ông ngoại tôi phải chi ra; sau hỏi lại thì ông ta đâu có chết vợ bao giờ; thì ta hai ông dùng cậu chuyện để kiếm tiền chơi tiếp.'",
           notes:"Con thứ 5 (T5) của Tổ Đ2 Huỳnh Văn Hơn. Không rõ ngày sinh mất. Lấy chồng họ Ngô. Có 3 người con: Ngô Văn Viêm (2 con), Ngô Thị Sầm, Ngô Thị Quế.",
           children:[
             {
@@ -3913,6 +4309,7 @@ flatten(DATA);
 const nodeMap = {};
 allNodes.forEach(n => nodeMap[n.id] = n);
 document.getElementById('totalN').textContent = allNodes.length;
+document.querySelectorAll('.nodeCount').forEach(el => el.textContent = allNodes.length);
 
 /* ══════════════════════════════════════════════════════
    D3 TREE SETUP
@@ -4355,6 +4752,27 @@ window.scrollToSec = function(secId, btn){
   document.querySelectorAll('#histSubNav .subNavBtn').forEach(b=>b.classList.remove('cur'));
   if(btn) btn.classList.add('cur');
 };
+
+// Story tab – reorder cards chronologically (nav link order) + scroll-spy
+(function(){
+  const nav  = document.querySelector('#tabStories .storyNav');
+  const cont = document.querySelector('#tabStories .storyContent');
+  if(!nav || !cont) return;
+  nav.querySelectorAll('a[href^="#st-"]').forEach(a => {
+    const card = document.getElementById(a.getAttribute('href').slice(1));
+    if(card) cont.appendChild(card);
+  });
+  const links = Array.from(nav.querySelectorAll('a[href^="#st-"]'));
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        const id = e.target.id;
+        links.forEach(l => l.classList.toggle('sn-active', l.getAttribute('href') === '#'+id));
+      }
+    });
+  }, {root:cont, threshold:0.25});
+  cont.querySelectorAll('.storyCard[id]').forEach(c => obs.observe(c));
+})();
 </script>
 </body>
 </html>
